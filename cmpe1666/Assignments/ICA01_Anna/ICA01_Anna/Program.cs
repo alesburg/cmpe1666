@@ -28,7 +28,22 @@ namespace ICA01_Anna
     {
         static void Main(string[] args)
         {
+            int arraySize; //size of array to generate
+            int valueMin; //minimum value of ints in array
+            int valueMax; //maximum value of ints in array
+            int[] array; //int array to generate
+
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
+
+            GetInt(out arraySize, "Input the size of the array to generate (10-100): ", 10, 100);
+
+            GetRange(out valueMin, out valueMax);
+
+            array = GenerateArray(arraySize, valueMin, valueMax);
+
+            DisplayArray(array);
+
+            Console.ReadLine();
         }
 
         //********************************************************************************************
@@ -70,8 +85,8 @@ namespace ICA01_Anna
         //*********************************************************************************************
         private static void GetRange(out int min, out int max)
         {
-            GetInt(out min, "Enter the lower limit of the range of values to generate (0-100): ", 0, 100);
-            GetInt(out max, "Enter the upper limit of the range of values to generate (0-100): ", 0, 100);
+            GetInt(out min, "\nEnter the lower limit of the range of values to generate (0-100): ", 0, 100);
+            GetInt(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
         }
 
         //********************************************************************************************
@@ -101,9 +116,10 @@ namespace ICA01_Anna
         //*********************************************************************************************
         private static void DisplayArray(int[] array)
         {
-            foreach (int i in array)
+            Console.Write("\nThe generated values are: ");
+            foreach(int i in array)
             {
-                Console.Write(i);
+                Console.Write("{0}, ",i);
             }
         }
 
