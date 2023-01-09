@@ -76,7 +76,7 @@ namespace ICA01_Anna
                     }
                 } while (!valid);
             } while (repeat);
-
+            Console.Write("Press any key to continue...");
             Console.ReadLine();
         }
 
