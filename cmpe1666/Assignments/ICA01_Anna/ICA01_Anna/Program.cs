@@ -44,6 +44,7 @@ namespace ICA01_Anna
             array = GenerateArray(arraySize, valueMin, valueMax);
 
             DisplayArray(array);
+            //loops as long as user inputs Y
             do{
                 GetInt(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
                 occurrences = CountOccurrences(array, searchValue);
@@ -93,7 +94,9 @@ namespace ICA01_Anna
         //*********************************************************************************************
         private static void GetRange(out int min, out int max)
         {
+            //gets minimum
             GetInt(out min, "\nEnter the lower limit of the range of values to generate (0-100): ", 0, 100);
+            //gets maximum
             GetInt(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
         }
 
@@ -111,9 +114,7 @@ namespace ICA01_Anna
 
             //fills array with random ints
             for(int i = 0; i < array.Length; i++)
-            {
-                array[i] = random.Next(min, max + 1);
-            }
+            array[i] = random.Next(min, max + 1);
             return array;
         }
 
@@ -125,10 +126,9 @@ namespace ICA01_Anna
         private static void DisplayArray(int[] array)
         {
             Console.Write("\nThe generated values are: ");
-            foreach(int i in array)
-            {
-                Console.Write("{0}, ",i);
-            }
+
+            //writes each iteration in array
+            foreach(int i in array) Console.Write("{0}, ",i);
         }
 
         //********************************************************************************************
@@ -140,10 +140,13 @@ namespace ICA01_Anna
         private static int CountOccurrences(int[] array, int value)
         {
             int counter = 0; //counts instances of value in array
+
+            //checks if each iteration in array is equal to value and updates counter
             foreach(int i in array)
             {
                 if (i == value) counter++;
             }
+
             return counter;
         }
     }
