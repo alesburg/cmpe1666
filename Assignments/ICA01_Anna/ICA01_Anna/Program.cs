@@ -28,7 +28,7 @@ namespace ICA01_Anna
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
         }
 
         //********************************************************************************************
@@ -92,6 +92,35 @@ namespace ICA01_Anna
                 array[i] = random.Next(min, max + 1);
             }
             return array;
+        }
+
+        //********************************************************************************************
+        //Method: private static void DisplayArray(int[] array)
+        //Purpose: Displays array to console
+        //Parameters: int[] array - array to display
+        //*********************************************************************************************
+        private static void DisplayArray(int[] array)
+        {
+            foreach (int i in array)
+            {
+                Console.Write(i);
+            }
+        }
+
+        //********************************************************************************************
+        //Method: private static int CountOccurrences(int[] array, int value)
+        //Purpose: Counts instances of value in array
+        //Parameters: int[] array - array to search
+        //int value - value to search
+        //*********************************************************************************************
+        private static int CountOccurrences(int[] array, int value)
+        {
+            int counter = 0; //counts instances of value in array
+            foreach(int i in array)
+            {
+                if (i == value) counter++;
+            }
+            return counter;
         }
     }
 }
