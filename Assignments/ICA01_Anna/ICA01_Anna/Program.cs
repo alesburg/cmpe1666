@@ -73,6 +73,11 @@ namespace ICA01_Anna
             GetInt(out min, "Enter the lower limit of the range of values to generate (0-100): ", 0, 100);
             GetInt(out max, "Enter the upper limit of the range of values to generate (0-100): ", 0, 100);
         }
+
+        private static int[] GenerateArray(int numValues, int min, int max)
+        {
+            Random random = new Random();
+        }
     }
 }
 
