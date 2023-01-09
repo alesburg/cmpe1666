@@ -33,6 +33,7 @@ namespace ICA01_Anna
             int valueMax; //maximum value of ints in array
             int[] array; //int array to generate
             int searchValue; //int value to search for in array
+            int occurrences; //occurrences of searchValue in array
 
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
 
@@ -43,8 +44,13 @@ namespace ICA01_Anna
             array = GenerateArray(arraySize, valueMin, valueMax);
 
             DisplayArray(array);
+            do{
+                GetInt(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
+                occurrences = CountOccurrences(array, searchValue);
+                if (searchValue < 1) Console.WriteLine("{0} not found in array", searchValue);
+                else Console.WriteLine("Number of occurrences of {0} is {1}", searchValue, occurrences);
+            } while (false);
 
-            GetInt(out searchValue, $"Enter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
             Console.ReadLine();
         }
 
