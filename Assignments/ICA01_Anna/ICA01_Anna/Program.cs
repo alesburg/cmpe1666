@@ -31,5 +31,36 @@ namespace ICA01_Anna
 
         }
 
+        //********************************************************************************************
+        //Method: private static void GetValue(out int value, string prompt, int min, int max)
+        //Purpose: Inputs an integer value with error checking within a minimum and maximum value
+        //Parameters: out int value - accepted int value
+        //string prompt - prompt to ask user
+        //int min - minimum value accepted
+        //int max - maximum value accepted
+        //*********************************************************************************************
+        public static void GetValue(out int value, string prompt, int min, int max)
+        {
+            bool valid = false; //is value accepted?
+            do //loops until value is accepted
+            {
+                Console.Write(prompt);
+                valid = int.TryParse(Console.ReadLine(), out value);
+                if (!valid)
+                {
+                    Console.WriteLine("An invalid number was entered. Please try again.");
+                }
+                else
+                {
+                    if (value < min || value > max)
+                    {
+                        Console.WriteLine("The value entered is outside the range accepted");
+                        valid = false;
+                    }
+                }
+            } while (!valid);
+        }
     }
-}
+    }
+
+
