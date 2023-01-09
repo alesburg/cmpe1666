@@ -32,6 +32,7 @@ namespace ICA01_Anna
             int valueMin; //minimum value of ints in array
             int valueMax; //maximum value of ints in array
             int[] array; //int array to generate
+            int searchValue; //int value to search for in array
 
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
 
@@ -43,6 +44,7 @@ namespace ICA01_Anna
 
             DisplayArray(array);
 
+            GetInt(out searchValue, $"Enter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
             Console.ReadLine();
         }
 
