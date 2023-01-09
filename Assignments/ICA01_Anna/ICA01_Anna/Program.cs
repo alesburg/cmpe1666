@@ -61,6 +61,18 @@ namespace ICA01_Anna
                 }
             } while (!valid);
         }
+
+        //********************************************************************************************
+        //Method: private static void GetRange(out int min, out int max)
+        //Purpose: Uses GetInt to obtain a range of values from the user
+        //Parameters: out int min - accepted min value
+        //out int max - accepted max value
+        //*********************************************************************************************
+        private static void GetRange(out int min, out int max)
+        {
+            GetInt(out min, "Enter the lower limit of the range of values to generate (0-100): ", 0, 100);
+            GetInt(out max, "Enter the upper limit of the range of values to generate (0-100): ", 0, 100);
+        }
     }
 }
 
