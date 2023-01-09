@@ -74,9 +74,24 @@ namespace ICA01_Anna
             GetInt(out max, "Enter the upper limit of the range of values to generate (0-100): ", 0, 100);
         }
 
+        //********************************************************************************************
+        //Method: private static int[] GenerateArray(int numValues, int min, int max)
+        //Purpose: Fills an array of specified size with random values within a specified range
+        //Parameters: int numValues - array size
+        //int min - lower bound of generated ints
+        //int max - upped bound of generated ints
+        //*********************************************************************************************
         private static int[] GenerateArray(int numValues, int min, int max)
         {
-            Random random = new Random();
+            Random random = new Random(); //random number generator
+            int[] array = new int[numValues]; //generated array
+
+            //fills array with random ints
+            for(int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(min, max + 1);
+            }
+            return array;
         }
     }
 }
