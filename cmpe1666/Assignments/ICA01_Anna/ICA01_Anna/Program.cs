@@ -34,6 +34,9 @@ namespace ICA01_Anna
             int[] array; //int array to generate
             int searchValue; //int value to search for in array
             int occurrences; //occurrences of searchValue in array
+            string input; //user input for repeating search
+            bool valid; //is user input valid
+            bool repeat = false; //repeat search prompt?
 
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
 
@@ -45,12 +48,34 @@ namespace ICA01_Anna
 
             DisplayArray(array);
             //loops as long as user inputs Y
-            do{
-                GetInt(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
+            do {
+                GetInt(out searchValue, $"\n\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
+
                 occurrences = CountOccurrences(array, searchValue);
-                if (searchValue < 1) Console.WriteLine("{0} not found in array", searchValue);
-                else Console.WriteLine("Number of occurrences of {0} is {1}", searchValue, occurrences);
-            } while (false);
+
+                if (occurrences < 1) Console.WriteLine("\n{0} not found in array", searchValue);
+                else Console.WriteLine("\nNumber of occurrences of {0} is {1}", searchValue, occurrences);
+
+                do
+                {
+                    Console.Write("\nDo you want to search for another value? (Y/N, y/n): ");
+                    input = Console.ReadLine().ToLower();
+                    switch (input)
+                    {
+                        case "y":
+                            repeat = true;
+                            valid = true;
+                            break;
+                        case "n":
+                            repeat = false;
+                            valid = true;
+                            break;
+                        default:
+                            valid = false;
+                            break;
+                    }
+                } while (!valid);
+            } while (repeat);
 
             Console.ReadLine();
         }
