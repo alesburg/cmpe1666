@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////////
 
-/// ICA #01 - Speed Conversion (CMPE1666)
+/// ICA #01 - Linear Search (CMPE1666)
 
 ///  
 
@@ -32,17 +32,18 @@ namespace ICA01_Anna
         }
 
         //********************************************************************************************
-        //Method: private static void GetValue(out int value, string prompt, int min, int max)
+        //Method: private static void GetInt(out int value, string prompt, int min, int max)
         //Purpose: Inputs an integer value with error checking within a minimum and maximum value
         //Parameters: out int value - accepted int value
         //string prompt - prompt to ask user
         //int min - minimum value accepted
         //int max - maximum value accepted
         //*********************************************************************************************
-        public static void GetValue(out int value, string prompt, int min, int max)
+        private static void GetInt(out int value, string prompt, int min, int max)
         {
             bool valid = false; //is value accepted?
-            do //loops until value is accepted
+            //loops until value is accepted
+            do
             {
                 Console.Write(prompt);
                 valid = int.TryParse(Console.ReadLine(), out value);
@@ -61,6 +62,6 @@ namespace ICA01_Anna
             } while (!valid);
         }
     }
-    }
+}
 
 
