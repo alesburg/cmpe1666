@@ -49,7 +49,8 @@ namespace Problem2
                     yPos = MousePos.Y;
                     xCoord = xPos / cellSize;
                     yCoord = yPos / cellSize;
-                    Console.WriteLine($"{xCoord},{yCoord}");
+                    Canvas.AddCenteredRectangle(Canvas.m_ciWidth/2, Canvas.m_ciHeight/2, 100, 50, Color.Aqua);
+                    Canvas.AddText($"{xCoord},{yCoord}",32,Color.Black);
                 }
             }
             Console.ReadKey();
