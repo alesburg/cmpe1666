@@ -55,8 +55,8 @@ namespace ICA01_Anna
 
                 occurrences = CountOccurrences(array, searchValue);
 
-                if (occurrences < 1) Console.WriteLine("\n{0} not found in array", searchValue);
-                else Console.WriteLine("\nNumber of occurrences of {0} is {1}", searchValue, occurrences);
+                if (occurrences < 1) Console.WriteLine($"\n{searchValue} not found in array");
+                else Console.WriteLine($"\nNumber of occurrences of {searchValue} is {occurrences}");
 
                 do
                 {
