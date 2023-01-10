@@ -47,9 +47,11 @@ namespace ICA01_Anna
             array = GenerateArray(arraySize, valueMin, valueMax);
 
             DisplayArray(array);
+            Console.WriteLine();
+
             //loops as long as user inputs Y
             do {
-                GetInt(out searchValue, $"\n\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
+                GetInt(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
 
                 occurrences = CountOccurrences(array, searchValue);
 
@@ -76,7 +78,7 @@ namespace ICA01_Anna
                     }
                 } while (!valid);
             } while (repeat);
-            Console.Write("Press any key to continue...");
+            Console.Write("\nPress any key to continue...");
             Console.ReadLine();
         }
 
