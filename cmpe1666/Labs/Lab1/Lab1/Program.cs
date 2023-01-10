@@ -10,9 +10,10 @@ namespace Lab1
 {
     internal class Program
     {
+        static CDrawer Display;
         static void Main(string[] args)
         {
-
+         
         }
     }
 }
