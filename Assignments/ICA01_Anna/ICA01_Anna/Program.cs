@@ -7,9 +7,9 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 9 JAN 2023 - Created Methods
+ * 9 JAN 2023 - Created
  * 10 JAN 2023 - Updated and tested
- * 11 JAN 2023 - Documented and final testing 
+ * 11 JAN 2023 - Final testing 
  */
 
 using System;
@@ -123,10 +123,17 @@ namespace ICA01_Anna
         //*********************************************************************************************
         private static void GetRange(out int min, out int max)
         {
+            bool maxValid = false; //is max greater than min?
             //gets minimum
             GetValue(out min, "\nEnter the lower limit of the range of values to generate (0-100): ", 0, 100);
-            //gets maximum
-            GetValue(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
+            //gets maximum, repeats as long as max<min
+            do
+            {
+                GetValue(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
+                if (max > min) maxValid = true;
+                else Console.Write("Maximum value must be larger than minimum value.");
+
+            }while(!maxValid);
         }
 
         //********************************************************************************************
