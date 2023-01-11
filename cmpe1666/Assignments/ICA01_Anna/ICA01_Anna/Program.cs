@@ -1,18 +1,16 @@
-﻿/////////////////////////////////////////////////////////////////////////////
-
-/// ICA #01 - Linear Search (CMPE1666)
-
-/// Creates a randomized array of a specified size and max/min values, 
-/// performs a linear search on the array to count instances of a user specified value
-
-///  Author: Anna Lesburg
-
-///  Modification History:
-///  9 JAN 2023 - Created Methods
-///  10 JAN 2023 - Updated and tested
-///  11 JAN 2023 - Documented and final testing
-
-/////////////////////////////////////////////////////////////////////////////
+﻿/* 
+ * ICA #01 - Linear Search (CMPE1666)
+ * 
+ * Creates a randomized array of a specified size and max/min values, 
+ * performs a linear search on the array to count instances of a user specified value.
+ *
+ * Author: Anna Lesburg
+ * 
+ * Modification History:
+ * 9 JAN 2023 - Created Methods
+ * 10 JAN 2023 - Updated and tested
+ * 11 JAN 2023 - Documented and final testing 
+ */
 
 using System;
 using System.Collections.Generic;
