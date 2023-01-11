@@ -40,7 +40,7 @@ namespace ICA01_Anna
 
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
 
-            GetInt(out arraySize, "Input the size of the array to generate (10-100): ", 10, 100);
+            GetValue(out arraySize, "Input the size of the array to generate (10-100): ", 10, 100);
 
             GetRange(out valueMin, out valueMax);
 
@@ -51,7 +51,7 @@ namespace ICA01_Anna
 
             //loops as long as user inputs Y
             do {
-                GetInt(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
+                GetValue(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
 
                 occurrences = CountOccurrences(array, searchValue);
 
@@ -83,14 +83,14 @@ namespace ICA01_Anna
         }
 
         //********************************************************************************************
-        //Method: private static void GetInt(out int value, string prompt, int min, int max)
+        //Method: private static void GetValue(out int value, string prompt, int min, int max)
         //Purpose: Inputs an integer value with error checking within a minimum and maximum value
         //Parameters: out int value - accepted int value
         //string prompt - prompt to ask user
         //int min - minimum value accepted
         //int max - maximum value accepted
         //*********************************************************************************************
-        private static void GetInt(out int value, string prompt, int min, int max)
+        private static void GetValue(out int value, string prompt, int min, int max)
         {
             bool valid = false; //is value accepted?
             //loops until value is accepted
@@ -115,16 +115,16 @@ namespace ICA01_Anna
 
         //********************************************************************************************
         //Method: private static void GetRange(out int min, out int max)
-        //Purpose: Uses GetInt to obtain a range of values from the user
+        //Purpose: Uses GetValue to obtain a range of values from the user
         //Parameters: out int min - accepted min value
         //out int max - accepted max value
         //*********************************************************************************************
         private static void GetRange(out int min, out int max)
         {
             //gets minimum
-            GetInt(out min, "\nEnter the lower limit of the range of values to generate (0-100): ", 0, 100);
+            GetValue(out min, "\nEnter the lower limit of the range of values to generate (0-100): ", 0, 100);
             //gets maximum
-            GetInt(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
+            GetValue(out max, "\nEnter the upper limit of the range of values to generate (0-100): ", 0, 100);
         }
 
         //********************************************************************************************
