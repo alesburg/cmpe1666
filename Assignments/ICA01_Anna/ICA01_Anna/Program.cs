@@ -2,16 +2,12 @@
 
 /// ICA #01 - Linear Search (CMPE1666)
 
-///  
-
-/// 
+/// Creates a randomized array of a specified size and max/min values, 
+/// performs a linear search on the array to count instances of a user specified value
 
 ///  Author: Anna Lesburg
 
-///  
-
 ///  Modification History:
-
 ///  9 JAN 2023 - Created Methods
 ///  10 JAN 2023 - Updated and tested
 ///  11 JAN 2023 - Documented and final testing
@@ -40,26 +36,32 @@ namespace ICA01_Anna
             bool valid; //is user input valid
             bool repeat = false; //repeat search prompt?
 
+            //displays title
             Console.WriteLine("\t\t CMPE 1666 - ICA1 Winter 2022 - Anna Lesburg\n");
 
+            //prompt user for array size and upper and lower limits
             GetValue(out arraySize, "Input the size of the array to generate (10-100): ", 10, 100);
-
             GetRange(out valueMin, out valueMax);
 
+            //generate and display array
             array = GenerateArray(arraySize, valueMin, valueMax);
-
             DisplayArray(array);
             Console.WriteLine();
 
-            //loops as long as user inputs Y
-            do {
+            //search for a value within array, loops as long as user inputs Y/y
+            do
+            {
+                //prompt user for search value
                 GetValue(out searchValue, $"\nEnter value to be searched ({valueMin}-{valueMax}): ", valueMin, valueMax);
 
+                //count occurences of value in array
                 occurrences = CountOccurrences(array, searchValue);
 
+                //show result
                 if (occurrences < 1) Console.WriteLine($"\n{searchValue} not found in array");
                 else Console.WriteLine($"\nNumber of occurrences of {searchValue} is {occurrences}");
 
+                //inputs y/n or Y/N from user and validates, loops until input is valid
                 do
                 {
                     Console.Write("\nDo you want to search for another value? (Y/N, y/n): ");
@@ -135,6 +137,7 @@ namespace ICA01_Anna
         //Parameters: int numValues - array size
         //int min - lower bound of generated ints
         //int max - upped bound of generated ints
+        //Returns: int[] array - array filled with random ints 
         //*********************************************************************************************
         private static int[] GenerateArray(int numValues, int min, int max)
         {
@@ -142,8 +145,8 @@ namespace ICA01_Anna
             int[] array = new int[numValues]; //generated array
 
             //fills array with random ints
-            for(int i = 0; i < array.Length; i++)
-            array[i] = random.Next(min, max + 1);
+            for (int i = 0; i < array.Length; i++)
+                array[i] = random.Next(min, max + 1);
             return array;
         }
 
@@ -157,7 +160,7 @@ namespace ICA01_Anna
             Console.Write("\nThe generated values are: ");
 
             //writes each iteration in array
-            foreach(int i in array) Console.Write("{0}, ",i);
+            foreach (int i in array) Console.Write("{0}, ", i);
         }
 
         //********************************************************************************************
@@ -165,13 +168,14 @@ namespace ICA01_Anna
         //Purpose: Counts instances of value in array
         //Parameters: int[] array - array to search
         //int value - value to search
+        //Returns: int counter - instances of value in array
         //*********************************************************************************************
         private static int CountOccurrences(int[] array, int value)
         {
             int counter = 0; //counts instances of value in array
 
             //checks if each iteration in array is equal to value and updates counter
-            foreach(int i in array)
+            foreach (int i in array)
             {
                 if (i == value) counter++;
             }
