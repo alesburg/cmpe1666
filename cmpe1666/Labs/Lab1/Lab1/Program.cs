@@ -21,10 +21,19 @@ namespace Lab1
 {
     internal class Program
     {
-        static CDrawer Display;
+        public static CDrawer Display;
         static void Main(string[] args)
         {
+            double input; //user input value
+            double roundedInput; //input rounded to nearest 0.05
+            do
+            {
+                input = ParseInput("How much money do you wish to convert?: ");
+                roundedInput = RoundPennies(input);
+                Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
 
+                Console.ReadKey();
+            } while (false);
         }
 
         private static double ParseInput(string prompt)
@@ -57,9 +66,22 @@ namespace Lab1
                     }
                 }
                 success = double.TryParse(output, out outputNum);
-                if (!success) Console.WriteLine("Bad Input");
-                else return outputNum;
+                if (!success) Console.WriteLine("Unable to get currency value from input. Please try again.");
+
             } while (!success);
+            return outputNum;
+        }
+
+        private static double RoundPennies(double input)
+        {
+            double result = Math.Round(input / 0.05) * 0.05;
+            return result;
+        }
+
+        private static void Normalize(double input)
+        {
+            double dollars = Math.Floor(input);
+            double cents = input - dollars;
         }
     }
 }
