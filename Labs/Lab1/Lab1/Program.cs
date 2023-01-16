@@ -7,6 +7,7 @@
  * 
  * Modification History:
  * 11 JAN 2023: Created
+ * 16 JAN 2023: Added methods
  */
 
 using System;
@@ -83,6 +84,7 @@ namespace Lab1
             double dollars = Math.Floor(input);
             double cents = input - dollars;
             
+
         }
     }
 }
