@@ -82,6 +82,7 @@ namespace Lab1
         {
             double dollars = Math.Floor(input);
             double cents = input - dollars;
+            
         }
     }
 }
