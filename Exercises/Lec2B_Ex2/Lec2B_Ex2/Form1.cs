@@ -16,11 +16,12 @@ namespace Lec2B_Ex2
         {
             InitializeComponent();
             UI_Display_Lbl.Text = "Initial Label Value";
+            UI_Transfer_Btn.Text = "Transfer to Label";
         }
 
         private void UI_Transfer_Btn_Click(object sender, EventArgs e)
         {
-
+            UI_Display_Lbl.Text = UI_Lbl_Tbx.Text;
         }
     }
 }
