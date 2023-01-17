@@ -8,6 +8,7 @@
  * Modification History:
  * 11 JAN 2023: Created
  * 16 JAN 2023: Added methods
+ * 17 JAN 2023: Added more methods
  */
 
 using System;
@@ -17,12 +18,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using GDIDrawer;
+using System.Linq.Expressions;
 
 namespace Lab1
 {
     internal class Program
     {
-        public static CDrawer Display;
+        public static CDrawer Display = new CDrawer();
         static void Main(string[] args)
         {
             double input; //user input value
@@ -31,7 +33,9 @@ namespace Lab1
             {
                 input = ParseInput("How much money do you wish to convert?: ");
                 roundedInput = RoundPennies(input);
+
                 Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
+                Display.AddText($"{roundedInput:C2}",24, Display.m_ciWidth/2 - 75,50,150,50,Color.Yellow);
 
                 Console.ReadKey();
             } while (false);
