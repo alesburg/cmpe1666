@@ -201,8 +201,8 @@ namespace Lab1
                     break;
             }
 
-            if (count < 5) Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count*10, 200, 100, color, 3, Color.DarkGray);
-            else Display.AddCenteredRectangle(Display.m_ciWidth * 3/4, 150 + count * 10, 200, 100, color, 3, Color.DarkGray);
+            if (count < 5) Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count * 120, 200, 100, color, 3, Color.DarkGray);
+            else Display.AddCenteredRectangle(Display.m_ciWidth * 3/4, 150 + count * 120, 200, 100, color, 3, Color.DarkGray);
 
         }
 
