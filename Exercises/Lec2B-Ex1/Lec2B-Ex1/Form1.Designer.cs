@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.UI_Display_Lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // UI_Display_Lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(331, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Initial Label Value";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.UI_Display_Lbl.AutoSize = true;
+            this.UI_Display_Lbl.Location = new System.Drawing.Point(331, 134);
+            this.UI_Display_Lbl.Name = "UI_Display_Lbl";
+            this.UI_Display_Lbl.Size = new System.Drawing.Size(112, 16);
+            this.UI_Display_Lbl.TabIndex = 0;
+            this.UI_Display_Lbl.Text = "Initial Label Value";
+            this.UI_Display_Lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.UI_Display_Lbl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,7 +56,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UI_Display_Lbl;
     }
 }
 
