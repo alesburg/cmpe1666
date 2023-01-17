@@ -35,7 +35,7 @@ namespace Lab1
                 roundedInput = RoundPennies(input);
 
                 Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
-                Display.AddText($"{roundedInput:C2}",24, Display.m_ciWidth/2 - 75,50,150,50,Color.Yellow);
+                Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 75, 50, 150, 50, Color.Yellow);
 
                 Console.ReadKey();
             } while (false);
@@ -97,9 +97,46 @@ namespace Lab1
 
         private static void Normalize(double input)
         {
-            double dollars = Math.Floor(input);
-            double cents = (input - dollars)*100;
-            
+            int dollars = (int)(Math.Floor(input));
+            int cents = (int)(input - dollars) * 100;
+            int numFifties;
+            int numTwenties;
+            int numTens;
+            int numFives;
+            int numToonies;
+            int numLoonies;
+            int numQuarters;
+            int numDimes;
+            int numNickles;
+
+            //fifties
+            numFifties = dollars / 50;
+            dollars = dollars % 50;
+            Console.WriteLine($"Fifty x {numFifties}");
+
+            //twenties
+            numTwenties = dollars / 20;
+            dollars = dollars % 20;
+            Console.WriteLine($"Twenty x {numTwenties}");
+
+            //tens
+            numTens = dollars / 10;
+            dollars = dollars % 10;
+            Console.WriteLine($"Ten x {numTens}");
+
+            //fives
+            numFives = dollars / 5;
+            dollars = dollars % 5;
+            Console.WriteLine($"Five x {numFives}");
+
+            //toonies
+            numToonies = dollars / 2;
+            dollars = dollars % 2;
+            Console.WriteLine($"Toonie x {numToonies}");
+
+            //loonies
+            numLoonies = dollars;
+            Console.WriteLine($"Loonie x {numLoonies}");
 
         }
     }
