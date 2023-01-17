@@ -19,7 +19,7 @@ namespace Lec2B_Ex4
 
         private void UI_Enter_Btn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("")
         }
     }
 }
