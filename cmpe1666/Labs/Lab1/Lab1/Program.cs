@@ -114,26 +114,47 @@ namespace Lab1
             int numQuarters; //number of quarters to display
             int numDimes; //number of dimes to display
             int numNickels; //number of nickels to display
+            int displayCount = 0; //counts elements that have been displayed
 
             //fifties
             numFifties = dollars / 50;
             dollars = dollars % 50;
             Console.WriteLine($"Fifty x {numFifties}");
+            if (numFifties > 0)
+            {
+                RenderBill(50, numFifties, displayCount);
+                displayCount++;
+            }
 
             //twenties
             numTwenties = dollars / 20;
             dollars = dollars % 20;
             Console.WriteLine($"Twenty x {numTwenties}");
+            if (numTwenties > 0)
+            {
+                RenderBill(20, numTwenties, displayCount);
+                displayCount++;
+            }
 
             //tens
             numTens = dollars / 10;
             dollars = dollars % 10;
             Console.WriteLine($"Ten x {numTens}");
+            if (numTens > 0)
+            {
+                RenderBill(10, numTens, displayCount);
+                displayCount++;
+            }
 
             //fives
             numFives = dollars / 5;
             dollars = dollars % 5;
             Console.WriteLine($"Five x {numFives}");
+            if (numFives > 0)
+            {
+                RenderBill(5, numFives, displayCount);
+                displayCount++;
+            }
 
             //toonies
             numToonies = dollars / 2;
@@ -157,6 +178,37 @@ namespace Lab1
             //nickels
             numNickels = cents / 5;
             Console.WriteLine($"Nickel x {numNickels}");
+        }
+
+        private static void RenderBill(double value, int quantity, int count)
+        {
+            System.Drawing.Color color = Color.Gray; //determines color of bill
+
+            //determines color of bill
+            switch (value)
+            {
+                case 50:
+                    color = Color.LightCoral;
+                    break;
+                case 20:
+                    color = Color.PaleGreen;
+                    break;
+                case 10:
+                    color = Color.Lavender;
+                    break;
+                case 5:
+                    color = Color.LightBlue;
+                    break;
+            }
+
+            if (count < 5) Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count*10, 200, 100, color, 3, Color.DarkGray);
+            else Display.AddCenteredRectangle(Display.m_ciWidth * 3/4, 150 + count * 10, 200, 100, color, 3, Color.DarkGray);
+
+        }
+
+        private static void RenderCoin(double value, int quantity, int count)
+        {
+
         }
     }
 }
