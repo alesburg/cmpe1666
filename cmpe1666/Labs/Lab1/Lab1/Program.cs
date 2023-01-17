@@ -35,7 +35,7 @@ namespace Lab1
                 roundedInput = RoundPennies(input);
 
                 Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
-                Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 75, 50, 150, 50, Color.Yellow);
+                Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 100, 50, 200, 50, Color.Yellow);
 
                 Normalize(roundedInput);
                 Console.ReadKey();
@@ -108,7 +108,7 @@ namespace Lab1
             int numLoonies;
             int numQuarters;
             int numDimes;
-            int numNickles;
+            int numNickels;
 
             //fifties
             numFifties = dollars / 50;
@@ -150,8 +150,8 @@ namespace Lab1
             Console.WriteLine($"Dime x {numDimes}");
 
             //nickels
-            numNickles = cents / 5;
-            Console.WriteLine($"Nickle x {numNickles}");
+            numNickels = cents / 5;
+            Console.WriteLine($"Nickel x {numNickels}");
         }
     }
 }
