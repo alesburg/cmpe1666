@@ -28,37 +28,37 @@ namespace ICA02_Anna
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Load event called");
+            System.Diagnostics.Trace.WriteLine("Load event called");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Console.WriteLine("Closing event called");
+            System.Diagnostics.Trace.WriteLine("Closing event called");
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Console.WriteLine("Closed event called");
+            System.Diagnostics.Trace.WriteLine("Closed event called");
         }
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            Console.WriteLine("Activated event called");
+            System.Diagnostics.Trace.WriteLine("Activated event called");
         }
 
         private void Form1_Deactivate(object sender, EventArgs e)
         {
-            Console.WriteLine("Deactivated event called");
+            System.Diagnostics.Trace.WriteLine("Deactivated event called");
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            Console.WriteLine("Shown event called");
+            System.Diagnostics.Trace.WriteLine("Shown event called");
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            Console.WriteLine("Paint event called");
+            System.Diagnostics.Trace.WriteLine("Paint event called");
         }
     }
 }
