@@ -201,9 +201,8 @@ namespace Lab1
                     break;
             }
 
-            if (count < 5) Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count * 120, 200, 100, color, 3, Color.DarkGray);
-            else Display.AddCenteredRectangle(Display.m_ciWidth * 3/4, 150 + count * 120, 200, 100, color, 3, Color.DarkGray);
-
+            Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count * 95, 200, 85, color, 3, Color.DarkGray);
+            Display.AddText($"${value} x {quantity}", 16, Display.m_ciWidth / 6, 125 + count * 95, 100, 50, Color.Black);
         }
 
         private static void RenderCoin(double value, int quantity, int count)
