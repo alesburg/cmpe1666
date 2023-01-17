@@ -41,6 +41,12 @@ namespace Lab1
             } while (false);
         }
 
+        //********************************************************************************************
+        //Method: private static double ParseInput(string prompt)
+        //Purpose: Prompts user for string and parses out a double value to 2 decimal places
+        //Parameters: string prompt - prompt to ask user
+        //Returns: double
+        //*********************************************************************************************
         private static double ParseInput(string prompt)
         {
             string input; //user input string
@@ -77,6 +83,12 @@ namespace Lab1
             return outputNum;
         }
 
+        //********************************************************************************************
+        //Method: private static double RoundPennies(double input)
+        //Purpose: Rounds a double value to nearest nickel
+        //Parameters: double input - value to round
+        //Returns: double
+        //*********************************************************************************************
         private static double RoundPennies(double input)
         {
             double result = Math.Round(input / 0.05) * 0.05;
@@ -86,7 +98,7 @@ namespace Lab1
         private static void Normalize(double input)
         {
             double dollars = Math.Floor(input);
-            double cents = input - dollars;
+            double cents = (input - dollars)*100;
             
 
         }
