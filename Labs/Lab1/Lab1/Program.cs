@@ -139,6 +139,19 @@ namespace Lab1
             numLoonies = dollars;
             Console.WriteLine($"Loonie x {numLoonies}");
 
+            //quarters
+            numQuarters = cents / 25;
+            cents = cents % 25;
+            Console.WriteLine($"Quarter x {numQuarters}");
+
+            //dimes
+            numDimes = cents / 10;
+            cents = cents % 10;
+            Console.WriteLine($"Dime x {numDimes}");
+
+            //nickels
+            numNickles = cents / 5;
+            Console.WriteLine($"Nickle x {numNickles}");
         }
     }
 }
