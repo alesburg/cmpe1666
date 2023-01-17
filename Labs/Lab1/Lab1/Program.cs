@@ -96,19 +96,24 @@ namespace Lab1
             return result;
         }
 
+        //********************************************************************************************
+        //Method: private static void Normalize(double input)
+        //Purpose: Normalizes input value into bills and coins, displays to GDIDrawer
+        //Parameters: double input - value to normalize
+        //*********************************************************************************************
         private static void Normalize(double input)
         {
-            int dollars = (int)(Math.Floor(input));
-            int cents = (int)((input - dollars) * 100);
-            int numFifties;
-            int numTwenties;
-            int numTens;
-            int numFives;
-            int numToonies;
-            int numLoonies;
-            int numQuarters;
-            int numDimes;
-            int numNickels;
+            int dollars = (int)(Math.Floor(input)); //int value of dollars
+            int cents = (int)((input - dollars) * 100); //int value of cents
+            int numFifties; //number of fifties to display
+            int numTwenties; //number of twenties to display
+            int numTens; //number of tens to display
+            int numFives; //number of fives to display
+            int numToonies; //number of toonies to display
+            int numLoonies; //number of loonies to display
+            int numQuarters; //number of quarters to display
+            int numDimes; //number of dimes to display
+            int numNickels; //number of nickels to display
 
             //fifties
             numFifties = dollars / 50;
