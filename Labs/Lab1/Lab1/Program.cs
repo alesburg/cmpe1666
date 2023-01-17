@@ -37,6 +37,7 @@ namespace Lab1
                 Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
                 Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 75, 50, 150, 50, Color.Yellow);
 
+                Normalize(roundedInput);
                 Console.ReadKey();
             } while (false);
         }
@@ -98,7 +99,7 @@ namespace Lab1
         private static void Normalize(double input)
         {
             int dollars = (int)(Math.Floor(input));
-            int cents = (int)(input - dollars) * 100;
+            int cents = (int)((input - dollars) * 100);
             int numFifties;
             int numTwenties;
             int numTens;
