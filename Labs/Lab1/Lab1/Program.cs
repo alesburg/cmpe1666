@@ -208,6 +208,21 @@ namespace Lab1
         private static void RenderCoin(double value, int quantity, int count)
         {
 
+            System.Drawing.Color color = Color.Gray; //determines color of coin
+
+            //determines color of coin
+            switch (value)
+            {
+                case 2:
+                    color = Color.PaleGoldenrod;
+                    break;
+                case 1:
+                    color = Color.Gold;
+                    break;
+                default:
+                    color = Color.LightGray;
+                    break;
+            }
         }
     }
 }
