@@ -16,5 +16,10 @@ namespace Lec2B_Ex6
         {
             InitializeComponent();
         }
+
+        private void UI_Name_Tbx_TextChanged(object sender, EventArgs e)
+        {
+            UI_Display_Tbx.Text = UI_Name_Tbx.Text;
+        }
     }
 }
