@@ -16,5 +16,19 @@ namespace Lec2B_Ex5
         {
             InitializeComponent();
         }
+
+        private void UI_Sum_Btn_Click(object sender, EventArgs e)
+        {
+            int val1;
+            int val2;
+            int sum;
+            
+            int.TryParse(UI_Val1_Tbx.Text, out val1);
+            int.TryParse(UI_Val2_Tbx.Text, out val2);
+            sum = val1 + val2;
+            
+
+            UI_Sum_Tbx.Text = sum.ToString();
+        }
     }
 }
