@@ -160,24 +160,49 @@ namespace Lab1
             numToonies = dollars / 2;
             dollars = dollars % 2;
             Console.WriteLine($"Toonie x {numToonies}");
+            if (numToonies > 0)
+            {
+                RenderCoin(2, numToonies, displayCount);
+                displayCount++;
+            }
 
             //loonies
             numLoonies = dollars;
             Console.WriteLine($"Loonie x {numLoonies}");
+            if (numLoonies > 0)
+            {
+                RenderCoin(1, numLoonies, displayCount);
+                displayCount++;
+            }
 
             //quarters
             numQuarters = cents / 25;
             cents = cents % 25;
             Console.WriteLine($"Quarter x {numQuarters}");
+            if (numQuarters > 0)
+            {
+                RenderCoin(0.25, numQuarters, displayCount);
+                displayCount++;
+            }
 
             //dimes
             numDimes = cents / 10;
             cents = cents % 10;
             Console.WriteLine($"Dime x {numDimes}");
+            if (numDimes > 0)
+            {
+                RenderCoin(0.10, numDimes, displayCount);
+                displayCount++;
+            }
 
             //nickels
             numNickels = cents / 5;
             Console.WriteLine($"Nickel x {numNickels}");
+            if (numNickels > 0)
+            {
+                RenderCoin(0.10, numNickels, displayCount);
+                displayCount++;
+            }
         }
 
         private static void RenderBill(double value, int quantity, int count)
@@ -202,7 +227,7 @@ namespace Lab1
             }
 
             Display.AddCenteredRectangle(Display.m_ciWidth / 4, 150 + count * 95, 200, 85, color, 3, Color.DarkGray);
-            Display.AddText($"${value} x {quantity}", 16, Display.m_ciWidth / 6, 125 + count * 95, 100, 50, Color.Black);
+            Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth / 6, 125 + count * 95, 100, 50, Color.Black);
         }
 
         private static void RenderCoin(double value, int quantity, int count)
@@ -222,6 +247,11 @@ namespace Lab1
                 default:
                     color = Color.LightGray;
                     break;
+            }
+            if (quantity < 4)
+            {
+                Display.AddCenteredEllipse(Display.m_ciWidth / 4, 150 + count * 95, 85, 85, color, 3, Color.DarkGray);
+                Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth / 6 + 15, 125 + count * 95, 100, 50, Color.Black);
             }
         }
     }
