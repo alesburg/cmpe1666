@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using GDIDrawer;
 using System.Linq.Expressions;
+using System.Runtime.Remoting.Messaging;
 
 namespace Lab1
 {
@@ -32,6 +33,9 @@ namespace Lab1
             double roundedInput; //input rounded to nearest 0.05
             do
             {
+                Console.Clear();
+                Display.Clear();
+
                 input = ParseInput("How much money do you wish to convert?: ");
                 roundedInput = RoundPennies(input);
 
@@ -39,8 +43,7 @@ namespace Lab1
                 Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 100, 50, 200, 50, Color.Yellow);
 
                 Normalize(roundedInput);
-                Console.ReadKey();
-            } while (false);
+            } while (RunAgain());
         }
 
         //********************************************************************************************
@@ -206,6 +209,13 @@ namespace Lab1
             }
         }
 
+        //********************************************************************************************
+        //Method: RenderBill(double value, int quantity, int count)
+        //Purpose: Draws specified bill to GDIDrawer
+        //Parameters: double value - influences color of bill
+        //int quantity - displays quantity of bill to GDIDrawer
+        //int count - how many elements have been drawn so far?
+        //*********************************************************************************************
         private static void RenderBill(double value, int quantity, int count)
         {
             System.Drawing.Color color = Color.Gray; //determines color of bill
@@ -231,6 +241,13 @@ namespace Lab1
             Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth / 6, 125 + count * 95, 100, 50, Color.Black);
         }
 
+        //********************************************************************************************
+        //Method: RenderCoin(double value, int quantity, int count)
+        //Purpose: Draws specified coin to GDIDrawer
+        //Parameters: double value - influences color of coin
+        //int quantity - displays quantity of coin to GDIDrawer
+        //int count - how many elements have been drawn so far?
+        //*********************************************************************************************
         private static void RenderCoin(double value, int quantity, int count)
         {
 
@@ -257,6 +274,21 @@ namespace Lab1
             {
                 Display.AddCenteredEllipse(Display.m_ciWidth * 3/4, 150 + (count-5) * 95, 85, 85, color, 3, Color.DarkGray);
                 Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth * 4 / 6 + 15, 125 + (count - 5) * 95, 100, 50, Color.Black);
+            }
+        }
+
+        private static bool RunAgain()
+        {
+            string input; //user input
+
+            Console.Write("Run program again? (y/n): ");
+            input = Console.ReadLine().Trim().ToLower();
+            if (input == "y") return true;
+            else
+            {
+                Console.Write("Press any key to exit...");
+                Console.ReadKey();
+                return false;
             }
         }
     }
