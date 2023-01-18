@@ -7,9 +7,9 @@
  * 
  * Modification History:
  * 11 JAN 2023: Created
- * 16 JAN 2023: Added methods
- * 17 JAN 2023: Added more methods
- * 18 JAN 2023: Added more methods
+ * 16 JAN 2023: Added and tested input parsing
+ * 17 JAN 2023: Created normalization function
+ * 18 JAN 2023: Created drawing/run again functions and final testing/documentation
  */
 
 using System;
@@ -31,18 +31,23 @@ namespace Lab1
         {
             double input; //user input value
             double roundedInput; //input rounded to nearest 0.05
+
+            //loops as long as user enters y or Y
             do
             {
+                //clear console and GDIDrawer
                 Console.Clear();
                 Display.Clear();
 
+                //parse and round input
                 input = ParseInput("How much money do you wish to convert?: ");
                 roundedInput = RoundPennies(input);
 
+                //Display results
                 Console.WriteLine($"User entry of {input:C2} interpreted and rounded to {roundedInput:C2}");
                 Display.AddText($"{roundedInput:C2}", 24, Display.m_ciWidth / 2 - 100, 50, 200, 50, Color.Yellow);
-
                 Normalize(roundedInput);
+
             } while (RunAgain());
         }
 
@@ -67,6 +72,7 @@ namespace Lab1
                 Console.Write(prompt);
                 input = Console.ReadLine();
 
+                //iterates through each char in input
                 foreach (char c in input)
                 {
                     if (!afterPoint && c == '.')
@@ -270,13 +276,19 @@ namespace Lab1
             {
                 Display.AddCenteredEllipse(Display.m_ciWidth / 4, 150 + count * 95, 85, 85, color, 3, Color.DarkGray);
                 Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth / 6 + 15, 125 + count * 95, 100, 50, Color.Black);
-            } else
+            }
+            else
             {
-                Display.AddCenteredEllipse(Display.m_ciWidth * 3/4, 150 + (count-5) * 95, 85, 85, color, 3, Color.DarkGray);
+                Display.AddCenteredEllipse(Display.m_ciWidth * 3 / 4, 150 + (count - 5) * 95, 85, 85, color, 3, Color.DarkGray);
                 Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth * 4 / 6 + 15, 125 + (count - 5) * 95, 100, 50, Color.Black);
             }
         }
 
+        //********************************************************************************************
+        //Method: private static bool RunAgain()
+        //Purpose: Prompts user to repeat program
+        //Returns: true if user enters y or Y, false otherwise
+        //*********************************************************************************************
         private static bool RunAgain()
         {
             string input; //user input
