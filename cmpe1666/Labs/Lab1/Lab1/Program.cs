@@ -248,10 +248,14 @@ namespace Lab1
                     color = Color.LightGray;
                     break;
             }
-            if (quantity < 4)
+            if (count < 5)
             {
                 Display.AddCenteredEllipse(Display.m_ciWidth / 4, 150 + count * 95, 85, 85, color, 3, Color.DarkGray);
                 Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth / 6 + 15, 125 + count * 95, 100, 50, Color.Black);
+            } else
+            {
+                Display.AddCenteredEllipse(Display.m_ciWidth * 3/4, 150 + (count-5) * 95, 85, 85, color, 3, Color.DarkGray);
+                Display.AddText($"{value:C2} x {quantity}", 12, Display.m_ciWidth * 4 / 6 + 15, 125 + (count - 5) * 95, 100, 50, Color.Black);
             }
         }
     }
