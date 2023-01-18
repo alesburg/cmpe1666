@@ -90,6 +90,7 @@
             this.UI_Price_Tbx.Name = "UI_Price_Tbx";
             this.UI_Price_Tbx.Size = new System.Drawing.Size(162, 22);
             this.UI_Price_Tbx.TabIndex = 1;
+            this.UI_Price_Tbx.TextChanged += new System.EventHandler(this.UI_Price_Tbx_TextChanged);
             // 
             // UI_Price_Lbl
             // 

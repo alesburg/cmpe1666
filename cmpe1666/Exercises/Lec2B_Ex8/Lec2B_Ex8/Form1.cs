@@ -16,5 +16,13 @@ namespace Lec2B_Ex8
         {
             InitializeComponent();
         }
+
+        private void UI_Price_Tbx_TextChanged(object sender, EventArgs e)
+        {
+            double price;
+            double.TryParse(UI_Price_Tbx.Text, out price);
+
+            UI_Price_Tbx.Text = 
+        }
     }
 }
