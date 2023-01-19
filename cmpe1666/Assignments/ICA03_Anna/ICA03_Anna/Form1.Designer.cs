@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_Timer_Lbl = new System.Windows.Forms.Label();
             this.UI_Timer_Lstbx = new System.Windows.Forms.ListBox();
+            this.UI_Start_Btn = new System.Windows.Forms.Button();
+            this.UI_Stop_Btn = new System.Windows.Forms.Button();
+            this.UI_Reset_Btn = new System.Windows.Forms.Button();
+            this.UI_Split_Btn = new System.Windows.Forms.Button();
+            this.UI_Refresh_Timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UI_Timer_Lbl
@@ -56,11 +62,61 @@
             this.UI_Timer_Lstbx.Size = new System.Drawing.Size(194, 372);
             this.UI_Timer_Lstbx.TabIndex = 1;
             // 
+            // UI_Start_Btn
+            // 
+            this.UI_Start_Btn.Location = new System.Drawing.Point(208, 66);
+            this.UI_Start_Btn.Name = "UI_Start_Btn";
+            this.UI_Start_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Start_Btn.TabIndex = 2;
+            this.UI_Start_Btn.Text = "Start";
+            this.UI_Start_Btn.UseVisualStyleBackColor = true;
+            this.UI_Start_Btn.Click += new System.EventHandler(this.UI_Start_Btn_Click);
+            // 
+            // UI_Stop_Btn
+            // 
+            this.UI_Stop_Btn.Location = new System.Drawing.Point(208, 95);
+            this.UI_Stop_Btn.Name = "UI_Stop_Btn";
+            this.UI_Stop_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Stop_Btn.TabIndex = 3;
+            this.UI_Stop_Btn.Text = "Stop";
+            this.UI_Stop_Btn.UseVisualStyleBackColor = true;
+            this.UI_Stop_Btn.Click += new System.EventHandler(this.UI_Stop_Btn_Click);
+            // 
+            // UI_Reset_Btn
+            // 
+            this.UI_Reset_Btn.Location = new System.Drawing.Point(208, 124);
+            this.UI_Reset_Btn.Name = "UI_Reset_Btn";
+            this.UI_Reset_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Reset_Btn.TabIndex = 4;
+            this.UI_Reset_Btn.Text = "Reset";
+            this.UI_Reset_Btn.UseVisualStyleBackColor = true;
+            this.UI_Reset_Btn.Click += new System.EventHandler(this.UI_Reset_Btn_Click);
+            // 
+            // UI_Split_Btn
+            // 
+            this.UI_Split_Btn.Location = new System.Drawing.Point(208, 415);
+            this.UI_Split_Btn.Name = "UI_Split_Btn";
+            this.UI_Split_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Split_Btn.TabIndex = 5;
+            this.UI_Split_Btn.Text = "Split";
+            this.UI_Split_Btn.UseVisualStyleBackColor = true;
+            this.UI_Split_Btn.Click += new System.EventHandler(this.UI_Split_Btn_Click);
+            // 
+            // UI_Refresh_Timer
+            // 
+            this.UI_Refresh_Timer.Enabled = true;
+            this.UI_Refresh_Timer.Interval = 20;
+            this.UI_Refresh_Timer.Tick += new System.EventHandler(this.UI_Refresh_Timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 450);
+            this.ClientSize = new System.Drawing.Size(289, 450);
+            this.Controls.Add(this.UI_Split_Btn);
+            this.Controls.Add(this.UI_Reset_Btn);
+            this.Controls.Add(this.UI_Stop_Btn);
+            this.Controls.Add(this.UI_Start_Btn);
             this.Controls.Add(this.UI_Timer_Lstbx);
             this.Controls.Add(this.UI_Timer_Lbl);
             this.Name = "Form1";
@@ -74,6 +130,11 @@
 
         private System.Windows.Forms.Label UI_Timer_Lbl;
         private System.Windows.Forms.ListBox UI_Timer_Lstbx;
+        private System.Windows.Forms.Button UI_Start_Btn;
+        private System.Windows.Forms.Button UI_Stop_Btn;
+        private System.Windows.Forms.Button UI_Reset_Btn;
+        private System.Windows.Forms.Button UI_Split_Btn;
+        private System.Windows.Forms.Timer UI_Refresh_Timer;
     }
 }
 
