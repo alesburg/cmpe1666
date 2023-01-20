@@ -51,7 +51,13 @@ namespace ICA03_Anna
 
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
-            UI_Timer_Lbl.Text = Stopwatch.Elapsed.ToString();
+            
+            UI_Timer_Lbl.Text = FormattedTime();
+        }
+
+        static private string FormattedTime()
+        {
+
         }
     }
 }
