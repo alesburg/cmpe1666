@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -52,11 +53,13 @@ namespace ICA03_Anna
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
             
-            UI_Timer_Lbl.Text = FormattedTime();
+            UI_Timer_Lbl.Text = FormattedTime(Stopwatch.ElapsedMilliseconds);
         }
 
-        static private string FormattedTime()
+        private string FormattedTime(double ms)
         {
+            int millisecs = (int)ms;
+
 
         }
     }
