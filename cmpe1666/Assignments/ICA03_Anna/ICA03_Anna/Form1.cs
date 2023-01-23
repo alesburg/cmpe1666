@@ -56,7 +56,7 @@ namespace ICA03_Anna
             {
                 UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
             }
-            splitCounter++;
+            //splitCounter++;
         }
 
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace ICA03_Anna
 
             hundredthSec = msTotal/10;
 
-            return $"{hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
+            return $"({splitCounter}) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
 }
