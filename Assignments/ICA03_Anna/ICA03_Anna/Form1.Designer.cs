@@ -40,7 +40,8 @@
             // 
             // UI_Timer_Lbl
             // 
-            this.UI_Timer_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.UI_Timer_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Timer_Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UI_Timer_Lbl.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_Timer_Lbl.Location = new System.Drawing.Point(12, 9);
@@ -52,7 +53,8 @@
             // 
             // UI_Timer_Lstbx
             // 
-            this.UI_Timer_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UI_Timer_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.UI_Timer_Lstbx.FormattingEnabled = true;
             this.UI_Timer_Lstbx.IntegralHeight = false;
             this.UI_Timer_Lstbx.ItemHeight = 16;
