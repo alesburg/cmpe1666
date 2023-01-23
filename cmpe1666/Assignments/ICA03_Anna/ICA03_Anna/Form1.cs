@@ -22,10 +22,10 @@ using System.Windows.Forms;
 
 namespace ICA03_Anna
 {
-    public partial class Form1 : Form
+    public partial class Timer : Form
     {
         System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
-        public Form1()
+        public Timer()
         {
             InitializeComponent();
         }
@@ -58,9 +58,9 @@ namespace ICA03_Anna
 
         private string FormattedTime(double ms)
         {
-            int millisecs = (int)ms;
-
-
+            TimeSpan formattedTime = new TimeSpan();
+            formattedTime = TimeSpan.FromMilliseconds(Math.Round(ms));
+            return formattedTime.ToString();
         }
     }
 }
