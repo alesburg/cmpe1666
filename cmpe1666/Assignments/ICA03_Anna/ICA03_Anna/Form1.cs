@@ -7,6 +7,7 @@
  * 
  * Modification History:
  * 19 JAN 2023 - Created
+ * 23 JAN 2023 - Finished
  */
 
 using System;
@@ -25,8 +26,10 @@ namespace ICA03_Anna
     public partial class Timer : Form
     {
         System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
+        int splitCounter;
         public Timer()
         {
+            splitCounter = 0;
             InitializeComponent();
         }
 
@@ -43,11 +46,14 @@ namespace ICA03_Anna
         private void UI_Reset_Btn_Click(object sender, EventArgs e)
         {
             Stopwatch.Reset();
+            UI_Timer_Lstbx.Items.Clear();
+            splitCounter = 0;
         }
 
         private void UI_Split_Btn_Click(object sender, EventArgs e)
         {
-
+            UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
+            splitCounter++;
         }
 
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
@@ -61,7 +67,7 @@ namespace ICA03_Anna
             int hr;
             int min;
             int sec;
-            int millisec;
+            int hundredthSec;
 
             hr = msTotal > 3600000 ? msTotal / 3600000 : 0;
             msTotal = msTotal > 3600000 ? msTotal % 3600000 : msTotal;
@@ -72,10 +78,10 @@ namespace ICA03_Anna
             sec = msTotal > 1000 ? msTotal / 1000 : 0;
             msTotal = msTotal > 1000 ? msTotal % 1000 : msTotal;
 
-            millisec = msTotal;
+            hundredthSec = msTotal/10;
 
 
-            return msTotal.ToString();
+            return $"({splitCounter}) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
 }
