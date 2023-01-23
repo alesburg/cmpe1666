@@ -53,14 +53,29 @@ namespace ICA03_Anna
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
             
-            UI_Timer_Lbl.Text = FormattedTime(Stopwatch.ElapsedMilliseconds);
+            UI_Timer_Lbl.Text = FormattedTime((int)Stopwatch.ElapsedMilliseconds);
         }
 
-        private string FormattedTime(double ms)
+        private string FormattedTime(int msTotal)
         {
-            TimeSpan formattedTime = new TimeSpan();
-            formattedTime = TimeSpan.FromMilliseconds(Math.Round(ms));
-            return formattedTime.ToString();
+            int hr;
+            int min;
+            int sec;
+            int millisec;
+
+            hr = msTotal > 3600000 ? msTotal / 3600000 : 0;
+            msTotal = msTotal > 3600000 ? msTotal % 3600000 : msTotal;
+
+            min = msTotal > 60000 ? msTotal / 60000 : 0;
+            msTotal = msTotal > 60000 ? msTotal % 60000 : msTotal;
+
+            sec = msTotal > 1000 ? msTotal / 1000 : 0;
+            msTotal = msTotal > 1000 ? msTotal % 1000 : msTotal;
+
+            millisec = msTotal;
+
+
+            return msTotal.ToString();
         }
     }
 }
