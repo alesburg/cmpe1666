@@ -52,13 +52,15 @@ namespace ICA03_Anna
 
         private void UI_Split_Btn_Click(object sender, EventArgs e)
         {
-            UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
+            if (!(UI_Timer_Lstbx.Items.Contains(FormattedTime((int)Stopwatch.ElapsedMilliseconds))))
+            {
+                UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
+            }
             splitCounter++;
         }
 
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
-            
             UI_Timer_Lbl.Text = FormattedTime((int)Stopwatch.ElapsedMilliseconds);
         }
 
@@ -80,8 +82,7 @@ namespace ICA03_Anna
 
             hundredthSec = msTotal/10;
 
-
-            return $"({splitCounter}) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
+            return $"{hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
 }
