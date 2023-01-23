@@ -55,8 +55,8 @@ namespace ICA03_Anna
             if (!(UI_Timer_Lstbx.Items.Contains(FormattedTime((int)Stopwatch.ElapsedMilliseconds))))
             {
                 UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
+                //splitCounter++;
             }
-            //splitCounter++;
         }
 
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
