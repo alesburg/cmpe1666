@@ -62,6 +62,7 @@
             this.UI_Timer_Lstbx.Name = "UI_Timer_Lstbx";
             this.UI_Timer_Lstbx.Size = new System.Drawing.Size(205, 399);
             this.UI_Timer_Lstbx.TabIndex = 1;
+            this.UI_Timer_Lstbx.TabStop = false;
             // 
             // UI_Start_Btn
             // 
@@ -69,7 +70,7 @@
             this.UI_Start_Btn.Location = new System.Drawing.Point(225, 67);
             this.UI_Start_Btn.Name = "UI_Start_Btn";
             this.UI_Start_Btn.Size = new System.Drawing.Size(75, 23);
-            this.UI_Start_Btn.TabIndex = 2;
+            this.UI_Start_Btn.TabIndex = 0;
             this.UI_Start_Btn.Text = "Start";
             this.UI_Start_Btn.UseVisualStyleBackColor = true;
             this.UI_Start_Btn.Click += new System.EventHandler(this.UI_Start_Btn_Click);
@@ -80,7 +81,7 @@
             this.UI_Stop_Btn.Location = new System.Drawing.Point(225, 96);
             this.UI_Stop_Btn.Name = "UI_Stop_Btn";
             this.UI_Stop_Btn.Size = new System.Drawing.Size(75, 23);
-            this.UI_Stop_Btn.TabIndex = 3;
+            this.UI_Stop_Btn.TabIndex = 2;
             this.UI_Stop_Btn.Text = "Stop";
             this.UI_Stop_Btn.UseVisualStyleBackColor = true;
             this.UI_Stop_Btn.Click += new System.EventHandler(this.UI_Stop_Btn_Click);
@@ -91,7 +92,7 @@
             this.UI_Reset_Btn.Location = new System.Drawing.Point(225, 125);
             this.UI_Reset_Btn.Name = "UI_Reset_Btn";
             this.UI_Reset_Btn.Size = new System.Drawing.Size(75, 23);
-            this.UI_Reset_Btn.TabIndex = 4;
+            this.UI_Reset_Btn.TabIndex = 3;
             this.UI_Reset_Btn.Text = "Reset";
             this.UI_Reset_Btn.UseVisualStyleBackColor = true;
             this.UI_Reset_Btn.Click += new System.EventHandler(this.UI_Reset_Btn_Click);
@@ -102,7 +103,7 @@
             this.UI_Split_Btn.Location = new System.Drawing.Point(225, 443);
             this.UI_Split_Btn.Name = "UI_Split_Btn";
             this.UI_Split_Btn.Size = new System.Drawing.Size(75, 23);
-            this.UI_Split_Btn.TabIndex = 5;
+            this.UI_Split_Btn.TabIndex = 1;
             this.UI_Split_Btn.Text = "Split";
             this.UI_Split_Btn.UseVisualStyleBackColor = true;
             this.UI_Split_Btn.Click += new System.EventHandler(this.UI_Split_Btn_Click);
