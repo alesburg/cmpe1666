@@ -26,12 +26,10 @@ namespace ICA03_Anna
 {
     public partial class Timer : Form
     {
-        System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
-        int splitCounter;
+        System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch(); //stopwatch
 
         public Timer()
         {
-            splitCounter = 0;
             InitializeComponent();
         }
 
@@ -49,22 +47,20 @@ namespace ICA03_Anna
         {
             Stopwatch.Reset();
             UI_Timer_Lstbx.Items.Clear();
-            splitCounter = 0;
         }
 
         private void UI_Split_Btn_Click(object sender, EventArgs e)
         {
-            if (!(UI_Timer_Lstbx.Items.Contains($"({splitCounter-1}) {FormattedTime((int)Stopwatch.ElapsedMilliseconds)}")))
+            if (!(UI_Timer_Lstbx.Items.Contains(FormattedTime((int)Stopwatch.ElapsedMilliseconds))))
             {
-                UI_Timer_Lstbx.Items.Add($"({splitCounter}) {FormattedTime((int)Stopwatch.ElapsedMilliseconds)}");
-                splitCounter++;
+                UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
             }
         }
 
         //refresh UI on timer tick
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
-            UI_Timer_Lbl.Text = $"({splitCounter}) {FormattedTime((int)Stopwatch.ElapsedMilliseconds)}";
+            UI_Timer_Lbl.Text = FormattedTime((int)Stopwatch.ElapsedMilliseconds);
         }
 
         //********************************************************************************************
@@ -96,7 +92,7 @@ namespace ICA03_Anna
             hundredthSec = msTotal / 10;
 
             //return formatted string
-            return $"{hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
+            return $"(0) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
 }
