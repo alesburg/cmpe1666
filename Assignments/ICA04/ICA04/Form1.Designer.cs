@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.UI_Units_Grpbox = new System.Windows.Forms.GroupBox();
-            this.UI_Mph_Radbtn = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.UI_Mph_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_output_Txtbx = new System.Windows.Forms.TextBox();
             this.UI_input_Txtbx = new System.Windows.Forms.TextBox();
             this.UI_input_Lbl = new System.Windows.Forms.Label();
@@ -51,17 +51,6 @@
             this.UI_Units_Grpbox.TabStop = false;
             this.UI_Units_Grpbox.Text = "Input Units";
             // 
-            // UI_Mph_Radbtn
-            // 
-            this.UI_Mph_Radbtn.AutoSize = true;
-            this.UI_Mph_Radbtn.Location = new System.Drawing.Point(7, 22);
-            this.UI_Mph_Radbtn.Name = "UI_Mph_Radbtn";
-            this.UI_Mph_Radbtn.Size = new System.Drawing.Size(153, 20);
-            this.UI_Mph_Radbtn.TabIndex = 0;
-            this.UI_Mph_Radbtn.TabStop = true;
-            this.UI_Mph_Radbtn.Text = "Miles Per Hour (mph)";
-            this.UI_Mph_Radbtn.UseVisualStyleBackColor = true;
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -72,6 +61,18 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Kilometres Per Hour (km/h)";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // UI_Mph_Radbtn
+            // 
+            this.UI_Mph_Radbtn.AutoSize = true;
+            this.UI_Mph_Radbtn.Location = new System.Drawing.Point(7, 22);
+            this.UI_Mph_Radbtn.Name = "UI_Mph_Radbtn";
+            this.UI_Mph_Radbtn.Size = new System.Drawing.Size(153, 20);
+            this.UI_Mph_Radbtn.TabIndex = 0;
+            this.UI_Mph_Radbtn.TabStop = true;
+            this.UI_Mph_Radbtn.Text = "Miles Per Hour (mph)";
+            this.UI_Mph_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Mph_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
             // 
             // UI_output_Txtbx
             // 
