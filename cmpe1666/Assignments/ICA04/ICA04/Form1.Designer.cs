@@ -46,7 +46,7 @@
             this.UI_Units_Grpbox.Controls.Add(this.UI_Mph_Radbtn);
             this.UI_Units_Grpbox.Location = new System.Drawing.Point(12, 7);
             this.UI_Units_Grpbox.Name = "UI_Units_Grpbox";
-            this.UI_Units_Grpbox.Size = new System.Drawing.Size(316, 85);
+            this.UI_Units_Grpbox.Size = new System.Drawing.Size(335, 85);
             this.UI_Units_Grpbox.TabIndex = 0;
             this.UI_Units_Grpbox.TabStop = false;
             this.UI_Units_Grpbox.Text = "Input Units";
@@ -76,25 +76,25 @@
             // UI_output_Txtbx
             // 
             this.UI_output_Txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_output_Txtbx.Location = new System.Drawing.Point(12, 212);
+            this.UI_output_Txtbx.Location = new System.Drawing.Point(12, 192);
             this.UI_output_Txtbx.Name = "UI_output_Txtbx";
             this.UI_output_Txtbx.ReadOnly = true;
-            this.UI_output_Txtbx.Size = new System.Drawing.Size(316, 22);
+            this.UI_output_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_output_Txtbx.TabIndex = 1;
             // 
             // UI_input_Txtbx
             // 
             this.UI_input_Txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_input_Txtbx.Location = new System.Drawing.Point(12, 149);
+            this.UI_input_Txtbx.Location = new System.Drawing.Point(12, 129);
             this.UI_input_Txtbx.Name = "UI_input_Txtbx";
-            this.UI_input_Txtbx.Size = new System.Drawing.Size(316, 22);
+            this.UI_input_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_input_Txtbx.TabIndex = 2;
             // 
             // UI_input_Lbl
             // 
             this.UI_input_Lbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.UI_input_Lbl.AutoSize = true;
-            this.UI_input_Lbl.Location = new System.Drawing.Point(12, 127);
+            this.UI_input_Lbl.Location = new System.Drawing.Point(12, 107);
             this.UI_input_Lbl.Name = "UI_input_Lbl";
             this.UI_input_Lbl.Size = new System.Drawing.Size(82, 16);
             this.UI_input_Lbl.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             this.UI_output_Lbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.UI_output_Lbl.AutoSize = true;
-            this.UI_output_Lbl.Location = new System.Drawing.Point(12, 193);
+            this.UI_output_Lbl.Location = new System.Drawing.Point(12, 173);
             this.UI_output_Lbl.Name = "UI_output_Lbl";
             this.UI_output_Lbl.Size = new System.Drawing.Size(92, 16);
             this.UI_output_Lbl.TabIndex = 4;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 262);
+            this.ClientSize = new System.Drawing.Size(359, 252);
             this.Controls.Add(this.UI_output_Lbl);
             this.Controls.Add(this.UI_input_Lbl);
             this.Controls.Add(this.UI_input_Txtbx);
