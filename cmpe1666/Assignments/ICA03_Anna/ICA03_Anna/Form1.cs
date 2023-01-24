@@ -71,10 +71,15 @@ namespace ICA03_Anna
         //*********************************************************************************************
         private string FormattedTime(int msTotal)
         {
+            int day; //calculated days elapsed
             int hr; //calculated hours elapsed
             int min; //calculated minutes elapsed
             int sec; //calculated seconds elapsed
             int hundredthSec; //calculated hundredths of seconds elapsed
+
+            //calculate days if ms elapsed > 1 day
+            day = msTotal > 86400000 ? msTotal / 86400000 : 0;
+            msTotal = msTotal > 86400000 ? msTotal % 86400000 : msTotal;
 
             //calculate hours if ms elapsed > 1 hr
             hr = msTotal > 3600000 ? msTotal / 3600000 : 0;
@@ -92,7 +97,7 @@ namespace ICA03_Anna
             hundredthSec = msTotal / 10;
 
             //return formatted string
-            return $"(0) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
+            return $"({day}) {hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
 }
