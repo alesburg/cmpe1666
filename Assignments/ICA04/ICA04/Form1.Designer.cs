@@ -81,6 +81,7 @@
             this.UI_output_Txtbx.ReadOnly = true;
             this.UI_output_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_output_Txtbx.TabIndex = 1;
+            this.UI_output_Txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // UI_input_Txtbx
             // 
@@ -89,6 +90,7 @@
             this.UI_input_Txtbx.Name = "UI_input_Txtbx";
             this.UI_input_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_input_Txtbx.TabIndex = 2;
+            this.UI_input_Txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // UI_input_Lbl
             // 
@@ -120,6 +122,7 @@
             this.Controls.Add(this.UI_input_Txtbx);
             this.Controls.Add(this.UI_output_Txtbx);
             this.Controls.Add(this.UI_Units_Grpbox);
+            this.MinimumSize = new System.Drawing.Size(377, 299);
             this.Name = "Form1";
             this.Text = "Speed Conversion";
             this.UI_Units_Grpbox.ResumeLayout(false);
