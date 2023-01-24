@@ -18,7 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ICA04
+namespace ICA04_Anna
 {
     public partial class Form1 : Form
     {

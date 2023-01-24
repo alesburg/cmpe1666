@@ -1,4 +1,4 @@
-﻿namespace ICA04
+﻿namespace ICA04_Anna
 {
     partial class Form1
     {
