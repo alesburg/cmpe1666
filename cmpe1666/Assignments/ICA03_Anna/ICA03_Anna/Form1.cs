@@ -8,7 +8,7 @@
  * Modification History:
  * 19 JAN 2023 - Created
  * 23 JAN 2023 - Finished UI
- * 24 JAN 2023 - Finsihed and tested
+ * 24 JAN 2023 - Finished and tested
  */
 
 using System;
@@ -33,24 +33,29 @@ namespace ICA03_Anna
             InitializeComponent();
         }
 
+        //start button clicked
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
             Stopwatch.Start();
         }
 
+        //stop button clicked
         private void UI_Stop_Btn_Click(object sender, EventArgs e)
         {
             Stopwatch.Stop();
         }
 
+        //reset button clicked
         private void UI_Reset_Btn_Click(object sender, EventArgs e)
         {
             Stopwatch.Reset();
             UI_Timer_Lstbx.Items.Clear();
         }
 
+        //split button clicked
         private void UI_Split_Btn_Click(object sender, EventArgs e)
         {
+            //check for time already present in listbox
             if (!(UI_Timer_Lstbx.Items.Contains(FormattedTime((int)Stopwatch.ElapsedMilliseconds))))
             {
                 UI_Timer_Lstbx.Items.Add(FormattedTime((int)Stopwatch.ElapsedMilliseconds));
