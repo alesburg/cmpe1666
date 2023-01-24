@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.UI_Units_Grpbox = new System.Windows.Forms.GroupBox();
+            this.SuspendLayout();
+            // 
+            // UI_Units_Grpbox
+            // 
+            this.UI_Units_Grpbox.Location = new System.Drawing.Point(12, 12);
+            this.UI_Units_Grpbox.Name = "UI_Units_Grpbox";
+            this.UI_Units_Grpbox.Size = new System.Drawing.Size(316, 100);
+            this.UI_Units_Grpbox.TabIndex = 0;
+            this.UI_Units_Grpbox.TabStop = false;
+            this.UI_Units_Grpbox.Text = "Input Units";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(340, 295);
+            this.Controls.Add(this.UI_Units_Grpbox);
+            this.Name = "Form1";
+            this.Text = "Speed Conversion";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox UI_Units_Grpbox;
     }
 }
 
