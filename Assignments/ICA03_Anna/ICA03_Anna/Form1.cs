@@ -7,7 +7,8 @@
  * 
  * Modification History:
  * 19 JAN 2023 - Created
- * 23 JAN 2023 - Finished
+ * 23 JAN 2023 - Finished UI
+ * 24 JAN 2023 - Finsihed and tested
  */
 
 using System;
@@ -60,29 +61,41 @@ namespace ICA03_Anna
             }
         }
 
+        //refresh UI on timer tick
         private void UI_Refresh_Timer_Tick(object sender, EventArgs e)
         {
             UI_Timer_Lbl.Text = $"({splitCounter}) {FormattedTime((int)Stopwatch.ElapsedMilliseconds)}";
         }
 
+        //********************************************************************************************
+        //Method: private string FormattedTime(int msTotal)
+        //Purpose: Formats total ms from timespan to display on UI
+        //Parameters: int msTotal - total milliseconds elapsed
+        //Returns: string
+        //*********************************************************************************************
         private string FormattedTime(int msTotal)
         {
-            int hr;
-            int min;
-            int sec;
-            int hundredthSec;
+            int hr; //calculated hours elapsed
+            int min; //calculated minutes elapsed
+            int sec; //calculated seconds elapsed
+            int hundredthSec; //calculated hundredths of seconds elapsed
 
+            //calculate hours if ms elapsed > 1 hr
             hr = msTotal > 3600000 ? msTotal / 3600000 : 0;
             msTotal = msTotal > 3600000 ? msTotal % 3600000 : msTotal;
 
+            //calculate minutes if ms elapsed > 1 min
             min = msTotal > 60000 ? msTotal / 60000 : 0;
             msTotal = msTotal > 60000 ? msTotal % 60000 : msTotal;
 
+            //calculate secs if ms elapsed > 1 sec
             sec = msTotal > 1000 ? msTotal / 1000 : 0;
             msTotal = msTotal > 1000 ? msTotal % 1000 : msTotal;
 
+            //calculate hunredths of seconds
             hundredthSec = msTotal / 10;
 
+            //return formatted string
             return $"{hr:D2}:{min:D2}:{sec:D2}.{hundredthSec:D2}";
         }
     }
