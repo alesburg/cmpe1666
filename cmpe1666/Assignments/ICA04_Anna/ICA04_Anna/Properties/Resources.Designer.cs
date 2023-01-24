@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ICA04.Properties
+namespace ICA04_Anna.Properties
 {
 
 
