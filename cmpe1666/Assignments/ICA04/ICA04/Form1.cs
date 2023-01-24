@@ -27,14 +27,16 @@ namespace ICA04
             InitializeComponent();
         }
 
-        private void UI_Mph_Radbtn_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void UI_Radbtn_CheckedChanged(object sender, EventArgs e)
         {
+            if (UI_Mph_Radbtn.Checked)
+            {
 
+            }
+            else
+            {
+
+            }
         }
     }
 }
