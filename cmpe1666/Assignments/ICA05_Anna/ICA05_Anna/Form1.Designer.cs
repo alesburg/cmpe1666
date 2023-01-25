@@ -97,7 +97,6 @@
             this.UI_CountFile_Lbl.Size = new System.Drawing.Size(173, 16);
             this.UI_CountFile_Lbl.TabIndex = 6;
             this.UI_CountFile_Lbl.Text = "Palindrome Count from File: ";
-            this.UI_CountFile_Lbl.Click += new System.EventHandler(this.UI_CountFile_Lbl_Click);
             // 
             // UI_ExTime_Lbl
             // 
