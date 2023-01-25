@@ -7,7 +7,7 @@
  * 
  * Modification History:
  * 24 JAN 2023 - Created
- * 25 JAN 2023 - Added event code and methods
+ * 25 JAN 2023 - Added event code and methods + documentation
  */
 using System;
 using System.Collections.Generic;
@@ -31,20 +31,28 @@ namespace ICA04_Anna
             InitializeComponent();
         }
 
+        //called when radio buttons changed
         private void UI_Radbtn_CheckedChanged(object sender, EventArgs e)
         {
             UI_output_Txtbx.Text = Convert(UI_input_Txtbx.Text);
         }
 
+        //called when text is changed in input box
         private void UI_input_Txtbx_TextChanged(object sender, EventArgs e)
         {
             UI_output_Txtbx.Text = Convert(UI_input_Txtbx.Text);
         }
 
+        //********************************************************************************************
+        //Method: private string Convert(string speedString)
+        //Purpose: Returns formatted string to converting kmph or mph to m/s with error checking
+        //Parameters: string speedString - input from user
+        //Returns: string
+        //*********************************************************************************************
         private string Convert(string speedString)
         {
-            bool success;
-            double speed;
+            bool success; //parse double from string successful?
+            double speed; //speed value to convert
 
             success = double.TryParse(speedString, out speed);
 
