@@ -36,6 +36,11 @@ namespace ICA04_Anna
             UI_output_Txtbx.Text = Convert(UI_input_Txtbx.Text);
         }
 
+        private void UI_input_Txtbx_TextChanged(object sender, EventArgs e)
+        {
+            UI_output_Txtbx.Text = Convert(UI_input_Txtbx.Text);
+        }
+
         private string Convert(string speedString)
         {
             bool success;
@@ -48,11 +53,6 @@ namespace ICA04_Anna
 
             if (success) return $"{speed:F2} m/s";
             else return "Unable to convert input.";
-        }
-
-        private void UI_input_Txtbx_TextChanged(object sender, EventArgs e)
-        {
-            UI_output_Txtbx.Text = Convert(UI_input_Txtbx.Text);
         }
     }
 }
