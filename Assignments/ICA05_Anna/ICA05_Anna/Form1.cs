@@ -16,10 +16,5 @@ namespace ICA05_Anna
         {
             InitializeComponent();
         }
-
-        private void UI_CountFile_Lbl_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
