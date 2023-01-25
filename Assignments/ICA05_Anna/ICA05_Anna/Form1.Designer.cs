@@ -37,7 +37,8 @@
             this.UI_CountFile_Lbl = new System.Windows.Forms.Label();
             this.UI_ExTime_Lbl = new System.Windows.Forms.Label();
             this.UI_Find_Btn = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.UI_File_Lstbx = new System.Windows.Forms.ListBox();
+            this.Ui_List_Lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UI_TestVal_Tbx
@@ -116,21 +117,31 @@
             this.UI_Find_Btn.Text = "Find Palindrome(s)";
             this.UI_Find_Btn.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // UI_File_Lstbx
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(523, 198);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(329, 228);
-            this.listBox1.TabIndex = 9;
+            this.UI_File_Lstbx.FormattingEnabled = true;
+            this.UI_File_Lstbx.ItemHeight = 16;
+            this.UI_File_Lstbx.Location = new System.Drawing.Point(523, 198);
+            this.UI_File_Lstbx.Name = "UI_File_Lstbx";
+            this.UI_File_Lstbx.Size = new System.Drawing.Size(329, 228);
+            this.UI_File_Lstbx.TabIndex = 9;
+            // 
+            // Ui_List_Lbl
+            // 
+            this.Ui_List_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Ui_List_Lbl.Location = new System.Drawing.Point(556, 165);
+            this.Ui_List_Lbl.Name = "Ui_List_Lbl";
+            this.Ui_List_Lbl.Size = new System.Drawing.Size(296, 22);
+            this.Ui_List_Lbl.TabIndex = 10;
+            this.Ui_List_Lbl.Text = "List of Palindromes From File";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Ui_List_Lbl);
+            this.Controls.Add(this.UI_File_Lstbx);
             this.Controls.Add(this.UI_Find_Btn);
             this.Controls.Add(this.UI_ExTime_Lbl);
             this.Controls.Add(this.UI_CountFile_Lbl);
@@ -158,7 +169,8 @@
         private System.Windows.Forms.Label UI_CountFile_Lbl;
         private System.Windows.Forms.Label UI_ExTime_Lbl;
         private System.Windows.Forms.Button UI_Find_Btn;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox UI_File_Lstbx;
+        private System.Windows.Forms.Label Ui_List_Lbl;
     }
 }
 
