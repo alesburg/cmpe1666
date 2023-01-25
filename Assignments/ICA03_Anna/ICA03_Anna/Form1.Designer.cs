@@ -44,32 +44,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Timer_Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UI_Timer_Lbl.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UI_Timer_Lbl.Location = new System.Drawing.Point(13, 10);
+            this.UI_Timer_Lbl.Location = new System.Drawing.Point(10, 8);
+            this.UI_Timer_Lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UI_Timer_Lbl.Name = "UI_Timer_Lbl";
-            this.UI_Timer_Lbl.Size = new System.Drawing.Size(287, 54);
+            this.UI_Timer_Lbl.Size = new System.Drawing.Size(216, 44);
             this.UI_Timer_Lbl.TabIndex = 0;
             this.UI_Timer_Lbl.Text = "(0) 00:00:00.00";
             this.UI_Timer_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UI_Timer_Lstbx
             // 
-            this.UI_Timer_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.UI_Timer_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Timer_Lstbx.FormattingEnabled = true;
             this.UI_Timer_Lstbx.IntegralHeight = false;
-            this.UI_Timer_Lstbx.ItemHeight = 16;
-            this.UI_Timer_Lstbx.Location = new System.Drawing.Point(13, 67);
+            this.UI_Timer_Lstbx.Location = new System.Drawing.Point(10, 54);
+            this.UI_Timer_Lstbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UI_Timer_Lstbx.Name = "UI_Timer_Lstbx";
-            this.UI_Timer_Lstbx.Size = new System.Drawing.Size(205, 399);
+            this.UI_Timer_Lstbx.Size = new System.Drawing.Size(155, 325);
             this.UI_Timer_Lstbx.TabIndex = 1;
             this.UI_Timer_Lstbx.TabStop = false;
             // 
             // UI_Start_Btn
             // 
             this.UI_Start_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Start_Btn.Location = new System.Drawing.Point(225, 67);
+            this.UI_Start_Btn.Location = new System.Drawing.Point(169, 54);
+            this.UI_Start_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UI_Start_Btn.Name = "UI_Start_Btn";
-            this.UI_Start_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Start_Btn.Size = new System.Drawing.Size(56, 19);
             this.UI_Start_Btn.TabIndex = 0;
             this.UI_Start_Btn.Text = "Start";
             this.UI_Start_Btn.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // UI_Stop_Btn
             // 
             this.UI_Stop_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Stop_Btn.Location = new System.Drawing.Point(225, 96);
+            this.UI_Stop_Btn.Location = new System.Drawing.Point(169, 78);
+            this.UI_Stop_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UI_Stop_Btn.Name = "UI_Stop_Btn";
-            this.UI_Stop_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Stop_Btn.Size = new System.Drawing.Size(56, 19);
             this.UI_Stop_Btn.TabIndex = 2;
             this.UI_Stop_Btn.Text = "Stop";
             this.UI_Stop_Btn.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // UI_Reset_Btn
             // 
             this.UI_Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Reset_Btn.Location = new System.Drawing.Point(225, 125);
+            this.UI_Reset_Btn.Location = new System.Drawing.Point(169, 102);
+            this.UI_Reset_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UI_Reset_Btn.Name = "UI_Reset_Btn";
-            this.UI_Reset_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Reset_Btn.Size = new System.Drawing.Size(56, 19);
             this.UI_Reset_Btn.TabIndex = 3;
             this.UI_Reset_Btn.Text = "Reset";
             this.UI_Reset_Btn.UseVisualStyleBackColor = true;
@@ -100,9 +105,10 @@
             // UI_Split_Btn
             // 
             this.UI_Split_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Split_Btn.Location = new System.Drawing.Point(225, 443);
+            this.UI_Split_Btn.Location = new System.Drawing.Point(169, 360);
+            this.UI_Split_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UI_Split_Btn.Name = "UI_Split_Btn";
-            this.UI_Split_Btn.Size = new System.Drawing.Size(75, 23);
+            this.UI_Split_Btn.Size = new System.Drawing.Size(56, 19);
             this.UI_Split_Btn.TabIndex = 1;
             this.UI_Split_Btn.Text = "Split";
             this.UI_Split_Btn.UseVisualStyleBackColor = true;
@@ -116,15 +122,16 @@
             // 
             // Timer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 479);
+            this.ClientSize = new System.Drawing.Size(230, 389);
             this.Controls.Add(this.UI_Split_Btn);
             this.Controls.Add(this.UI_Reset_Btn);
             this.Controls.Add(this.UI_Stop_Btn);
             this.Controls.Add(this.UI_Start_Btn);
             this.Controls.Add(this.UI_Timer_Lstbx);
             this.Controls.Add(this.UI_Timer_Lbl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Timer";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Text = "Timer";
