@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.UI_Units_Grpbox = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.UI_Kmph_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_Mph_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_output_Txtbx = new System.Windows.Forms.TextBox();
             this.UI_input_Txtbx = new System.Windows.Forms.TextBox();
@@ -42,7 +42,7 @@
             // 
             this.UI_Units_Grpbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Units_Grpbox.Controls.Add(this.radioButton1);
+            this.UI_Units_Grpbox.Controls.Add(this.UI_Kmph_RadBtn);
             this.UI_Units_Grpbox.Controls.Add(this.UI_Mph_Radbtn);
             this.UI_Units_Grpbox.Location = new System.Drawing.Point(12, 7);
             this.UI_Units_Grpbox.Name = "UI_Units_Grpbox";
@@ -51,16 +51,16 @@
             this.UI_Units_Grpbox.TabStop = false;
             this.UI_Units_Grpbox.Text = "Input Units";
             // 
-            // radioButton1
+            // UI_Kmph_RadBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 48);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(187, 20);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Kilometres Per Hour (km/h)";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.UI_Kmph_RadBtn.AutoSize = true;
+            this.UI_Kmph_RadBtn.Location = new System.Drawing.Point(7, 48);
+            this.UI_Kmph_RadBtn.Name = "UI_Kmph_RadBtn";
+            this.UI_Kmph_RadBtn.Size = new System.Drawing.Size(191, 20);
+            this.UI_Kmph_RadBtn.TabIndex = 1;
+            this.UI_Kmph_RadBtn.TabStop = true;
+            this.UI_Kmph_RadBtn.Text = "Kilometres Per Hour (kmph)";
+            this.UI_Kmph_RadBtn.UseVisualStyleBackColor = true;
             // 
             // UI_Mph_Radbtn
             // 
@@ -91,7 +91,9 @@
             this.UI_input_Txtbx.Name = "UI_input_Txtbx";
             this.UI_input_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_input_Txtbx.TabIndex = 2;
+            this.UI_input_Txtbx.Text = "0";
             this.UI_input_Txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.UI_input_Txtbx.TextChanged += new System.EventHandler(this.UI_input_Txtbx_TextChanged);
             // 
             // UI_input_Lbl
             // 
@@ -136,7 +138,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox UI_Units_Grpbox;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton UI_Kmph_RadBtn;
         private System.Windows.Forms.RadioButton UI_Mph_Radbtn;
         private System.Windows.Forms.TextBox UI_output_Txtbx;
         private System.Windows.Forms.TextBox UI_input_Txtbx;
