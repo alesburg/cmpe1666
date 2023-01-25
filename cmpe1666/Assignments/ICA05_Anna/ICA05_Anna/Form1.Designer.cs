@@ -39,6 +39,11 @@
             this.UI_Find_Btn = new System.Windows.Forms.Button();
             this.UI_File_Lstbx = new System.Windows.Forms.ListBox();
             this.Ui_List_Lbl = new System.Windows.Forms.Label();
+            this.UI_ChkFrom_GrpBx = new System.Windows.Forms.GroupBox();
+            this.UI_TestVal_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_File_RadBtn = new System.Windows.Forms.RadioButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.UI_ChkFrom_GrpBx.SuspendLayout();
             this.SuspendLayout();
             // 
             // UI_TestVal_Tbx
@@ -135,11 +140,49 @@
             this.Ui_List_Lbl.TabIndex = 10;
             this.Ui_List_Lbl.Text = "List of Palindromes From File";
             // 
+            // UI_ChkFrom_GrpBx
+            // 
+            this.UI_ChkFrom_GrpBx.Controls.Add(this.UI_File_RadBtn);
+            this.UI_ChkFrom_GrpBx.Controls.Add(this.UI_TestVal_RadBtn);
+            this.UI_ChkFrom_GrpBx.Location = new System.Drawing.Point(596, 39);
+            this.UI_ChkFrom_GrpBx.Name = "UI_ChkFrom_GrpBx";
+            this.UI_ChkFrom_GrpBx.Size = new System.Drawing.Size(228, 109);
+            this.UI_ChkFrom_GrpBx.TabIndex = 11;
+            this.UI_ChkFrom_GrpBx.TabStop = false;
+            this.UI_ChkFrom_GrpBx.Text = "Check Palindrome From";
+            // 
+            // UI_TestVal_RadBtn
+            // 
+            this.UI_TestVal_RadBtn.AutoSize = true;
+            this.UI_TestVal_RadBtn.Location = new System.Drawing.Point(33, 32);
+            this.UI_TestVal_RadBtn.Name = "UI_TestVal_RadBtn";
+            this.UI_TestVal_RadBtn.Size = new System.Drawing.Size(93, 20);
+            this.UI_TestVal_RadBtn.TabIndex = 0;
+            this.UI_TestVal_RadBtn.TabStop = true;
+            this.UI_TestVal_RadBtn.Text = "Test Value";
+            this.UI_TestVal_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_File_RadBtn
+            // 
+            this.UI_File_RadBtn.AutoSize = true;
+            this.UI_File_RadBtn.Location = new System.Drawing.Point(33, 63);
+            this.UI_File_RadBtn.Name = "UI_File_RadBtn";
+            this.UI_File_RadBtn.Size = new System.Drawing.Size(50, 20);
+            this.UI_File_RadBtn.TabIndex = 1;
+            this.UI_File_RadBtn.TabStop = true;
+            this.UI_File_RadBtn.Text = "File";
+            this.UI_File_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 450);
+            this.Controls.Add(this.UI_ChkFrom_GrpBx);
             this.Controls.Add(this.Ui_List_Lbl);
             this.Controls.Add(this.UI_File_Lstbx);
             this.Controls.Add(this.UI_Find_Btn);
@@ -153,6 +196,8 @@
             this.Controls.Add(this.UI_TestVal_Tbx);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.UI_ChkFrom_GrpBx.ResumeLayout(false);
+            this.UI_ChkFrom_GrpBx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +216,10 @@
         private System.Windows.Forms.Button UI_Find_Btn;
         private System.Windows.Forms.ListBox UI_File_Lstbx;
         private System.Windows.Forms.Label Ui_List_Lbl;
+        private System.Windows.Forms.GroupBox UI_ChkFrom_GrpBx;
+        private System.Windows.Forms.RadioButton UI_File_RadBtn;
+        private System.Windows.Forms.RadioButton UI_TestVal_RadBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
