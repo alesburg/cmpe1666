@@ -65,11 +65,11 @@
             // UI_Mph_Radbtn
             // 
             this.UI_Mph_Radbtn.AutoSize = true;
+            this.UI_Mph_Radbtn.Checked = true;
             this.UI_Mph_Radbtn.Location = new System.Drawing.Point(7, 22);
             this.UI_Mph_Radbtn.Name = "UI_Mph_Radbtn";
             this.UI_Mph_Radbtn.Size = new System.Drawing.Size(153, 20);
             this.UI_Mph_Radbtn.TabIndex = 0;
-            this.UI_Mph_Radbtn.TabStop = true;
             this.UI_Mph_Radbtn.Text = "Miles Per Hour (mph)";
             this.UI_Mph_Radbtn.UseVisualStyleBackColor = true;
             this.UI_Mph_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
@@ -82,6 +82,7 @@
             this.UI_output_Txtbx.ReadOnly = true;
             this.UI_output_Txtbx.Size = new System.Drawing.Size(335, 22);
             this.UI_output_Txtbx.TabIndex = 1;
+            this.UI_output_Txtbx.TabStop = false;
             this.UI_output_Txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // UI_input_Txtbx
@@ -90,8 +91,9 @@
             this.UI_input_Txtbx.Location = new System.Drawing.Point(12, 129);
             this.UI_input_Txtbx.Name = "UI_input_Txtbx";
             this.UI_input_Txtbx.Size = new System.Drawing.Size(335, 22);
-            this.UI_input_Txtbx.TabIndex = 2;
+            this.UI_input_Txtbx.TabIndex = 1;
             this.UI_input_Txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.UI_input_Txtbx.TextChanged += new System.EventHandler(this.UI_input_Txtbx_TextChanged);
             // 
             // UI_input_Lbl
             // 
