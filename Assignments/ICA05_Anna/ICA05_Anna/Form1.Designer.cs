@@ -40,9 +40,9 @@
             this.UI_File_Lstbx = new System.Windows.Forms.ListBox();
             this.Ui_List_Lbl = new System.Windows.Forms.Label();
             this.UI_ChkFrom_GrpBx = new System.Windows.Forms.GroupBox();
-            this.UI_TestVal_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_File_RadBtn = new System.Windows.Forms.RadioButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.UI_TestVal_RadBtn = new System.Windows.Forms.RadioButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.UI_ChkFrom_GrpBx.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             this.UI_CountFile_Tbx.ReadOnly = true;
             this.UI_CountFile_Tbx.Size = new System.Drawing.Size(234, 22);
             this.UI_CountFile_Tbx.TabIndex = 2;
+            this.UI_CountFile_Tbx.Visible = false;
             // 
             // UI_ExTime_Tbx
             // 
@@ -76,6 +77,7 @@
             this.UI_ExTime_Tbx.ReadOnly = true;
             this.UI_ExTime_Tbx.Size = new System.Drawing.Size(234, 22);
             this.UI_ExTime_Tbx.TabIndex = 3;
+            this.UI_ExTime_Tbx.Visible = false;
             // 
             // UI_TestVal_Lbl
             // 
@@ -98,20 +100,22 @@
             // UI_CountFile_Lbl
             // 
             this.UI_CountFile_Lbl.AutoSize = true;
-            this.UI_CountFile_Lbl.Location = new System.Drawing.Point(16, 271);
+            this.UI_CountFile_Lbl.Location = new System.Drawing.Point(16, 268);
             this.UI_CountFile_Lbl.Name = "UI_CountFile_Lbl";
             this.UI_CountFile_Lbl.Size = new System.Drawing.Size(173, 16);
             this.UI_CountFile_Lbl.TabIndex = 6;
             this.UI_CountFile_Lbl.Text = "Palindrome Count from File: ";
+            this.UI_CountFile_Lbl.Visible = false;
             // 
             // UI_ExTime_Lbl
             // 
             this.UI_ExTime_Lbl.AutoSize = true;
-            this.UI_ExTime_Lbl.Location = new System.Drawing.Point(55, 331);
+            this.UI_ExTime_Lbl.Location = new System.Drawing.Point(51, 331);
             this.UI_ExTime_Lbl.Name = "UI_ExTime_Lbl";
             this.UI_ExTime_Lbl.Size = new System.Drawing.Size(134, 16);
             this.UI_ExTime_Lbl.TabIndex = 7;
             this.UI_ExTime_Lbl.Text = "Execution Time (ms): ";
+            this.UI_ExTime_Lbl.Visible = false;
             // 
             // UI_Find_Btn
             // 
@@ -121,6 +125,7 @@
             this.UI_Find_Btn.TabIndex = 8;
             this.UI_Find_Btn.Text = "Find Palindrome(s)";
             this.UI_Find_Btn.UseVisualStyleBackColor = true;
+            this.UI_Find_Btn.Click += new System.EventHandler(this.UI_Find_Btn_Click);
             // 
             // UI_File_Lstbx
             // 
@@ -130,6 +135,7 @@
             this.UI_File_Lstbx.Name = "UI_File_Lstbx";
             this.UI_File_Lstbx.Size = new System.Drawing.Size(329, 228);
             this.UI_File_Lstbx.TabIndex = 9;
+            this.UI_File_Lstbx.Visible = false;
             // 
             // Ui_List_Lbl
             // 
@@ -139,6 +145,7 @@
             this.Ui_List_Lbl.Size = new System.Drawing.Size(296, 22);
             this.Ui_List_Lbl.TabIndex = 10;
             this.Ui_List_Lbl.Text = "List of Palindromes From File";
+            this.Ui_List_Lbl.Visible = false;
             // 
             // UI_ChkFrom_GrpBx
             // 
@@ -151,17 +158,6 @@
             this.UI_ChkFrom_GrpBx.TabStop = false;
             this.UI_ChkFrom_GrpBx.Text = "Check Palindrome From";
             // 
-            // UI_TestVal_RadBtn
-            // 
-            this.UI_TestVal_RadBtn.AutoSize = true;
-            this.UI_TestVal_RadBtn.Location = new System.Drawing.Point(33, 32);
-            this.UI_TestVal_RadBtn.Name = "UI_TestVal_RadBtn";
-            this.UI_TestVal_RadBtn.Size = new System.Drawing.Size(93, 20);
-            this.UI_TestVal_RadBtn.TabIndex = 0;
-            this.UI_TestVal_RadBtn.TabStop = true;
-            this.UI_TestVal_RadBtn.Text = "Test Value";
-            this.UI_TestVal_RadBtn.UseVisualStyleBackColor = true;
-            // 
             // UI_File_RadBtn
             // 
             this.UI_File_RadBtn.AutoSize = true;
@@ -169,13 +165,26 @@
             this.UI_File_RadBtn.Name = "UI_File_RadBtn";
             this.UI_File_RadBtn.Size = new System.Drawing.Size(50, 20);
             this.UI_File_RadBtn.TabIndex = 1;
-            this.UI_File_RadBtn.TabStop = true;
             this.UI_File_RadBtn.Text = "File";
             this.UI_File_RadBtn.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
+            // UI_TestVal_RadBtn
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.UI_TestVal_RadBtn.AutoSize = true;
+            this.UI_TestVal_RadBtn.Checked = true;
+            this.UI_TestVal_RadBtn.Location = new System.Drawing.Point(33, 32);
+            this.UI_TestVal_RadBtn.Name = "UI_TestVal_RadBtn";
+            this.UI_TestVal_RadBtn.Size = new System.Drawing.Size(93, 20);
+            this.UI_TestVal_RadBtn.TabIndex = 0;
+            this.UI_TestVal_RadBtn.TabStop = true;
+            this.UI_TestVal_RadBtn.Text = "Test Value";
+            this.UI_TestVal_RadBtn.UseVisualStyleBackColor = true;
+            this.UI_TestVal_RadBtn.CheckedChanged += new System.EventHandler(this.UI_TestVal_RadBtn_CheckedChanged);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Title = "Choose Text File";
             // 
             // Form1
             // 
@@ -187,13 +196,13 @@
             this.Controls.Add(this.UI_File_Lstbx);
             this.Controls.Add(this.UI_Find_Btn);
             this.Controls.Add(this.UI_ExTime_Lbl);
-            this.Controls.Add(this.UI_CountFile_Lbl);
-            this.Controls.Add(this.UI_TestResult_Lbl);
             this.Controls.Add(this.UI_TestVal_Lbl);
             this.Controls.Add(this.UI_ExTime_Tbx);
             this.Controls.Add(this.UI_CountFile_Tbx);
             this.Controls.Add(this.UI_TestValResult_Tbx);
             this.Controls.Add(this.UI_TestVal_Tbx);
+            this.Controls.Add(this.UI_CountFile_Lbl);
+            this.Controls.Add(this.UI_TestResult_Lbl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.UI_ChkFrom_GrpBx.ResumeLayout(false);
@@ -219,7 +228,7 @@
         private System.Windows.Forms.GroupBox UI_ChkFrom_GrpBx;
         private System.Windows.Forms.RadioButton UI_File_RadBtn;
         private System.Windows.Forms.RadioButton UI_TestVal_RadBtn;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
