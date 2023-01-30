@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace ICA05_Anna
 {
     public partial class Form1 : Form
@@ -101,6 +102,8 @@ namespace ICA05_Anna
         {
             string[] lineArray; //array of strings from file
             int paliCount = 0; //total number of palindromes found
+            System.Diagnostics.Stopwatch exTime = new System.Diagnostics.Stopwatch();
+            exTime.Start();
 
             lineArray = File.ReadAllLines(fileName);
 
@@ -113,6 +116,7 @@ namespace ICA05_Anna
                 }
             }
             UI_CountFile_Tbx.Text = paliCount.ToString();
+            UI_ExTime_Tbx.Text = $"{exTime.ElapsedMilliseconds.ToString()} ms";
         }
     }
 }
