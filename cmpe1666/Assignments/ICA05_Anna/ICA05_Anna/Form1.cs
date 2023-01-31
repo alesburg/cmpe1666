@@ -1,5 +1,5 @@
 ﻿/* 
- * ICA #04 - Palindrome (CMPE1666)
+ * ICA #05 - Palindrome (CMPE1666)
  * 
  * Forms application that checks palindromes using recursion
  *
@@ -110,7 +110,8 @@ namespace ICA05_Anna
                         fileName = openFileDialog.FileName;
                         CheckPaliFromFile(fileName);
                     }
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     System.Diagnostics.Trace.WriteLine($"Error: {ex.ToString()}");
                 }
