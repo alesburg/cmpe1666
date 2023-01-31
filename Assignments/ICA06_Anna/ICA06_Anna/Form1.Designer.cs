@@ -50,6 +50,7 @@
             this.UI_Generate_Btn.TabIndex = 0;
             this.UI_Generate_Btn.Text = "Generate";
             this.UI_Generate_Btn.UseVisualStyleBackColor = true;
+            this.UI_Generate_Btn.Click += new System.EventHandler(this.UI_Generate_Btn_Click);
             // 
             // UI_Fill_Btn
             // 
