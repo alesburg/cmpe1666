@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDIDrawer;
 
 namespace ICA06_Anna
 {
@@ -25,6 +26,14 @@ namespace ICA06_Anna
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void UI_FillColor_Btn_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = UI_Color_Picbx.BackColor;
+
+            if(colorDialog.ShowDialog() == DialogResult.OK) UI_Color_Picbx.BackColor= colorDialog.Color;
         }
     }
 }
