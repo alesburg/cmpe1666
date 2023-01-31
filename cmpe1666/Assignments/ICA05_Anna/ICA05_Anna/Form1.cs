@@ -8,6 +8,7 @@
  * Modification History:
  * 27 JAN 2023 - Created
  * 30 JAN 2023 - Added recursive method and OpenFileDialog
+ * 31 Jan 2023 - Added error checking and documentation
  */
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,15 @@ namespace ICA05_Anna
             InitializeComponent();
         }
 
-        static bool IsPalindrome(string checkStr, int lowIndex, int highIndex)
+        //********************************************************************************************
+        //Method: private bool IsPalindrome(string checkStr, int lowIndex, int highIndex)
+        //Purpose: Checks if string is palindrome using recursion
+        //Parameters: string checkStr - string to check
+        //int lowIndex - low index of string to check
+        //int highIndex - high index of string to check
+        //Returns: bool (true if palindrome)
+        //*********************************************************************************************
+        private bool IsPalindrome(string checkStr, int lowIndex, int highIndex)
         {
             //base cases
             if (checkStr.Length <= 1) return true;
@@ -44,6 +53,7 @@ namespace ICA05_Anna
             }
         }
 
+        //hides or shows parts of  UI based on radio buttons
         private void UI_TestVal_RadBtn_CheckedChanged(object sender, EventArgs e)
         {
             if (UI_TestVal_RadBtn.Checked == true)
@@ -79,6 +89,8 @@ namespace ICA05_Anna
         private void UI_Find_Btn_Click(object sender, EventArgs e)
         {
             string fileName; //name of file chosen
+
+            //if text input 
             if (UI_TestVal_RadBtn.Checked)
             {
                 if (UI_TestVal_Tbx.Text != "")
@@ -87,36 +99,62 @@ namespace ICA05_Anna
                     else UI_TestValResult_Tbx.Text = "false";
                 }
             }
+            //if file input
             else
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    fileName = openFileDialog.FileName;
-                    CheckPaliFromFile(fileName);
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        fileName = openFileDialog.FileName;
+                        CheckPaliFromFile(fileName);
+                    }
+                } catch (Exception ex)
+                {
+                    System.Diagnostics.Trace.WriteLine($"Error: {ex.ToString()}");
                 }
             }
         }
-        
+
+        //********************************************************************************************
+        //Method: private void CheckPaliFromFile(string fileName)
+        //Purpose: Checks all strings in a file for palindromes using recursion and outputs to listbox
+        //Parameters: string fileName - file to check
+        //*********************************************************************************************
         private void CheckPaliFromFile(string fileName)
         {
             string[] lineArray; //array of strings from file
             int paliCount = 0; //total number of palindromes found
+
+            //stopwatch for execution time
             System.Diagnostics.Stopwatch exTime = new System.Diagnostics.Stopwatch();
             exTime.Start();
 
-            lineArray = File.ReadAllLines(fileName);
-
-            foreach (string line in lineArray)
+            try
             {
-                if (line != "" && IsPalindrome(line, 0, line.Length - 1))
+                //adds stings from file into array
+                lineArray = File.ReadAllLines(fileName);
+
+                //iterates through strings in array
+                foreach (string line in lineArray)
                 {
-                    paliCount++;
-                    UI_File_Lstbx.Items.Add(line);
+                    //checks for palindromes
+                    if (line != "" && IsPalindrome(line, 0, line.Length - 1))
+                    {
+                        //increments timer and adds to listbox
+                        paliCount++;
+                        UI_File_Lstbx.Items.Add(line);
+                    }
                 }
+                //displays count and excecution time to texboxes
+                UI_CountFile_Tbx.Text = paliCount.ToString();
+                UI_ExTime_Tbx.Text = exTime.ElapsedMilliseconds.ToString();
             }
-            UI_CountFile_Tbx.Text = paliCount.ToString();
-            UI_ExTime_Tbx.Text = $"{exTime.ElapsedMilliseconds.ToString()} ms";
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine($"Error: {ex.ToString()}");
+            }
         }
     }
 }
