@@ -43,7 +43,7 @@ namespace ICA06_Anna
         private void UI_Generate_Btn_Click(object sender, EventArgs e)
         {
             Random random= new Random(); //random generator
-            int blocks = UI_NumBlocks_Trckbar.
+            int blocksNum = UI_NumBlocks_Trckbar.Value; //number of blocks to generate based on trackbar
 
             //clear array
             for (int y = 0; y < 60; y++)
@@ -66,7 +66,11 @@ namespace ICA06_Anna
                 colorArray[x,59] = Color.Red;
             }
 
-            //random red pixels 
+            //random red blocks
+            for (int i = 0; i < blocksNum;i++)
+            {
+                colorArray[random.Next(1,80),random.Next(1,60)] = Color.Red;
+            }
 
 
            //draw array to canvas
