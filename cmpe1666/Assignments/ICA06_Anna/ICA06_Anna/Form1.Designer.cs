@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.UI_Generate_Btn = new System.Windows.Forms.Button();
             this.UI_Fill_Btn = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.UI_Color_Picbx = new System.Windows.Forms.PictureBox();
             this.UI_Min_Lbl = new System.Windows.Forms.Label();
             this.UI_Max_Lbl = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UI_NumBlocks_Trckbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UI_Color_Picbx)).BeginInit();
             this.SuspendLayout();
@@ -169,6 +172,8 @@
         private System.Windows.Forms.PictureBox UI_Color_Picbx;
         private System.Windows.Forms.Label UI_Min_Lbl;
         private System.Windows.Forms.Label UI_Max_Lbl;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
