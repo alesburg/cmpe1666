@@ -210,7 +210,7 @@ namespace Lab01_Anna
             Console.WriteLine($"Nickel x {numNickels}");
             if (numNickels > 0)
             {
-                RenderCoin(0.10, numNickels, displayCount);
+                RenderCoin(0.05, numNickels, displayCount);
                 displayCount++;
             }
         }
