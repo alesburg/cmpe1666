@@ -44,6 +44,7 @@ namespace ICA06_Anna
         {
             Random random= new Random(); //random generator
             int blocksNum = UI_NumBlocks_Trckbar.Value; //number of blocks to generate based on trackbar
+            Point redPoint;
 
             //clear array
             for (int y = 0; y < 60; y++)
@@ -67,11 +68,16 @@ namespace ICA06_Anna
             }
 
             //random red blocks
-            for (int i = 0; i < blocksNum;i++)
+            for (int i = 0; i < blocksNum;)
             {
-                colorArray[random.Next(1,80),random.Next(1,60)] = Color.Red;
+                //check if red point already exists
+                if (colorArray[random.Next(1,80),random.Next(1,60)] != Color.Red)
+                {
+                    redPoint = new Point(random.Next(1, 80), random.Next(1, 60));
+                    colorArray[redPoint.X, redPoint.Y] = Color.Red;
+                    i++;
+                }
             }
-
 
            //draw array to canvas
            for(int y = 0; y < 60; y++)
