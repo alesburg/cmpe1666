@@ -39,8 +39,7 @@
             this.UI_Color_Picbx = new System.Windows.Forms.PictureBox();
             this.UI_Min_Lbl = new System.Windows.Forms.Label();
             this.UI_Max_Lbl = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.MouseClickTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UI_NumBlocks_Trckbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UI_Color_Picbx)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +62,7 @@
             this.UI_Fill_Btn.TabIndex = 1;
             this.UI_Fill_Btn.Text = "Fill";
             this.UI_Fill_Btn.UseVisualStyleBackColor = true;
+            this.UI_Fill_Btn.Click += new System.EventHandler(this.UI_Fill_Btn_Click);
             // 
             // UI_FillColor_Btn
             // 
@@ -135,6 +135,10 @@
             this.UI_Max_Lbl.TabIndex = 8;
             this.UI_Max_Lbl.Text = "3000";
             // 
+            // MouseClickTimer
+            // 
+            this.MouseClickTimer.Enabled = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,8 +176,7 @@
         private System.Windows.Forms.PictureBox UI_Color_Picbx;
         private System.Windows.Forms.Label UI_Min_Lbl;
         private System.Windows.Forms.Label UI_Max_Lbl;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer MouseClickTimer;
     }
 }
 
