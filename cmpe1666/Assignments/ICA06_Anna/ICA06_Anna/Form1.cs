@@ -37,12 +37,12 @@ namespace ICA06_Anna
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.Color = UI_Color_Picbx.BackColor;
 
-            if(colorDialog.ShowDialog() == DialogResult.OK) UI_Color_Picbx.BackColor= colorDialog.Color;
+            if (colorDialog.ShowDialog() == DialogResult.OK) UI_Color_Picbx.BackColor = colorDialog.Color;
         }
 
         private void UI_Generate_Btn_Click(object sender, EventArgs e)
         {
-            Random random= new Random(); //random generator
+            Random random = new Random(); //random generator
             int blocksNum = UI_NumBlocks_Trckbar.Value; //number of blocks to generate based on trackbar
             Point redPoint;
 
@@ -63,15 +63,15 @@ namespace ICA06_Anna
             }
             for (int x = 0; x < 80; x++)
             {
-                colorArray[x,0] = Color.Red;
-                colorArray[x,59] = Color.Red;
+                colorArray[x, 0] = Color.Red;
+                colorArray[x, 59] = Color.Red;
             }
 
             //random red blocks
             for (int i = 0; i < blocksNum;)
             {
                 //check if red point already exists
-                if (colorArray[random.Next(1,80),random.Next(1,60)] != Color.Red)
+                if (colorArray[random.Next(1, 80), random.Next(1, 60)] != Color.Red)
                 {
                     redPoint = new Point(random.Next(1, 80), random.Next(1, 60));
                     colorArray[redPoint.X, redPoint.Y] = Color.Red;
@@ -79,14 +79,19 @@ namespace ICA06_Anna
                 }
             }
 
-           //draw array to canvas
-           for(int y = 0; y < 60; y++)
+            //draw array to canvas
+            for (int y = 0; y < 60; y++)
             {
-                for(int x = 0; x < 80; x++)
+                for (int x = 0; x < 80; x++)
                 {
                     canvas.SetBBScaledPixel(x, y, colorArray[x, y]);
                 }
             }
+        }
+
+        private void UI_Fill_Btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
