@@ -32,7 +32,7 @@ namespace Lab01_Anna
             double input; //user input value
             double roundedInput; //input rounded to nearest 0.05
 
-            //loops as long as user enters y or Y
+            //loops as long as user enters yes or Yes
             do
             {
                 //clear console and GDIDrawer
@@ -114,7 +114,7 @@ namespace Lab01_Anna
         private static void Normalize(double input)
         {
             int dollars = (int)(Math.Floor(input)); //int value of dollars
-            int cents = (int)((input - dollars) * 100); //int value of cents
+            int cents = (int)Math.Round((input - dollars) * 100); //int value of cents
             int numFifties; //number of fifties to display
             int numTwenties; //number of twenties to display
             int numTens; //number of tens to display
@@ -155,7 +155,7 @@ namespace Lab01_Anna
                 RenderBill(10, numTens, displayCount);
                 displayCount++;
             }
-
+            
             //fives
             numFives = dollars / 5;
             dollars = dollars % 5;
@@ -207,6 +207,7 @@ namespace Lab01_Anna
 
             //nickels
             numNickels = cents / 5;
+
             Console.WriteLine($"Nickel x {numNickels}");
             if (numNickels > 0)
             {
@@ -293,9 +294,9 @@ namespace Lab01_Anna
         {
             string input; //user input
 
-            Console.Write("Run program again? (y/n): ");
+            Console.Write("Run program again? (yes/no): ");
             input = Console.ReadLine().Trim().ToLower();
-            if (input == "y") return true;
+            if (input == "yes") return true;
             else
             {
                 Console.Write("Press any key to exit...");
