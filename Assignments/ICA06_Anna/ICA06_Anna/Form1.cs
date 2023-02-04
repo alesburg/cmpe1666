@@ -107,7 +107,7 @@ namespace ICA06_Anna
             if (rightClick != lastRightClick)
             {
                 FloodFill(rightClick.X, rightClick.Y, Color.Black, UI_Color_Picbx.BackColor);
-                //System.Diagnostics.Debug.WriteLine(rightClick);
+                System.Diagnostics.Debug.WriteLine(rightClick);
                 lastRightClick = rightClick;
             }
         }
