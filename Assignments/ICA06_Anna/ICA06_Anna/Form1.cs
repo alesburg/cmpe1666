@@ -123,7 +123,7 @@ namespace ICA06_Anna
                 FloodFill(x + 1, y, target, replacement);
                 FloodFill(x, y - 1, target, replacement);
                 FloodFill(x, y + 1, target, replacement);
-                canvas.Render();
+                canvas.Render(); 
             }
         }
     }
