@@ -138,6 +138,8 @@
             // MouseClickTimer
             // 
             this.MouseClickTimer.Enabled = true;
+            this.MouseClickTimer.Interval = 200;
+            this.MouseClickTimer.Tick += new System.EventHandler(this.MouseClickTimer_Tick);
             // 
             // Form1
             // 
