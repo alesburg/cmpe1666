@@ -115,14 +115,16 @@ namespace ICA06_Anna
         private void FloodFill(int x, int y, Color target, Color replacement)
         {
             if (colorArray[x, y] != target) return;
-            if (colorArray[x, y] == replacement) return;
+            else if (colorArray[x, y] == replacement) return;
+            else
+            {
                 canvas.SetBBScaledPixel(x, y, replacement);
                 FloodFill(x - 1, y, target, replacement);
                 FloodFill(x + 1, y, target, replacement);
                 FloodFill(x, y - 1, target, replacement);
                 FloodFill(x, y + 1, target, replacement);
                 canvas.Render();
-            
+            }
         }
     }
 }
