@@ -7,6 +7,8 @@
  * 
  * Modification History:
  * 31 JAN 2023 - Created
+ * 5 FEB 2023 - Debugging
+ * 6 FEB 6 2023 - Finished and tested
  */
 using System;
 using System.Collections.Generic;
@@ -27,29 +29,36 @@ namespace ICA06_Anna
     {
         static CDrawer canvas = new CDrawer(); //GDIDrawer Window
         static Color[,] colorArray = new Color[80, 60]; //color array
+        static Point rightClick; //tracks right click
+        static Point prevRightClick = new Point(-1,-1); //tracks previous right click
+
         public Form1()
         {
             canvas.Scale = 10;
-            canvas.RedundaMouse = true;
             canvas.ContinuousUpdate = false;
+            canvas.RedundaMouse = false;
             InitializeComponent();
         }
 
+        //color dialog popup
         private void UI_FillColor_Btn_Click(object sender, EventArgs e)
         {
+            MouseClickTimer.Stop();
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.Color = UI_Color_Picbx.BackColor;
 
             if (colorDialog.ShowDialog() == DialogResult.OK) UI_Color_Picbx.BackColor = colorDialog.Color;
         }
 
+        //generates array of red pixels to canvas
         private void UI_Generate_Btn_Click(object sender, EventArgs e)
         {
             Random random = new Random(); //random generator
             int blocksNum = UI_NumBlocks_Trckbar.Value; //number of blocks to generate based on trackbar
-            Point redPoint;
+            Point redPoint; //genrated point
 
             //clear array
+            MouseClickTimer.Stop();
             for (int y = 0; y < 60; y++)
             {
                 for (int x = 0; x < 80; x++)
@@ -93,25 +102,39 @@ namespace ICA06_Anna
             }
         }
 
+        //starts timer to detect mouse clicks
         private void UI_Fill_Btn_Click(object sender, EventArgs e)
         {
-            
+            MouseClickTimer.Start();
         }
-
-       
 
         private void FloodFill(int x, int y, Color target, Color replacement)
         {
+            //base cases
             if (colorArray[x, y] != target) return;
             else if (colorArray[x, y] == replacement) return;
             else
             {
+                colorArray[x,y] = replacement;
                 canvas.SetBBScaledPixel(x, y, replacement);
+                //recursion
                 FloodFill(x - 1, y, target, replacement);
                 FloodFill(x + 1, y, target, replacement);
                 FloodFill(x, y - 1, target, replacement);
                 FloodFill(x, y + 1, target, replacement);
+
+                //render canvas
                 canvas.Render(); 
+            }
+        }
+
+        private void MouseClickTimer_Tick(object sender, EventArgs e)
+        {  
+            canvas.GetLastMouseRightClickScaled(out rightClick);
+            if (rightClick != prevRightClick)
+            {
+                prevRightClick = new Point(rightClick.X,rightClick.Y);
+                FloodFill(rightClick.X, rightClick.Y,Color.Black,UI_Color_Picbx.BackColor);
             }
         }
     }
