@@ -33,10 +33,10 @@
             this.UI_LoadPic_Btn = new System.Windows.Forms.Button();
             this.UI_Transform_Btn = new System.Windows.Forms.Button();
             this.UI_Modtype_Grpbx = new System.Windows.Forms.GroupBox();
-            this.UI_Contrast_RadBtn = new System.Windows.Forms.RadioButton();
-            this.UI_BW_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Tint_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_Noise_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Tint_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_BW_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Contrast_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_Intensity_Trckbar = new System.Windows.Forms.TrackBar();
             this.UI_Value_Lbl = new System.Windows.Forms.Label();
             this.UI_Left_Lbl = new System.Windows.Forms.Label();
@@ -92,27 +92,15 @@
             this.UI_Modtype_Grpbx.TabStop = false;
             this.UI_Modtype_Grpbx.Text = "Modification Type";
             // 
-            // UI_Contrast_RadBtn
+            // UI_Noise_Radbtn
             // 
-            this.UI_Contrast_RadBtn.AutoSize = true;
-            this.UI_Contrast_RadBtn.Checked = true;
-            this.UI_Contrast_RadBtn.Location = new System.Drawing.Point(6, 33);
-            this.UI_Contrast_RadBtn.Name = "UI_Contrast_RadBtn";
-            this.UI_Contrast_RadBtn.Size = new System.Drawing.Size(77, 20);
-            this.UI_Contrast_RadBtn.TabIndex = 0;
-            this.UI_Contrast_RadBtn.TabStop = true;
-            this.UI_Contrast_RadBtn.Text = "Contrast";
-            this.UI_Contrast_RadBtn.UseVisualStyleBackColor = true;
-            // 
-            // UI_BW_Radbtn
-            // 
-            this.UI_BW_Radbtn.AutoSize = true;
-            this.UI_BW_Radbtn.Location = new System.Drawing.Point(6, 70);
-            this.UI_BW_Radbtn.Name = "UI_BW_Radbtn";
-            this.UI_BW_Radbtn.Size = new System.Drawing.Size(125, 20);
-            this.UI_BW_Radbtn.TabIndex = 1;
-            this.UI_BW_Radbtn.Text = "Black and White";
-            this.UI_BW_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Noise_Radbtn.AutoSize = true;
+            this.UI_Noise_Radbtn.Location = new System.Drawing.Point(173, 70);
+            this.UI_Noise_Radbtn.Name = "UI_Noise_Radbtn";
+            this.UI_Noise_Radbtn.Size = new System.Drawing.Size(64, 20);
+            this.UI_Noise_Radbtn.TabIndex = 3;
+            this.UI_Noise_Radbtn.Text = "Noise";
+            this.UI_Noise_Radbtn.UseVisualStyleBackColor = true;
             // 
             // UI_Tint_Radbtn
             // 
@@ -124,15 +112,28 @@
             this.UI_Tint_Radbtn.Text = "Tint";
             this.UI_Tint_Radbtn.UseVisualStyleBackColor = true;
             // 
-            // UI_Noise_Radbtn
+            // UI_BW_Radbtn
             // 
-            this.UI_Noise_Radbtn.AutoSize = true;
-            this.UI_Noise_Radbtn.Location = new System.Drawing.Point(173, 70);
-            this.UI_Noise_Radbtn.Name = "UI_Noise_Radbtn";
-            this.UI_Noise_Radbtn.Size = new System.Drawing.Size(64, 20);
-            this.UI_Noise_Radbtn.TabIndex = 3;
-            this.UI_Noise_Radbtn.Text = "Noise";
-            this.UI_Noise_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_BW_Radbtn.AutoSize = true;
+            this.UI_BW_Radbtn.Location = new System.Drawing.Point(6, 70);
+            this.UI_BW_Radbtn.Name = "UI_BW_Radbtn";
+            this.UI_BW_Radbtn.Size = new System.Drawing.Size(125, 20);
+            this.UI_BW_Radbtn.TabIndex = 1;
+            this.UI_BW_Radbtn.Text = "Black and White";
+            this.UI_BW_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Contrast_RadBtn
+            // 
+            this.UI_Contrast_RadBtn.AutoSize = true;
+            this.UI_Contrast_RadBtn.Checked = true;
+            this.UI_Contrast_RadBtn.Location = new System.Drawing.Point(6, 33);
+            this.UI_Contrast_RadBtn.Name = "UI_Contrast_RadBtn";
+            this.UI_Contrast_RadBtn.Size = new System.Drawing.Size(77, 20);
+            this.UI_Contrast_RadBtn.TabIndex = 0;
+            this.UI_Contrast_RadBtn.TabStop = true;
+            this.UI_Contrast_RadBtn.Text = "Contrast";
+            this.UI_Contrast_RadBtn.UseVisualStyleBackColor = true;
+            this.UI_Contrast_RadBtn.CheckedChanged += new System.EventHandler(this.UI_Contrast_RadBtn_CheckedChanged);
             // 
             // UI_Intensity_Trckbar
             // 
@@ -143,6 +144,7 @@
             this.UI_Intensity_Trckbar.TabIndex = 5;
             this.UI_Intensity_Trckbar.TickFrequency = 10;
             this.UI_Intensity_Trckbar.Value = 50;
+            this.UI_Intensity_Trckbar.Scroll += new System.EventHandler(this.UI_Intensity_Trckbar_Scroll);
             // 
             // UI_Value_Lbl
             // 
