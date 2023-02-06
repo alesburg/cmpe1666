@@ -128,6 +128,7 @@ namespace ICA06_Anna
             }
         }
 
+        //gets mouse click and passes to floodfill on tick
         private void MouseClickTimer_Tick(object sender, EventArgs e)
         {  
             canvas.GetLastMouseRightClickScaled(out rightClick);
