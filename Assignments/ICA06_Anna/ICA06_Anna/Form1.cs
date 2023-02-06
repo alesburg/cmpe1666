@@ -30,7 +30,7 @@ namespace ICA06_Anna
         public Form1()
         {
             canvas.Scale = 10;
-            canvas.RedundaMouse = false;
+            canvas.RedundaMouse = true;
             canvas.ContinuousUpdate = false;
             InitializeComponent();
         }
@@ -50,7 +50,6 @@ namespace ICA06_Anna
             Point redPoint;
 
             //clear array
-            MouseClickTimer.Stop();
             for (int y = 0; y < 60; y++)
             {
                 for (int x = 0; x < 80; x++)
@@ -96,21 +95,10 @@ namespace ICA06_Anna
 
         private void UI_Fill_Btn_Click(object sender, EventArgs e)
         {
-            MouseClickTimer.Start();
+            
         }
 
-        private void MouseClickTimer_Tick(object sender, EventArgs e)
-        {
-            Point lastRightClick = new Point(-1, -1);
-            Point rightClick;
-            canvas.GetLastMouseRightClickScaled(out rightClick);
-            if (rightClick != lastRightClick)
-            {
-                FloodFill(rightClick.X, rightClick.Y, Color.Black, UI_Color_Picbx.BackColor);
-                System.Diagnostics.Debug.WriteLine(rightClick);
-                lastRightClick = rightClick;
-            }
-        }
+       
 
         private void FloodFill(int x, int y, Color target, Color replacement)
         {
@@ -124,7 +112,6 @@ namespace ICA06_Anna
                 FloodFill(x, y - 1, target, replacement);
                 FloodFill(x, y + 1, target, replacement);
                 canvas.Render(); 
-                MouseClickTimer.Stop();
             }
         }
     }
