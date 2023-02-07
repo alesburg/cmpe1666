@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* 
+ * ICA #07 - Binary Search (CMPE1666)
+ * 
+ * Forms application utilizing lists and binary search alogorithm
+ *
+ * Author: Anna Lesburg
+ * 
+ * Modification History:
+ * 07 FEB 2023 - Created
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
