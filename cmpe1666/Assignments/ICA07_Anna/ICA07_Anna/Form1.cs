@@ -52,18 +52,19 @@ namespace ICA07_Anna
             int index; //index of searched string
             if (UI_Name_Tbx.Text != "") 
             {
+                //if index found
                 index = BinarySearch(UI_Name_Tbx.Text, 0, UI_Sorted_LstBx.Items.Count);
                 if(index > -1)
                 {
                     MessageBox.Show($"{UI_Name_Tbx.Text} found at index {index}");
                     UI_Name_Tbx.Text = null;
                 }
+                //if index not found
                 else
                 {
                     MessageBox.Show($"{UI_Name_Tbx.Text} not found");
                     UI_Name_Tbx.Text = null;
                 }
-                
             }
         }
 
