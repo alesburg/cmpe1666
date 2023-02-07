@@ -59,7 +59,7 @@
             this.UI_AddName_Button.Location = new System.Drawing.Point(337, 124);
             this.UI_AddName_Button.Name = "UI_AddName_Button";
             this.UI_AddName_Button.Size = new System.Drawing.Size(127, 43);
-            this.UI_AddName_Button.TabIndex = 2;
+            this.UI_AddName_Button.TabIndex = 1;
             this.UI_AddName_Button.Text = "Add Name";
             this.UI_AddName_Button.UseVisualStyleBackColor = true;
             this.UI_AddName_Button.Click += new System.EventHandler(this.UI_AddName_Button_Click);
@@ -69,7 +69,7 @@
             this.UI_Search_Button.Location = new System.Drawing.Point(337, 204);
             this.UI_Search_Button.Name = "UI_Search_Button";
             this.UI_Search_Button.Size = new System.Drawing.Size(127, 43);
-            this.UI_Search_Button.TabIndex = 3;
+            this.UI_Search_Button.TabIndex = 2;
             this.UI_Search_Button.Text = "Search";
             this.UI_Search_Button.UseVisualStyleBackColor = true;
             this.UI_Search_Button.Click += new System.EventHandler(this.UI_Search_Button_Click);
@@ -82,6 +82,7 @@
             this.UI_Sorted_LstBx.Name = "UI_Sorted_LstBx";
             this.UI_Sorted_LstBx.Size = new System.Drawing.Size(161, 276);
             this.UI_Sorted_LstBx.TabIndex = 4;
+            this.UI_Sorted_LstBx.TabStop = false;
             // 
             // UI_Unsorted_Listbx
             // 
@@ -91,6 +92,7 @@
             this.UI_Unsorted_Listbx.Name = "UI_Unsorted_Listbx";
             this.UI_Unsorted_Listbx.Size = new System.Drawing.Size(161, 276);
             this.UI_Unsorted_Listbx.TabIndex = 5;
+            this.UI_Unsorted_Listbx.TabStop = false;
             // 
             // UI_Unsorted_Lbl
             // 
