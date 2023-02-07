@@ -6,7 +6,7 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 07 FEB 2023 - Created
+ * 07 FEB 2023 - Created, debugged and tested
  */
 using System;
 using System.Collections.Generic;
@@ -52,7 +52,7 @@ namespace ICA07_Anna
             int index; //index of searched string
             if (UI_Name_Tbx.Text != "") 
             {
-                index = BinarySearch(UI_Name_Tbx.Text, 0, UI_Name_Tbx.Text.Length);
+                index = BinarySearch(UI_Name_Tbx.Text, 0, UI_Sorted_LstBx.Items.Count);
                 if(index > -1)
                 {
                     MessageBox.Show($"{UI_Name_Tbx.Text} found at index {index}");
