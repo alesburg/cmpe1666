@@ -12,6 +12,7 @@ namespace ICA07_Anna
 {
     public partial class Form1 : Form
     {
+        List<string> list = new List<string>(); //list object
         public Form1()
         {
             InitializeComponent();
