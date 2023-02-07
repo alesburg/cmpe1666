@@ -34,6 +34,8 @@
             this.UI_Search_Button = new System.Windows.Forms.Button();
             this.UI_Sorted_LstBx = new System.Windows.Forms.ListBox();
             this.UI_Unsorted_Listbx = new System.Windows.Forms.ListBox();
+            this.UI_Unsorted_Lbl = new System.Windows.Forms.Label();
+            this.UI_Sorted_Lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UI_Name_Tbx
@@ -60,6 +62,7 @@
             this.UI_AddName_Button.TabIndex = 2;
             this.UI_AddName_Button.Text = "Add Name";
             this.UI_AddName_Button.UseVisualStyleBackColor = true;
+            this.UI_AddName_Button.Click += new System.EventHandler(this.UI_AddName_Button_Click);
             // 
             // UI_Search_Button
             // 
@@ -69,6 +72,7 @@
             this.UI_Search_Button.TabIndex = 3;
             this.UI_Search_Button.Text = "Search";
             this.UI_Search_Button.UseVisualStyleBackColor = true;
+            this.UI_Search_Button.Click += new System.EventHandler(this.UI_Search_Button_Click);
             // 
             // UI_Sorted_LstBx
             // 
@@ -88,11 +92,31 @@
             this.UI_Unsorted_Listbx.Size = new System.Drawing.Size(161, 276);
             this.UI_Unsorted_Listbx.TabIndex = 5;
             // 
+            // UI_Unsorted_Lbl
+            // 
+            this.UI_Unsorted_Lbl.AutoSize = true;
+            this.UI_Unsorted_Lbl.Location = new System.Drawing.Point(44, 60);
+            this.UI_Unsorted_Lbl.Name = "UI_Unsorted_Lbl";
+            this.UI_Unsorted_Lbl.Size = new System.Drawing.Size(180, 16);
+            this.UI_Unsorted_Lbl.TabIndex = 6;
+            this.UI_Unsorted_Lbl.Text = "List of Names (Order of Entry)";
+            // 
+            // UI_Sorted_Lbl
+            // 
+            this.UI_Sorted_Lbl.AutoSize = true;
+            this.UI_Sorted_Lbl.Location = new System.Drawing.Point(588, 60);
+            this.UI_Sorted_Lbl.Name = "UI_Sorted_Lbl";
+            this.UI_Sorted_Lbl.Size = new System.Drawing.Size(139, 16);
+            this.UI_Sorted_Lbl.TabIndex = 7;
+            this.UI_Sorted_Lbl.Text = "List of Names (Sorted)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UI_Sorted_Lbl);
+            this.Controls.Add(this.UI_Unsorted_Lbl);
             this.Controls.Add(this.UI_Unsorted_Listbx);
             this.Controls.Add(this.UI_Sorted_LstBx);
             this.Controls.Add(this.UI_Search_Button);
@@ -114,6 +138,8 @@
         private System.Windows.Forms.Button UI_Search_Button;
         private System.Windows.Forms.ListBox UI_Sorted_LstBx;
         private System.Windows.Forms.ListBox UI_Unsorted_Listbx;
+        private System.Windows.Forms.Label UI_Unsorted_Lbl;
+        private System.Windows.Forms.Label UI_Sorted_Lbl;
     }
 }
 
