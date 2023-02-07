@@ -35,7 +35,7 @@ namespace ICA07_Anna
             {
                 list.Add(UI_Name_Tbx.Text);
                 UI_Unsorted_Listbx.Items.Add(UI_Name_Tbx.Text);
-                UI_Name_Tbx= null;
+                UI_Name_Tbx.Text= null;
             }
 
             //sorts list and displays in right box
@@ -52,8 +52,18 @@ namespace ICA07_Anna
             int index; //index of searched string
             if (UI_Name_Tbx.Text != "") 
             {
-                index = BinarySearch(UI_Name_Tbx.Text, 0, UI_Name_Tbx.Text.Length - 1);
-                if
+                index = BinarySearch(UI_Name_Tbx.Text, 0, UI_Name_Tbx.Text.Length);
+                if(index > -1)
+                {
+                    MessageBox.Show($"{UI_Name_Tbx.Text} found at index {index}");
+                    UI_Name_Tbx.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show($"{UI_Name_Tbx.Text} not found");
+                    UI_Name_Tbx.Text = null;
+                }
+                
             }
         }
 
