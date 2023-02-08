@@ -40,6 +40,7 @@
             // 
             // UI_Name_Tbx
             // 
+            this.UI_Name_Tbx.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.UI_Name_Tbx.Location = new System.Drawing.Point(316, 79);
             this.UI_Name_Tbx.Name = "UI_Name_Tbx";
             this.UI_Name_Tbx.Size = new System.Drawing.Size(168, 22);
@@ -47,6 +48,7 @@
             // 
             // UI_Name_Lbl
             // 
+            this.UI_Name_Lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.UI_Name_Lbl.AutoSize = true;
             this.UI_Name_Lbl.Location = new System.Drawing.Point(263, 82);
             this.UI_Name_Lbl.Name = "UI_Name_Lbl";
@@ -56,6 +58,7 @@
             // 
             // UI_AddName_Button
             // 
+            this.UI_AddName_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.UI_AddName_Button.Location = new System.Drawing.Point(337, 124);
             this.UI_AddName_Button.Name = "UI_AddName_Button";
             this.UI_AddName_Button.Size = new System.Drawing.Size(127, 43);
@@ -66,6 +69,7 @@
             // 
             // UI_Search_Button
             // 
+            this.UI_Search_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.UI_Search_Button.Location = new System.Drawing.Point(337, 204);
             this.UI_Search_Button.Name = "UI_Search_Button";
             this.UI_Search_Button.Size = new System.Drawing.Size(127, 43);
@@ -76,6 +80,8 @@
             // 
             // UI_Sorted_LstBx
             // 
+            this.UI_Sorted_LstBx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Sorted_LstBx.FormattingEnabled = true;
             this.UI_Sorted_LstBx.ItemHeight = 16;
             this.UI_Sorted_LstBx.Location = new System.Drawing.Point(576, 79);
@@ -86,6 +92,8 @@
             // 
             // UI_Unsorted_Listbx
             // 
+            this.UI_Unsorted_Listbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.UI_Unsorted_Listbx.FormattingEnabled = true;
             this.UI_Unsorted_Listbx.ItemHeight = 16;
             this.UI_Unsorted_Listbx.Location = new System.Drawing.Point(47, 79);
@@ -105,6 +113,7 @@
             // 
             // UI_Sorted_Lbl
             // 
+            this.UI_Sorted_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Sorted_Lbl.AutoSize = true;
             this.UI_Sorted_Lbl.Location = new System.Drawing.Point(588, 60);
             this.UI_Sorted_Lbl.Name = "UI_Sorted_Lbl";
