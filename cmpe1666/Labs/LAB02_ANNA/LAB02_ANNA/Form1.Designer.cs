@@ -101,6 +101,7 @@
             this.UI_Noise_Radbtn.TabIndex = 3;
             this.UI_Noise_Radbtn.Text = "Noise";
             this.UI_Noise_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Noise_Radbtn.CheckedChanged += new System.EventHandler(this.UI_RadBtn_CheckedChanged);
             // 
             // UI_Tint_Radbtn
             // 
@@ -111,6 +112,7 @@
             this.UI_Tint_Radbtn.TabIndex = 2;
             this.UI_Tint_Radbtn.Text = "Tint";
             this.UI_Tint_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Tint_Radbtn.CheckedChanged += new System.EventHandler(this.UI_RadBtn_CheckedChanged);
             // 
             // UI_BW_Radbtn
             // 
@@ -121,6 +123,7 @@
             this.UI_BW_Radbtn.TabIndex = 1;
             this.UI_BW_Radbtn.Text = "Black and White";
             this.UI_BW_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_BW_Radbtn.CheckedChanged += new System.EventHandler(this.UI_RadBtn_CheckedChanged);
             // 
             // UI_Contrast_RadBtn
             // 
@@ -133,7 +136,7 @@
             this.UI_Contrast_RadBtn.TabStop = true;
             this.UI_Contrast_RadBtn.Text = "Contrast";
             this.UI_Contrast_RadBtn.UseVisualStyleBackColor = true;
-            this.UI_Contrast_RadBtn.CheckedChanged += new System.EventHandler(this.UI_Contrast_RadBtn_CheckedChanged);
+            this.UI_Contrast_RadBtn.CheckedChanged += new System.EventHandler(this.UI_RadBtn_CheckedChanged);
             // 
             // UI_Intensity_Trckbar
             // 
@@ -149,13 +152,14 @@
             // UI_Value_Lbl
             // 
             this.UI_Value_Lbl.AutoSize = true;
-            this.UI_Value_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UI_Value_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_Value_Lbl.ForeColor = System.Drawing.Color.Blue;
-            this.UI_Value_Lbl.Location = new System.Drawing.Point(509, 450);
+            this.UI_Value_Lbl.Location = new System.Drawing.Point(516, 449);
             this.UI_Value_Lbl.Name = "UI_Value_Lbl";
-            this.UI_Value_Lbl.Size = new System.Drawing.Size(27, 20);
+            this.UI_Value_Lbl.Size = new System.Drawing.Size(21, 15);
             this.UI_Value_Lbl.TabIndex = 6;
             this.UI_Value_Lbl.Text = "50";
+            this.UI_Value_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UI_Left_Lbl
             // 
