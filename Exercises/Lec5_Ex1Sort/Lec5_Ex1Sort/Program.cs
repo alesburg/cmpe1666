@@ -32,7 +32,7 @@ namespace Lec5_Ex1Sort
             array = new int[n];
             for (int i = 0; i < n; i++)
             {
-                array[i] = random.Next(0,1000);
+                array[i] = random.Next(0,10);
                 Console.Write($" {array[i]}");
             }
             Console.WriteLine();
