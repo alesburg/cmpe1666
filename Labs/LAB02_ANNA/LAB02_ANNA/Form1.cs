@@ -112,7 +112,7 @@ namespace LAB02_ANNA
 
         private void UI_Transform_Btn_Click(object sender, EventArgs e)
         {
-            UI_Operation_Progbar.Value = 0; 
+            UI_Operation_Progbar.Value = 0;
             Bitmap transformedBM = new Bitmap(UI_Pic_Picbx.Image);
             if (UI_BW_Radbtn.Checked) BlackAndWhite(transformedBM, UI_Intensity_Trckbar.Value);
             else if (UI_Contrast_RadBtn.Checked) Contrast(transformedBM, UI_Intensity_Trckbar.Value);
@@ -128,7 +128,7 @@ namespace LAB02_ANNA
             UI_Pic_Picbx.Image = Bitmap;
         }
 
-        static private void BlackAndWhite(Bitmap bm, int value)
+        private void BlackAndWhite(Bitmap bm, int value)
         {
             Color rgb;
             int r;
@@ -154,7 +154,7 @@ namespace LAB02_ANNA
         }
 
 
-        static private void Contrast(Bitmap bm, int value)
+        private void Contrast(Bitmap bm, int value)
         {
             Color rgb;
             int r;
@@ -174,10 +174,11 @@ namespace LAB02_ANNA
                     b = b > 128 ? (b + amount) > 255 ? 255 : b + amount : (b - amount) > 0 ? b - amount : 0;
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
+                UpdateProgress(x / bm.Width);
             }
         }
 
-        static private void Tint(Bitmap bm, int value)
+        private void Tint(Bitmap bm, int value)
         {
             Color rgb;
             int r;
@@ -199,10 +200,11 @@ namespace LAB02_ANNA
                     else if (value > 50) g = greenBias > 255 ? 255 : greenBias;
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
+                UpdateProgress(x / bm.Width);
             }
         }
 
-        static private void Noise(Bitmap bm, int value)
+        private void Noise(Bitmap bm, int value)
         {
             Color rgb;
             Random rand = new Random();
@@ -225,18 +227,19 @@ namespace LAB02_ANNA
                     newG = g + (rand.Next() % ((value + 1) * 2)) - value;
                     newB = b + (rand.Next() % ((value + 1) * 2)) - value;
 
-                    r = newR > 255? 255 : newR < 0? 0: newR;
+                    r = newR > 255 ? 255 : newR < 0 ? 0 : newR;
                     g = newG > 255 ? 255 : newG < 0 ? 0 : newG;
                     b = newB > 255 ? 255 : newB < 0 ? 0 : newB;
 
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
+                UpdateProgress(x / bm.Width);
             }
         }
 
         private void UpdateProgress(double ratio)
         {
-            UI_Operation_Progbar.Value = (int)(ratio * 100);
+            UI_Operation_Progbar.PerformStep;
         }
     }
 }
