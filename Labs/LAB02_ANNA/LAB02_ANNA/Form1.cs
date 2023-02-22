@@ -237,9 +237,10 @@ namespace LAB02_ANNA
             }
         }
 
+        //doesnt work
         private void UpdateProgress(double ratio)
         {
-            UI_Operation_Progbar.PerformStep;
+            UI_Operation_Progbar.Value = (int)(ratio * 100);
         }
     }
 }
