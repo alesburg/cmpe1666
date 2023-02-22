@@ -24,6 +24,7 @@ namespace LAB02_ANNA
     public partial class Form1 : Form
     {
         string imagePath; //path of selected image
+        Bitmap Bitmap; //bitmap of loaded image
         public Form1()
         {
             InitializeComponent();
@@ -88,10 +89,154 @@ namespace LAB02_ANNA
             openImageDialog.Filter = "JPEG Images (*.jpg)|*.jpg|PNG Images (*.png)|*.png|BMP Images (*.bmp)|*.bmp|All files (*.*)|*.*";
             openImageDialog.FilterIndex = 3;
             openImageDialog.RestoreDirectory = true;
+
             if (openImageDialog.ShowDialog() == DialogResult.OK)
             {
                 imagePath = openImageDialog.FileName;
+                UI_Transform_Btn.Enabled = true;
+                try
+                {
+                    UI_Pic_Picbx.Load(imagePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    Bitmap = new Bitmap(UI_Pic_Picbx.Image);
+                }
             }
+
+        }
+
+        private void UI_Transform_Btn_Click(object sender, EventArgs e)
+        {
+            UI_Operation_Progbar.Value = 0; 
+            Bitmap transformedBM = new Bitmap(UI_Pic_Picbx.Image);
+            if (UI_BW_Radbtn.Checked) BlackAndWhite(transformedBM, UI_Intensity_Trckbar.Value);
+            else if (UI_Contrast_RadBtn.Checked) Contrast(transformedBM, UI_Intensity_Trckbar.Value);
+            else if (UI_Tint_Radbtn.Checked) Tint(transformedBM, UI_Intensity_Trckbar.Value);
+            else if (UI_Noise_Radbtn.Checked) Noise(transformedBM, UI_Intensity_Trckbar.Value);
+            UI_Revert_Btn.Enabled = true;
+            UI_Pic_Picbx.Image = transformedBM;
+            UI_Operation_Progbar.Value = 0;
+        }
+
+        private void UI_Revert_Btn_Click(object sender, EventArgs e)
+        {
+            UI_Pic_Picbx.Image = Bitmap;
+        }
+
+        static private void BlackAndWhite(Bitmap bm, int value)
+        {
+            Color rgb;
+            int r;
+            int g;
+            int b;
+            int avg;
+            for (int x = 0; x < bm.Width; x++)
+            {
+                for (int y = 0; y < bm.Height; y++)
+                {
+                    rgb = bm.GetPixel(x, y);
+                    r = rgb.R;
+                    g = rgb.G;
+                    b = rgb.B;
+                    avg = (r + g + b) / 3;
+                    r = r + ((avg - r) * value / 100);
+                    g = g + ((avg - g) * value / 100);
+                    b = b + ((avg - b) * value / 100);
+                    bm.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+                UpdateProgress(x / bm.Width);
+            }
+        }
+
+
+        static private void Contrast(Bitmap bm, int value)
+        {
+            Color rgb;
+            int r;
+            int g;
+            int b;
+            int amount = value / 5;
+            for (int x = 0; x < bm.Width; x++)
+            {
+                for (int y = 0; y < bm.Height; y++)
+                {
+                    rgb = bm.GetPixel(x, y);
+                    r = rgb.R;
+                    g = rgb.G;
+                    b = rgb.B;
+                    r = r > 128 ? (r + amount) > 255 ? 255 : r + amount : (r - amount) > 0 ? r - amount : 0;
+                    g = g > 128 ? (g + amount) > 255 ? 255 : g + amount : (g - amount) > 0 ? g - amount : 0;
+                    b = b > 128 ? (b + amount) > 255 ? 255 : b + amount : (b - amount) > 0 ? b - amount : 0;
+                    bm.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+        }
+
+        static private void Tint(Bitmap bm, int value)
+        {
+            Color rgb;
+            int r;
+            int g;
+            int b;
+            int greenBias;
+            int redBias;
+            for (int x = 0; x < bm.Width; x++)
+            {
+                for (int y = 0; y < bm.Height; y++)
+                {
+                    rgb = bm.GetPixel(x, y);
+                    r = rgb.R;
+                    g = rgb.G;
+                    b = rgb.B;
+                    greenBias = g + (value - 50);
+                    redBias = r + (50 - value);
+                    if (value < 50) r = redBias > 255 ? 255 : redBias;
+                    else if (value > 50) g = greenBias > 255 ? 255 : greenBias;
+                    bm.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+        }
+
+        static private void Noise(Bitmap bm, int value)
+        {
+            Color rgb;
+            Random rand = new Random();
+            int r;
+            int g;
+            int b;
+            int newR;
+            int newG;
+            int newB;
+            for (int x = 0; x < bm.Width; x++)
+            {
+                for (int y = 0; y < bm.Height; y++)
+                {
+                    rgb = bm.GetPixel(x, y);
+                    r = rgb.R;
+                    g = rgb.G;
+                    b = rgb.B;
+
+                    newR = r + (rand.Next() % ((value + 1) * 2)) - value;
+                    newG = g + (rand.Next() % ((value + 1) * 2)) - value;
+                    newB = b + (rand.Next() % ((value + 1) * 2)) - value;
+
+                    r = newR > 255? 255 : newR < 0? 0: newR;
+                    g = newG > 255 ? 255 : newG < 0 ? 0 : newG;
+                    b = newB > 255 ? 255 : newB < 0 ? 0 : newB;
+
+                    bm.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+        }
+
+        private void UpdateProgress(double ratio)
+        {
+            UI_Operation_Progbar.Value = (int)(ratio * 100);
         }
     }
 }
