@@ -42,6 +42,7 @@
             this.UI_Left_Lbl = new System.Windows.Forms.Label();
             this.UI_Right_Lbl = new System.Windows.Forms.Label();
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.UI_Revert_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UI_Pic_Picbx)).BeginInit();
             this.UI_Modtype_Grpbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UI_Intensity_Trckbar)).BeginInit();
@@ -77,7 +78,7 @@
             this.UI_LoadPic_Btn.Name = "UI_LoadPic_Btn";
             this.UI_LoadPic_Btn.Size = new System.Drawing.Size(83, 27);
             this.UI_LoadPic_Btn.TabIndex = 2;
-            this.UI_LoadPic_Btn.Text = "LoadPicture";
+            this.UI_LoadPic_Btn.Text = "Load Picture";
             this.UI_LoadPic_Btn.UseVisualStyleBackColor = true;
             this.UI_LoadPic_Btn.Click += new System.EventHandler(this.UI_LoadPic_Btn_Click);
             // 
@@ -92,6 +93,7 @@
             this.UI_Transform_Btn.TabIndex = 6;
             this.UI_Transform_Btn.Text = "Transform!";
             this.UI_Transform_Btn.UseVisualStyleBackColor = true;
+            this.UI_Transform_Btn.Click += new System.EventHandler(this.UI_Transform_Btn_Click);
             // 
             // UI_Modtype_Grpbx
             // 
@@ -213,11 +215,25 @@
             this.UI_Right_Lbl.TabIndex = 8;
             this.UI_Right_Lbl.Text = "More";
             // 
+            // UI_Revert_Btn
+            // 
+            this.UI_Revert_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UI_Revert_Btn.Enabled = false;
+            this.UI_Revert_Btn.Location = new System.Drawing.Point(9, 393);
+            this.UI_Revert_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.UI_Revert_Btn.Name = "UI_Revert_Btn";
+            this.UI_Revert_Btn.Size = new System.Drawing.Size(83, 27);
+            this.UI_Revert_Btn.TabIndex = 9;
+            this.UI_Revert_Btn.Text = "Revert";
+            this.UI_Revert_Btn.UseVisualStyleBackColor = true;
+            this.UI_Revert_Btn.Click += new System.EventHandler(this.UI_Revert_Btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 428);
+            this.Controls.Add(this.UI_Revert_Btn);
             this.Controls.Add(this.UI_Right_Lbl);
             this.Controls.Add(this.UI_Left_Lbl);
             this.Controls.Add(this.UI_Value_Lbl);
@@ -256,6 +272,7 @@
         private System.Windows.Forms.Label UI_Left_Lbl;
         private System.Windows.Forms.Label UI_Right_Lbl;
         private System.Windows.Forms.OpenFileDialog openImageDialog;
+        private System.Windows.Forms.Button UI_Revert_Btn;
     }
 }
 
