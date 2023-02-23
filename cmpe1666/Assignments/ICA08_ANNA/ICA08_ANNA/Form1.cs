@@ -35,7 +35,16 @@ namespace ICA08_ANNA
 
         private void UI_Genval_Btn_Click(object sender, EventArgs e)
         {
+            Random random = new Random();
+            int numVals;
+            int minVal;
+            int maxVal;
 
+            if (int.TryParse(UI_Numval_Tbx.Text, out numVals) && int.TryParse(UI_Minval_Tbx.Text, out minVal) && int.TryParse(UI_Maxval_Tbx.Text, out maxVal))
+            {
+                if (numVals < 10) MessageBox.Show("Must generate at least 10 values.");
+                else if (minVal >= maxVal) MessageBox.Show("Minimum value must be smaller than maximum value.");
+            }else MessageBox.Show("Please enter valid integers number of, minimum, and maximum values.");
         }
     }
 }
