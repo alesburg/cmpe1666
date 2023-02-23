@@ -39,6 +39,11 @@
             this.UI_Clearsort_Btn = new System.Windows.Forms.Button();
             this.UI_Clearraw_Btn = new System.Windows.Forms.Button();
             this.UI_Redisplay_Btn = new System.Windows.Forms.Button();
+            this.UI_Sorted_Lbl = new System.Windows.Forms.Label();
+            this.UI_Generated_Lbl = new System.Windows.Forms.Label();
+            this.UI_Numval_Lbl = new System.Windows.Forms.Label();
+            this.UI_Minval_Lbl = new System.Windows.Forms.Label();
+            this.UI_Maxval_Lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UI_Sorted_Tbx
@@ -135,11 +140,66 @@
             this.UI_Redisplay_Btn.Text = "Redisplay";
             this.UI_Redisplay_Btn.UseVisualStyleBackColor = true;
             // 
+            // UI_Sorted_Lbl
+            // 
+            this.UI_Sorted_Lbl.AutoSize = true;
+            this.UI_Sorted_Lbl.Location = new System.Drawing.Point(613, 57);
+            this.UI_Sorted_Lbl.Name = "UI_Sorted_Lbl";
+            this.UI_Sorted_Lbl.Size = new System.Drawing.Size(73, 13);
+            this.UI_Sorted_Lbl.TabIndex = 11;
+            this.UI_Sorted_Lbl.Text = "Sorted Values";
+            this.UI_Sorted_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UI_Generated_Lbl
+            // 
+            this.UI_Generated_Lbl.AutoSize = true;
+            this.UI_Generated_Lbl.Location = new System.Drawing.Point(94, 57);
+            this.UI_Generated_Lbl.Name = "UI_Generated_Lbl";
+            this.UI_Generated_Lbl.Size = new System.Drawing.Size(92, 13);
+            this.UI_Generated_Lbl.TabIndex = 12;
+            this.UI_Generated_Lbl.Text = "Generated Values";
+            this.UI_Generated_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UI_Numval_Lbl
+            // 
+            this.UI_Numval_Lbl.AutoSize = true;
+            this.UI_Numval_Lbl.Location = new System.Drawing.Point(285, 60);
+            this.UI_Numval_Lbl.Name = "UI_Numval_Lbl";
+            this.UI_Numval_Lbl.Size = new System.Drawing.Size(97, 13);
+            this.UI_Numval_Lbl.TabIndex = 13;
+            this.UI_Numval_Lbl.Text = "Number of Values: ";
+            this.UI_Numval_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UI_Minval_Lbl
+            // 
+            this.UI_Minval_Lbl.AutoSize = true;
+            this.UI_Minval_Lbl.Location = new System.Drawing.Point(301, 102);
+            this.UI_Minval_Lbl.Name = "UI_Minval_Lbl";
+            this.UI_Minval_Lbl.Size = new System.Drawing.Size(81, 13);
+            this.UI_Minval_Lbl.TabIndex = 14;
+            this.UI_Minval_Lbl.Text = "Minimum Value:";
+            this.UI_Minval_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UI_Maxval_Lbl
+            // 
+            this.UI_Maxval_Lbl.AutoSize = true;
+            this.UI_Maxval_Lbl.Location = new System.Drawing.Point(301, 146);
+            this.UI_Maxval_Lbl.Name = "UI_Maxval_Lbl";
+            this.UI_Maxval_Lbl.Size = new System.Drawing.Size(84, 13);
+            this.UI_Maxval_Lbl.TabIndex = 15;
+            this.UI_Maxval_Lbl.Text = "Maximum Value:";
+            this.UI_Maxval_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UI_Maxval_Lbl);
+            this.Controls.Add(this.UI_Minval_Lbl);
+            this.Controls.Add(this.UI_Numval_Lbl);
+            this.Controls.Add(this.UI_Generated_Lbl);
+            this.Controls.Add(this.UI_Sorted_Lbl);
             this.Controls.Add(this.UI_Redisplay_Btn);
             this.Controls.Add(this.UI_Clearraw_Btn);
             this.Controls.Add(this.UI_Clearsort_Btn);
@@ -171,6 +231,11 @@
         private System.Windows.Forms.Button UI_Clearsort_Btn;
         private System.Windows.Forms.Button UI_Clearraw_Btn;
         private System.Windows.Forms.Button UI_Redisplay_Btn;
+        private System.Windows.Forms.Label UI_Sorted_Lbl;
+        private System.Windows.Forms.Label UI_Generated_Lbl;
+        private System.Windows.Forms.Label UI_Numval_Lbl;
+        private System.Windows.Forms.Label UI_Minval_Lbl;
+        private System.Windows.Forms.Label UI_Maxval_Lbl;
     }
 }
 
