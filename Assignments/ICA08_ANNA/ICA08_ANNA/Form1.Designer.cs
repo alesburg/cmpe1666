@@ -108,12 +108,14 @@
             // 
             // UI_Sort_Btn
             // 
+            this.UI_Sort_Btn.Enabled = false;
             this.UI_Sort_Btn.Location = new System.Drawing.Point(363, 343);
             this.UI_Sort_Btn.Name = "UI_Sort_Btn";
             this.UI_Sort_Btn.Size = new System.Drawing.Size(86, 27);
             this.UI_Sort_Btn.TabIndex = 5;
             this.UI_Sort_Btn.Text = "Sort Values";
             this.UI_Sort_Btn.UseVisualStyleBackColor = true;
+            this.UI_Sort_Btn.Click += new System.EventHandler(this.UI_Sort_Btn_Click);
             // 
             // UI_Time_Tbx
             // 
