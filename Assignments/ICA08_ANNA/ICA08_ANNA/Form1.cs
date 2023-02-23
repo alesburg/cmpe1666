@@ -44,6 +44,20 @@ namespace ICA08_ANNA
             {
                 if (numVals < 10) MessageBox.Show("Must generate at least 10 values.");
                 else if (minVal >= maxVal) MessageBox.Show("Minimum value must be smaller than maximum value.");
+                else
+                {
+                    for(int i = 0; i < numVals; i++)
+                    {
+                        generatedInts.Add(random.Next(minVal,maxVal + 1));
+                    }
+
+                    UI_Unsorted_Tbx.Text = String.Empty;
+
+                    foreach(int i in generatedInts)
+                    {
+                        UI_Unsorted_Tbx.Text += $"{i.ToString()} ";
+                    }
+                }
             }else MessageBox.Show("Please enter valid integers number of, minimum, and maximum values.");
         }
     }
