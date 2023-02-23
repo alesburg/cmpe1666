@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.UI_Sorted_Tbx = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // UI_Sorted_Tbx
+            // 
+            this.UI_Sorted_Tbx.Location = new System.Drawing.Point(531, 74);
+            this.UI_Sorted_Tbx.Multiline = true;
+            this.UI_Sorted_Tbx.Name = "UI_Sorted_Tbx";
+            this.UI_Sorted_Tbx.ReadOnly = true;
+            this.UI_Sorted_Tbx.Size = new System.Drawing.Size(257, 320);
+            this.UI_Sorted_Tbx.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UI_Sorted_Tbx);
             this.Name = "Form1";
             this.Text = "ICA08";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox UI_Sorted_Tbx;
     }
 }
 
