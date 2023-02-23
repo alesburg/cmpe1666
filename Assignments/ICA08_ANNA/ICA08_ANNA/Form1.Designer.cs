@@ -44,6 +44,13 @@
             this.UI_Numval_Lbl = new System.Windows.Forms.Label();
             this.UI_Minval_Lbl = new System.Windows.Forms.Label();
             this.UI_Maxval_Lbl = new System.Windows.Forms.Label();
+            this.UI_Method_Grpbx = new System.Windows.Forms.GroupBox();
+            this.UI_Bubble_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Selection_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Insertion_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Quick_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Ticks_Lbl = new System.Windows.Forms.Label();
+            this.UI_Method_Grpbx.SuspendLayout();
             this.SuspendLayout();
             // 
             // UI_Sorted_Tbx
@@ -98,7 +105,7 @@
             // 
             // UI_Sort_Btn
             // 
-            this.UI_Sort_Btn.Location = new System.Drawing.Point(363, 327);
+            this.UI_Sort_Btn.Location = new System.Drawing.Point(363, 343);
             this.UI_Sort_Btn.Name = "UI_Sort_Btn";
             this.UI_Sort_Btn.Size = new System.Drawing.Size(86, 27);
             this.UI_Sort_Btn.TabIndex = 6;
@@ -190,11 +197,80 @@
             this.UI_Maxval_Lbl.Text = "Maximum Value:";
             this.UI_Maxval_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // UI_Method_Grpbx
+            // 
+            this.UI_Method_Grpbx.Controls.Add(this.UI_Quick_Radbtn);
+            this.UI_Method_Grpbx.Controls.Add(this.UI_Insertion_Radbtn);
+            this.UI_Method_Grpbx.Controls.Add(this.UI_Selection_Radbtn);
+            this.UI_Method_Grpbx.Controls.Add(this.UI_Bubble_Radbtn);
+            this.UI_Method_Grpbx.Location = new System.Drawing.Point(340, 211);
+            this.UI_Method_Grpbx.Name = "UI_Method_Grpbx";
+            this.UI_Method_Grpbx.Size = new System.Drawing.Size(132, 126);
+            this.UI_Method_Grpbx.TabIndex = 16;
+            this.UI_Method_Grpbx.TabStop = false;
+            this.UI_Method_Grpbx.Text = "Sorting Method";
+            // 
+            // UI_Bubble_Radbtn
+            // 
+            this.UI_Bubble_Radbtn.AutoSize = true;
+            this.UI_Bubble_Radbtn.Location = new System.Drawing.Point(12, 19);
+            this.UI_Bubble_Radbtn.Name = "UI_Bubble_Radbtn";
+            this.UI_Bubble_Radbtn.Size = new System.Drawing.Size(80, 17);
+            this.UI_Bubble_Radbtn.TabIndex = 0;
+            this.UI_Bubble_Radbtn.TabStop = true;
+            this.UI_Bubble_Radbtn.Text = "Bubble Sort";
+            this.UI_Bubble_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Selection_Radbtn
+            // 
+            this.UI_Selection_Radbtn.AutoSize = true;
+            this.UI_Selection_Radbtn.Location = new System.Drawing.Point(12, 42);
+            this.UI_Selection_Radbtn.Name = "UI_Selection_Radbtn";
+            this.UI_Selection_Radbtn.Size = new System.Drawing.Size(91, 17);
+            this.UI_Selection_Radbtn.TabIndex = 1;
+            this.UI_Selection_Radbtn.TabStop = true;
+            this.UI_Selection_Radbtn.Text = "Selection Sort";
+            this.UI_Selection_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Insertion_Radbtn
+            // 
+            this.UI_Insertion_Radbtn.AutoSize = true;
+            this.UI_Insertion_Radbtn.Location = new System.Drawing.Point(12, 65);
+            this.UI_Insertion_Radbtn.Name = "UI_Insertion_Radbtn";
+            this.UI_Insertion_Radbtn.Size = new System.Drawing.Size(65, 17);
+            this.UI_Insertion_Radbtn.TabIndex = 2;
+            this.UI_Insertion_Radbtn.TabStop = true;
+            this.UI_Insertion_Radbtn.Text = "Insertion";
+            this.UI_Insertion_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Quick_Radbtn
+            // 
+            this.UI_Quick_Radbtn.AutoSize = true;
+            this.UI_Quick_Radbtn.Location = new System.Drawing.Point(12, 88);
+            this.UI_Quick_Radbtn.Name = "UI_Quick_Radbtn";
+            this.UI_Quick_Radbtn.Size = new System.Drawing.Size(75, 17);
+            this.UI_Quick_Radbtn.TabIndex = 3;
+            this.UI_Quick_Radbtn.TabStop = true;
+            this.UI_Quick_Radbtn.Text = "Quick Sort";
+            this.UI_Quick_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Ticks_Lbl
+            // 
+            this.UI_Ticks_Lbl.AutoSize = true;
+            this.UI_Ticks_Lbl.Location = new System.Drawing.Point(282, 383);
+            this.UI_Ticks_Lbl.Name = "UI_Ticks_Lbl";
+            this.UI_Ticks_Lbl.Size = new System.Drawing.Size(103, 13);
+            this.UI_Ticks_Lbl.TabIndex = 17;
+            this.UI_Ticks_Lbl.Text = "Sorting Time (ticks): ";
+            this.UI_Ticks_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UI_Ticks_Lbl);
+            this.Controls.Add(this.UI_Method_Grpbx);
             this.Controls.Add(this.UI_Maxval_Lbl);
             this.Controls.Add(this.UI_Minval_Lbl);
             this.Controls.Add(this.UI_Numval_Lbl);
@@ -213,6 +289,8 @@
             this.Controls.Add(this.UI_Sorted_Tbx);
             this.Name = "Form1";
             this.Text = "ICA08";
+            this.UI_Method_Grpbx.ResumeLayout(false);
+            this.UI_Method_Grpbx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +314,12 @@
         private System.Windows.Forms.Label UI_Numval_Lbl;
         private System.Windows.Forms.Label UI_Minval_Lbl;
         private System.Windows.Forms.Label UI_Maxval_Lbl;
+        private System.Windows.Forms.GroupBox UI_Method_Grpbx;
+        private System.Windows.Forms.RadioButton UI_Quick_Radbtn;
+        private System.Windows.Forms.RadioButton UI_Insertion_Radbtn;
+        private System.Windows.Forms.RadioButton UI_Selection_Radbtn;
+        private System.Windows.Forms.RadioButton UI_Bubble_Radbtn;
+        private System.Windows.Forms.Label UI_Ticks_Lbl;
     }
 }
 
