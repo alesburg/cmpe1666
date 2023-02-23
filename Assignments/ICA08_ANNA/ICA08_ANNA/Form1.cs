@@ -73,7 +73,7 @@ namespace ICA08_ANNA
             if (UI_Bubble_Radbtn.Checked) BubbleSort(ref sortedInts);
             else if (UI_Selection_Radbtn.Checked) SelectionSort(ref sortedInts);
             else if (UI_Insertion_Radbtn.Checked) InsertionSort(ref sortedInts);
-            else if (UI_Quick_Radbtn.Checked) ;
+            else if (UI_Quick_Radbtn.Checked) QuickSort(ref sortedInts,0,sortedInts.Count-1);
 
 
             UI_Sorted_Tbx.Text = String.Empty;
@@ -149,6 +149,35 @@ namespace ICA08_ANNA
                 }
                 list[j + 1] = temp;
             }
+        }
+
+        private void QuickSort(ref List<int> list,int low, int high)
+        {
+            int partIndex;
+            if(low < high)
+            {
+                partIndex = Partition(ref list, low, high);
+
+                QuickSort(ref list,low, partIndex-1);
+                QuickSort(ref list,partIndex+1,high);
+            }
+        }
+
+        private int Partition(ref List<int> list, int low, int high)
+        {
+            int pivot = list[high];
+            int i = low - 1;
+
+            for (int j = low; j <= high -1; j++)
+            {
+                if (list[j] < pivot)
+                {
+                    i++;
+                    Swap(ref list, i, j);
+                }
+            }
+            Swap(ref list, i + 1, high);
+            return (i + 1);
         }
     }
 }
