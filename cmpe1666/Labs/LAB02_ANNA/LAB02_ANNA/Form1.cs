@@ -7,7 +7,7 @@
  * 
  * Modification History:
  * 07 FEB 2023 - Created
- * 08 FEB 2023 - UI finished
+ * 08 FEB 2023 - Finished UI and bitmap methods
  */
 using System;
 using System.Collections.Generic;
