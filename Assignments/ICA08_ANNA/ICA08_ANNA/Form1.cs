@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* 
+ * ICA #08 - Sorting Methods (CMPE1666)
+ * 
+ * Forms application to demonstrate sorting methods
+ *
+ * Author: Anna Lesburg
+ * 
+ * Modification History:
+ * 23 FEB 2023 - Created
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
