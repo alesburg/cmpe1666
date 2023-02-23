@@ -62,6 +62,7 @@
             this.UI_Sorted_Tbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UI_Sorted_Tbx.Size = new System.Drawing.Size(257, 320);
             this.UI_Sorted_Tbx.TabIndex = 0;
+            this.UI_Sorted_Tbx.TabStop = false;
             // 
             // UI_Unsorted_Tbx
             // 
@@ -72,43 +73,45 @@
             this.UI_Unsorted_Tbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UI_Unsorted_Tbx.Size = new System.Drawing.Size(257, 320);
             this.UI_Unsorted_Tbx.TabIndex = 1;
+            this.UI_Unsorted_Tbx.TabStop = false;
             // 
             // UI_Numval_Tbx
             // 
             this.UI_Numval_Tbx.Location = new System.Drawing.Point(388, 57);
             this.UI_Numval_Tbx.Name = "UI_Numval_Tbx";
             this.UI_Numval_Tbx.Size = new System.Drawing.Size(89, 20);
-            this.UI_Numval_Tbx.TabIndex = 2;
+            this.UI_Numval_Tbx.TabIndex = 0;
             // 
             // UI_Minval_Tbx
             // 
             this.UI_Minval_Tbx.Location = new System.Drawing.Point(388, 99);
             this.UI_Minval_Tbx.Name = "UI_Minval_Tbx";
             this.UI_Minval_Tbx.Size = new System.Drawing.Size(89, 20);
-            this.UI_Minval_Tbx.TabIndex = 3;
+            this.UI_Minval_Tbx.TabIndex = 1;
             // 
             // UI_Maxval_Tbx
             // 
             this.UI_Maxval_Tbx.Location = new System.Drawing.Point(388, 143);
             this.UI_Maxval_Tbx.Name = "UI_Maxval_Tbx";
             this.UI_Maxval_Tbx.Size = new System.Drawing.Size(89, 20);
-            this.UI_Maxval_Tbx.TabIndex = 4;
+            this.UI_Maxval_Tbx.TabIndex = 2;
             // 
             // UI_Genval_Btn
             // 
             this.UI_Genval_Btn.Location = new System.Drawing.Point(352, 178);
             this.UI_Genval_Btn.Name = "UI_Genval_Btn";
             this.UI_Genval_Btn.Size = new System.Drawing.Size(97, 27);
-            this.UI_Genval_Btn.TabIndex = 5;
+            this.UI_Genval_Btn.TabIndex = 3;
             this.UI_Genval_Btn.Text = "Generate Values";
             this.UI_Genval_Btn.UseVisualStyleBackColor = true;
+            this.UI_Genval_Btn.Click += new System.EventHandler(this.UI_Genval_Btn_Click);
             // 
             // UI_Sort_Btn
             // 
             this.UI_Sort_Btn.Location = new System.Drawing.Point(363, 343);
             this.UI_Sort_Btn.Name = "UI_Sort_Btn";
             this.UI_Sort_Btn.Size = new System.Drawing.Size(86, 27);
-            this.UI_Sort_Btn.TabIndex = 6;
+            this.UI_Sort_Btn.TabIndex = 5;
             this.UI_Sort_Btn.Text = "Sort Values";
             this.UI_Sort_Btn.UseVisualStyleBackColor = true;
             // 
@@ -119,6 +122,7 @@
             this.UI_Time_Tbx.ReadOnly = true;
             this.UI_Time_Tbx.Size = new System.Drawing.Size(89, 20);
             this.UI_Time_Tbx.TabIndex = 7;
+            this.UI_Time_Tbx.TabStop = false;
             // 
             // UI_Clearsort_Btn
             // 
@@ -134,7 +138,7 @@
             this.UI_Clearraw_Btn.Location = new System.Drawing.Point(38, 407);
             this.UI_Clearraw_Btn.Name = "UI_Clearraw_Btn";
             this.UI_Clearraw_Btn.Size = new System.Drawing.Size(88, 31);
-            this.UI_Clearraw_Btn.TabIndex = 9;
+            this.UI_Clearraw_Btn.TabIndex = 6;
             this.UI_Clearraw_Btn.Text = "Clear Raw";
             this.UI_Clearraw_Btn.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +147,7 @@
             this.UI_Redisplay_Btn.Location = new System.Drawing.Point(132, 407);
             this.UI_Redisplay_Btn.Name = "UI_Redisplay_Btn";
             this.UI_Redisplay_Btn.Size = new System.Drawing.Size(88, 31);
-            this.UI_Redisplay_Btn.TabIndex = 10;
+            this.UI_Redisplay_Btn.TabIndex = 7;
             this.UI_Redisplay_Btn.Text = "Redisplay";
             this.UI_Redisplay_Btn.UseVisualStyleBackColor = true;
             // 
@@ -206,13 +210,14 @@
             this.UI_Method_Grpbx.Location = new System.Drawing.Point(340, 211);
             this.UI_Method_Grpbx.Name = "UI_Method_Grpbx";
             this.UI_Method_Grpbx.Size = new System.Drawing.Size(132, 126);
-            this.UI_Method_Grpbx.TabIndex = 16;
+            this.UI_Method_Grpbx.TabIndex = 4;
             this.UI_Method_Grpbx.TabStop = false;
             this.UI_Method_Grpbx.Text = "Sorting Method";
             // 
             // UI_Bubble_Radbtn
             // 
             this.UI_Bubble_Radbtn.AutoSize = true;
+            this.UI_Bubble_Radbtn.Checked = true;
             this.UI_Bubble_Radbtn.Location = new System.Drawing.Point(12, 19);
             this.UI_Bubble_Radbtn.Name = "UI_Bubble_Radbtn";
             this.UI_Bubble_Radbtn.Size = new System.Drawing.Size(80, 17);
