@@ -37,6 +37,8 @@
             this.UI_Sort_Btn = new System.Windows.Forms.Button();
             this.UI_Time_Tbx = new System.Windows.Forms.TextBox();
             this.UI_Clearsort_Btn = new System.Windows.Forms.Button();
+            this.UI_Clearraw_Btn = new System.Windows.Forms.Button();
+            this.UI_Redisplay_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UI_Sorted_Tbx
@@ -115,11 +117,31 @@
             this.UI_Clearsort_Btn.Text = "Clear Sorted";
             this.UI_Clearsort_Btn.UseVisualStyleBackColor = true;
             // 
+            // UI_Clearraw_Btn
+            // 
+            this.UI_Clearraw_Btn.Location = new System.Drawing.Point(38, 407);
+            this.UI_Clearraw_Btn.Name = "UI_Clearraw_Btn";
+            this.UI_Clearraw_Btn.Size = new System.Drawing.Size(88, 31);
+            this.UI_Clearraw_Btn.TabIndex = 9;
+            this.UI_Clearraw_Btn.Text = "Clear Raw";
+            this.UI_Clearraw_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Redisplay_Btn
+            // 
+            this.UI_Redisplay_Btn.Location = new System.Drawing.Point(132, 407);
+            this.UI_Redisplay_Btn.Name = "UI_Redisplay_Btn";
+            this.UI_Redisplay_Btn.Size = new System.Drawing.Size(88, 31);
+            this.UI_Redisplay_Btn.TabIndex = 10;
+            this.UI_Redisplay_Btn.Text = "Redisplay";
+            this.UI_Redisplay_Btn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UI_Redisplay_Btn);
+            this.Controls.Add(this.UI_Clearraw_Btn);
             this.Controls.Add(this.UI_Clearsort_Btn);
             this.Controls.Add(this.UI_Time_Tbx);
             this.Controls.Add(this.UI_Sort_Btn);
@@ -147,6 +169,8 @@
         private System.Windows.Forms.Button UI_Sort_Btn;
         private System.Windows.Forms.TextBox UI_Time_Tbx;
         private System.Windows.Forms.Button UI_Clearsort_Btn;
+        private System.Windows.Forms.Button UI_Clearraw_Btn;
+        private System.Windows.Forms.Button UI_Redisplay_Btn;
     }
 }
 
