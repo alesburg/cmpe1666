@@ -45,10 +45,10 @@
             this.UI_Minval_Lbl = new System.Windows.Forms.Label();
             this.UI_Maxval_Lbl = new System.Windows.Forms.Label();
             this.UI_Method_Grpbx = new System.Windows.Forms.GroupBox();
-            this.UI_Bubble_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Selection_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Insertion_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_Quick_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Insertion_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Selection_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Bubble_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_Ticks_Lbl = new System.Windows.Forms.Label();
             this.UI_Method_Grpbx.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +134,7 @@
             this.UI_Clearsort_Btn.TabIndex = 8;
             this.UI_Clearsort_Btn.Text = "Clear Sorted";
             this.UI_Clearsort_Btn.UseVisualStyleBackColor = true;
+            this.UI_Clearsort_Btn.Click += new System.EventHandler(this.UI_Clearsort_Btn_Click);
             // 
             // UI_Clearraw_Btn
             // 
@@ -143,6 +144,7 @@
             this.UI_Clearraw_Btn.TabIndex = 6;
             this.UI_Clearraw_Btn.Text = "Clear Raw";
             this.UI_Clearraw_Btn.UseVisualStyleBackColor = true;
+            this.UI_Clearraw_Btn.Click += new System.EventHandler(this.UI_Clearraw_Btn_Click);
             // 
             // UI_Redisplay_Btn
             // 
@@ -152,6 +154,7 @@
             this.UI_Redisplay_Btn.TabIndex = 7;
             this.UI_Redisplay_Btn.Text = "Redisplay";
             this.UI_Redisplay_Btn.UseVisualStyleBackColor = true;
+            this.UI_Redisplay_Btn.Click += new System.EventHandler(this.UI_Redisplay_Btn_Click);
             // 
             // UI_Sorted_Lbl
             // 
@@ -216,28 +219,16 @@
             this.UI_Method_Grpbx.TabStop = false;
             this.UI_Method_Grpbx.Text = "Sorting Method";
             // 
-            // UI_Bubble_Radbtn
+            // UI_Quick_Radbtn
             // 
-            this.UI_Bubble_Radbtn.AutoSize = true;
-            this.UI_Bubble_Radbtn.Checked = true;
-            this.UI_Bubble_Radbtn.Location = new System.Drawing.Point(12, 19);
-            this.UI_Bubble_Radbtn.Name = "UI_Bubble_Radbtn";
-            this.UI_Bubble_Radbtn.Size = new System.Drawing.Size(80, 17);
-            this.UI_Bubble_Radbtn.TabIndex = 0;
-            this.UI_Bubble_Radbtn.TabStop = true;
-            this.UI_Bubble_Radbtn.Text = "Bubble Sort";
-            this.UI_Bubble_Radbtn.UseVisualStyleBackColor = true;
-            // 
-            // UI_Selection_Radbtn
-            // 
-            this.UI_Selection_Radbtn.AutoSize = true;
-            this.UI_Selection_Radbtn.Location = new System.Drawing.Point(12, 42);
-            this.UI_Selection_Radbtn.Name = "UI_Selection_Radbtn";
-            this.UI_Selection_Radbtn.Size = new System.Drawing.Size(91, 17);
-            this.UI_Selection_Radbtn.TabIndex = 1;
-            this.UI_Selection_Radbtn.TabStop = true;
-            this.UI_Selection_Radbtn.Text = "Selection Sort";
-            this.UI_Selection_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Quick_Radbtn.AutoSize = true;
+            this.UI_Quick_Radbtn.Location = new System.Drawing.Point(12, 88);
+            this.UI_Quick_Radbtn.Name = "UI_Quick_Radbtn";
+            this.UI_Quick_Radbtn.Size = new System.Drawing.Size(75, 17);
+            this.UI_Quick_Radbtn.TabIndex = 3;
+            this.UI_Quick_Radbtn.TabStop = true;
+            this.UI_Quick_Radbtn.Text = "Quick Sort";
+            this.UI_Quick_Radbtn.UseVisualStyleBackColor = true;
             // 
             // UI_Insertion_Radbtn
             // 
@@ -250,16 +241,28 @@
             this.UI_Insertion_Radbtn.Text = "Insertion";
             this.UI_Insertion_Radbtn.UseVisualStyleBackColor = true;
             // 
-            // UI_Quick_Radbtn
+            // UI_Selection_Radbtn
             // 
-            this.UI_Quick_Radbtn.AutoSize = true;
-            this.UI_Quick_Radbtn.Location = new System.Drawing.Point(12, 88);
-            this.UI_Quick_Radbtn.Name = "UI_Quick_Radbtn";
-            this.UI_Quick_Radbtn.Size = new System.Drawing.Size(75, 17);
-            this.UI_Quick_Radbtn.TabIndex = 3;
-            this.UI_Quick_Radbtn.TabStop = true;
-            this.UI_Quick_Radbtn.Text = "Quick Sort";
-            this.UI_Quick_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Selection_Radbtn.AutoSize = true;
+            this.UI_Selection_Radbtn.Location = new System.Drawing.Point(12, 42);
+            this.UI_Selection_Radbtn.Name = "UI_Selection_Radbtn";
+            this.UI_Selection_Radbtn.Size = new System.Drawing.Size(91, 17);
+            this.UI_Selection_Radbtn.TabIndex = 1;
+            this.UI_Selection_Radbtn.TabStop = true;
+            this.UI_Selection_Radbtn.Text = "Selection Sort";
+            this.UI_Selection_Radbtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Bubble_Radbtn
+            // 
+            this.UI_Bubble_Radbtn.AutoSize = true;
+            this.UI_Bubble_Radbtn.Checked = true;
+            this.UI_Bubble_Radbtn.Location = new System.Drawing.Point(12, 19);
+            this.UI_Bubble_Radbtn.Name = "UI_Bubble_Radbtn";
+            this.UI_Bubble_Radbtn.Size = new System.Drawing.Size(80, 17);
+            this.UI_Bubble_Radbtn.TabIndex = 0;
+            this.UI_Bubble_Radbtn.TabStop = true;
+            this.UI_Bubble_Radbtn.Text = "Bubble Sort";
+            this.UI_Bubble_Radbtn.UseVisualStyleBackColor = true;
             // 
             // UI_Ticks_Lbl
             // 
