@@ -110,31 +110,44 @@ namespace LAB02_ANNA
 
         }
 
+        //transform button clicked
         private void UI_Transform_Btn_Click(object sender, EventArgs e)
         {
             UI_Operation_Progbar.Value = 0;
             Bitmap transformedBM = new Bitmap(UI_Pic_Picbx.Image);
+
+            //radio button selection
             if (UI_BW_Radbtn.Checked) BlackAndWhite(transformedBM, UI_Intensity_Trckbar.Value);
             else if (UI_Contrast_RadBtn.Checked) Contrast(transformedBM, UI_Intensity_Trckbar.Value);
             else if (UI_Tint_Radbtn.Checked) Tint(transformedBM, UI_Intensity_Trckbar.Value);
             else if (UI_Noise_Radbtn.Checked) Noise(transformedBM, UI_Intensity_Trckbar.Value);
+
             UI_Revert_Btn.Enabled = true;
             UI_Pic_Picbx.Image = transformedBM;
             UI_Operation_Progbar.Value = 0;
         }
 
+        //revert button clicked
         private void UI_Revert_Btn_Click(object sender, EventArgs e)
         {
             UI_Pic_Picbx.Image = Bitmap;
         }
 
+        //********************************************************************************************
+        //Method: private void BlackAndWhite(Bitmap bm, int value)
+        //Purpose: makes bitmap black and white based on value
+        //Parameters: Bitmap bm -  bitmap to edit
+        //int value - intensity of effect
+        //*********************************************************************************************
         private void BlackAndWhite(Bitmap bm, int value)
         {
-            Color rgb;
-            int r;
-            int g;
-            int b;
-            int avg;
+            Color rgb; //rgb value of pixel
+            int r; //red value of pixel
+            int g; //green value of pixel
+            int b; //blue value of pixel
+            int avg; //average of rgb
+
+            //iterates through every pixel in bitmap
             for (int x = 0; x < bm.Width; x++)
             {
                 for (int y = 0; y < bm.Height; y++)
@@ -153,14 +166,21 @@ namespace LAB02_ANNA
             }
         }
 
-
+        //********************************************************************************************
+        //Method: private void Contrast(Bitmap bm, int value)
+        //Purpose: increases bitmap contrast based on value
+        //Parameters: Bitmap bm -  bitmap to edit
+        //int value - intensity of effect
+        //*********************************************************************************************
         private void Contrast(Bitmap bm, int value)
         {
-            Color rgb;
-            int r;
-            int g;
-            int b;
-            int amount = value / 5;
+            Color rgb; //rgb value of pixel
+            int r; //red value of pixel
+            int g; //green value of pixel
+            int b; //blue value of pixel
+            int amount = value / 5; //adjust for contrast
+
+            //iterates through every pixel in bitmap
             for (int x = 0; x < bm.Width; x++)
             {
                 for (int y = 0; y < bm.Height; y++)
@@ -169,6 +189,7 @@ namespace LAB02_ANNA
                     r = rgb.R;
                     g = rgb.G;
                     b = rgb.B;
+                    //conditionals prevent wrap
                     r = r > 128 ? (r + amount) > 255 ? 255 : r + amount : (r - amount) > 0 ? r - amount : 0;
                     g = g > 128 ? (g + amount) > 255 ? 255 : g + amount : (g - amount) > 0 ? g - amount : 0;
                     b = b > 128 ? (b + amount) > 255 ? 255 : b + amount : (b - amount) > 0 ? b - amount : 0;
@@ -178,14 +199,22 @@ namespace LAB02_ANNA
             }
         }
 
+        //********************************************************************************************
+        //Method: private void Tint(Bitmap bm, int value)
+        //Purpose: edits bitmap tint based on value
+        //Parameters: Bitmap bm -  bitmap to edit
+        //int value - intensity of effect
+        //*********************************************************************************************
         private void Tint(Bitmap bm, int value)
         {
-            Color rgb;
-            int r;
-            int g;
-            int b;
-            int greenBias;
-            int redBias;
+            Color rgb; //rgb value of pixel
+            int r; //red value of pixel
+            int g; //green value of pixel
+            int b; //blue value of pixel
+            int greenBias; //amount of red to tint
+            int redBias; //amount of green to tint
+
+            //iterates through every pixel in bitmap
             for (int x = 0; x < bm.Width; x++)
             {
                 for (int y = 0; y < bm.Height; y++)
@@ -204,16 +233,24 @@ namespace LAB02_ANNA
             }
         }
 
+        //********************************************************************************************
+        //Method: private void Noise(Bitmap bm, int value)
+        //Purpose: adds noise to bitmap based on value
+        //Parameters: Bitmap bm -  bitmap to edit
+        //int value - intensity of effect
+        //*********************************************************************************************
         private void Noise(Bitmap bm, int value)
         {
-            Color rgb;
-            Random rand = new Random();
-            int r;
-            int g;
-            int b;
-            int newR;
-            int newG;
-            int newB;
+            Random rand = new Random(); //random generator 
+            Color rgb; //rgb value of pixel
+            int r; //red value of pixel
+            int g; //green value of pixel
+            int b; //blue value of pixel
+            int newR; //new red value
+            int newG; //new green value
+            int newB; //new blue value
+
+            //iterates through every pixel in bitmap
             for (int x = 0; x < bm.Width; x++)
             {
                 for (int y = 0; y < bm.Height; y++)
@@ -227,6 +264,7 @@ namespace LAB02_ANNA
                     newG = g + (rand.Next() % ((value + 1) * 2)) - value;
                     newB = b + (rand.Next() % ((value + 1) * 2)) - value;
 
+                    //conditionals prevent wrap
                     r = newR > 255 ? 255 : newR < 0 ? 0 : newR;
                     g = newG > 255 ? 255 : newG < 0 ? 0 : newG;
                     b = newB > 255 ? 255 : newB < 0 ? 0 : newB;
