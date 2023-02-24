@@ -213,7 +213,7 @@ namespace ICA08_ANNA
         //Parameters: ref List<int> list - list to preform sort
         //int low - low index of sort region
         //int high - high index of sort region
-        //Returns: int - 
+        //Returns: int - partition index
         //*********************************************************************************************
         private int Partition(ref List<int> list, int low, int high)
         {
