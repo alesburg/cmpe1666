@@ -247,6 +247,7 @@ namespace ICA08_ANNA
         //writes unsorted list to textbox
         private void UI_Redisplay_Btn_Click(object sender, EventArgs e)
         {
+            UI_Unsorted_Tbx.Text = string.Empty;
             foreach (int i in generatedInts)
             {
                 UI_Unsorted_Tbx.Text += $"{i.ToString()} ";
