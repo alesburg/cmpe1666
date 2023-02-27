@@ -7,7 +7,8 @@
  * 
  * Modification History:
  * 07 FEB 2023 - Created
- * 08 FEB 2023 - Finished UI and bitmap methods
+ * 24 FEB 2023 - Finished UI and bitmap methods
+ * 27 FEB 2023 - Finished progress bar, tested and documented
  */
 using System;
 using System.Collections.Generic;
