@@ -163,7 +163,7 @@ namespace LAB02_ANNA
                     b = b + ((avg - b) * value / 100);
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
-                UpdateProgress(x / bm.Width);
+                UpdateProgress((double)x / (double)bm.Width);
             }
         }
 
@@ -196,7 +196,7 @@ namespace LAB02_ANNA
                     b = b > 128 ? (b + amount) > 255 ? 255 : b + amount : (b - amount) > 0 ? b - amount : 0;
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
-                UpdateProgress(x / bm.Width);
+                UpdateProgress((double)x / (double)bm.Width);
             }
         }
 
@@ -230,7 +230,7 @@ namespace LAB02_ANNA
                     else if (value > 50) g = greenBias > 255 ? 255 : greenBias;
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
-                UpdateProgress(x / bm.Width);
+                UpdateProgress((double)x / (double)bm.Width);
             }
         }
 
@@ -272,7 +272,7 @@ namespace LAB02_ANNA
 
                     bm.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
-                UpdateProgress(x / bm.Width);
+                UpdateProgress((double)x / (double)bm.Width);
             }
         }
 
