@@ -57,7 +57,7 @@
             this.UI_Pic_Picbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UI_Pic_Picbx.Name = "UI_Pic_Picbx";
             this.UI_Pic_Picbx.Size = new System.Drawing.Size(776, 362);
-            this.UI_Pic_Picbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.UI_Pic_Picbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UI_Pic_Picbx.TabIndex = 0;
             this.UI_Pic_Picbx.TabStop = false;
             // 
