@@ -276,7 +276,11 @@ namespace LAB02_ANNA
             }
         }
 
-        //doesnt work
+        //********************************************************************************************
+        //Method: private void UpdateProgress(double ratio)
+        //Purpose: Updates progress bar based on a ratio
+        //Parameters: double ratio - ratio of progress bar
+        //*********************************************************************************************
         private void UpdateProgress(double ratio)
         {
             UI_Operation_Progbar.Value = (int)(ratio * 100);
