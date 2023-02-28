@@ -182,12 +182,12 @@
             this.UI_Value_Lbl.AutoSize = true;
             this.UI_Value_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_Value_Lbl.ForeColor = System.Drawing.Color.Blue;
-            this.UI_Value_Lbl.Location = new System.Drawing.Point(511, 449);
+            this.UI_Value_Lbl.Location = new System.Drawing.Point(515, 449);
             this.UI_Value_Lbl.Name = "UI_Value_Lbl";
             this.UI_Value_Lbl.Size = new System.Drawing.Size(21, 15);
             this.UI_Value_Lbl.TabIndex = 6;
             this.UI_Value_Lbl.Text = "50";
-            this.UI_Value_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UI_Value_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // UI_Left_Lbl
             // 
