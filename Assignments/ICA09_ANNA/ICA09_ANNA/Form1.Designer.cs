@@ -34,6 +34,12 @@
             this.UI_Sorted_Lbl = new System.Windows.Forms.Label();
             this.UI_Ticks_Tbx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.UI_DisplayUnsorted_Btn = new System.Windows.Forms.Button();
+            this.UI_ClearUnsorted_Btn = new System.Windows.Forms.Button();
+            this.UI_N2Sorting_Btn = new System.Windows.Forms.Button();
+            this.UI_QuickSort_Btn = new System.Windows.Forms.Button();
+            this.UI_ClearSorted_Btn = new System.Windows.Forms.Button();
+            this.UI_LoadFiles_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UI_Unsorted_Lstbx
@@ -92,11 +98,71 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Time Taken (Elapsed Ticks):";
             // 
+            // UI_DisplayUnsorted_Btn
+            // 
+            this.UI_DisplayUnsorted_Btn.Location = new System.Drawing.Point(333, 46);
+            this.UI_DisplayUnsorted_Btn.Name = "UI_DisplayUnsorted_Btn";
+            this.UI_DisplayUnsorted_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_DisplayUnsorted_Btn.TabIndex = 6;
+            this.UI_DisplayUnsorted_Btn.Text = "Display Unsorted List";
+            this.UI_DisplayUnsorted_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_ClearUnsorted_Btn
+            // 
+            this.UI_ClearUnsorted_Btn.Location = new System.Drawing.Point(333, 108);
+            this.UI_ClearUnsorted_Btn.Name = "UI_ClearUnsorted_Btn";
+            this.UI_ClearUnsorted_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_ClearUnsorted_Btn.TabIndex = 7;
+            this.UI_ClearUnsorted_Btn.Text = "Clear Unsorted Listbox";
+            this.UI_ClearUnsorted_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_N2Sorting_Btn
+            // 
+            this.UI_N2Sorting_Btn.Location = new System.Drawing.Point(333, 254);
+            this.UI_N2Sorting_Btn.Name = "UI_N2Sorting_Btn";
+            this.UI_N2Sorting_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_N2Sorting_Btn.TabIndex = 8;
+            this.UI_N2Sorting_Btn.Text = "N^2 Sorting";
+            this.UI_N2Sorting_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_QuickSort_Btn
+            // 
+            this.UI_QuickSort_Btn.Location = new System.Drawing.Point(333, 314);
+            this.UI_QuickSort_Btn.Name = "UI_QuickSort_Btn";
+            this.UI_QuickSort_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_QuickSort_Btn.TabIndex = 9;
+            this.UI_QuickSort_Btn.Text = "Quick Sort";
+            this.UI_QuickSort_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_ClearSorted_Btn
+            // 
+            this.UI_ClearSorted_Btn.Location = new System.Drawing.Point(333, 374);
+            this.UI_ClearSorted_Btn.Name = "UI_ClearSorted_Btn";
+            this.UI_ClearSorted_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_ClearSorted_Btn.TabIndex = 10;
+            this.UI_ClearSorted_Btn.Text = "Clear Sorted Listbox";
+            this.UI_ClearSorted_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_LoadFiles_Btn
+            // 
+            this.UI_LoadFiles_Btn.Location = new System.Drawing.Point(333, 434);
+            this.UI_LoadFiles_Btn.Name = "UI_LoadFiles_Btn";
+            this.UI_LoadFiles_Btn.Size = new System.Drawing.Size(136, 47);
+            this.UI_LoadFiles_Btn.TabIndex = 11;
+            this.UI_LoadFiles_Btn.Text = "Load Files";
+            this.UI_LoadFiles_Btn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.UI_LoadFiles_Btn);
+            this.Controls.Add(this.UI_ClearSorted_Btn);
+            this.Controls.Add(this.UI_QuickSort_Btn);
+            this.Controls.Add(this.UI_N2Sorting_Btn);
+            this.Controls.Add(this.UI_ClearUnsorted_Btn);
+            this.Controls.Add(this.UI_DisplayUnsorted_Btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UI_Ticks_Tbx);
             this.Controls.Add(this.UI_Sorted_Lbl);
@@ -118,6 +184,12 @@
         private System.Windows.Forms.Label UI_Sorted_Lbl;
         private System.Windows.Forms.TextBox UI_Ticks_Tbx;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button UI_DisplayUnsorted_Btn;
+        private System.Windows.Forms.Button UI_ClearUnsorted_Btn;
+        private System.Windows.Forms.Button UI_N2Sorting_Btn;
+        private System.Windows.Forms.Button UI_QuickSort_Btn;
+        private System.Windows.Forms.Button UI_ClearSorted_Btn;
+        private System.Windows.Forms.Button UI_LoadFiles_Btn;
     }
 }
 
