@@ -1,7 +1,7 @@
 ﻿/* 
- * ICA #09 - Creating and sorting lists of structs (CMPE1666)
+ * ICA #09 - Sorting Structs (CMPE1666)
  * 
- * Forms application to demonstrate structs and sorting methods
+ * Forms application thaat creates and sorts lists of structs
  *
  * Author: Anna Lesburg
  * 
