@@ -25,15 +25,16 @@ namespace ICA09_ANNA
 {
     public partial class Form1 : Form
     {
-        List<Employees> fileEmployees;
-        List<Employees> givenEmployees;
-        List<Employees> sortedFileEmployees;
-        List<Employees> SortedGivenEmployees;
+        List<Employees> fileEmployees; //list of employees from file
+        List<Employees> givenEmployees; //list of employees from table
+        List<Employees> sortedFileEmployees; //list of employees from file, sorted
+        List<Employees> sortedGivenEmployees; //list of employees from table, sorted
+        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch(); //timer for sort
 
         public struct Employees
         {
-            public int empID;
-            public int empSalary; 
+            public int empID; //employee id
+            public int empSalary; //employee salary
 
             //constructor
             public Employees(int empID, int empSalary)
@@ -41,6 +42,7 @@ namespace ICA09_ANNA
                 this.empID = empID;
                 this.empSalary = empSalary;
             }
+            //fixes spacing
             public override string ToString()
             {
                 if (empID < 10) return $"{empID}:                {empSalary}";
@@ -54,6 +56,7 @@ namespace ICA09_ANNA
             InitializeComponent();
         }
 
+        //initializes table data and adds to list
         private void Form1_Load(object sender, EventArgs e)
         {
             fileEmployees = new List<Employees>();
@@ -68,6 +71,7 @@ namespace ICA09_ANNA
 
         }
 
+        //displays unsorted list based on radio button
         private void UI_DisplayUnsorted_Btn_Click(object sender, EventArgs e)
         {
             UI_Unsorted_Lstbx.Items.Clear();
@@ -88,27 +92,33 @@ namespace ICA09_ANNA
             }
         }
 
+        //clears unsorted listbox
         private void UI_ClearUnsorted_Btn_Click(object sender, EventArgs e)
         {
             UI_Unsorted_Lstbx.Items.Clear();
         }
 
+        //clears sorted listbox
         private void UI_ClearSorted_Btn_Click(object sender, EventArgs e)
         {
             UI_Sorted_Lstbox.Items.Clear();
         }
 
+        //loads files into lists
         private void UI_LoadFiles_Btn_Click(object sender, EventArgs e)
         {
-            string idsFile;
-            string salariesFile;
-            string[] temp;
-            int[] fileIDs = {1};
-            int[] fileSalaries = {1};
+            string idsFile; //path of file containing ids
+            string salariesFile; //path of file containing salaries
+            string[] temp; //temp storage for strings
+            int[] fileIDs = {1}; //array of ids from file
+            int[] fileSalaries = {1}; //array of salaries from file
+
             try
             {
                 OpenFileDialog OpenIDs = new OpenFileDialog();
                 OpenIDs.Title = "Select Employee IDs: ";
+
+                //try to read from ids file
                 if (OpenIDs.ShowDialog() == DialogResult.OK)
                 {
                     idsFile = OpenIDs.FileName;
@@ -120,6 +130,7 @@ namespace ICA09_ANNA
                     }
                 }
 
+                //try to read from salaries file
                 OpenFileDialog OpenSalaries = new OpenFileDialog();
                 OpenSalaries.Title = "Select Employee Salaries: ";
                 if (OpenSalaries.ShowDialog() == DialogResult.OK)
@@ -133,11 +144,13 @@ namespace ICA09_ANNA
                     }
                 }
 
+                //write to employee list
                 for (int i = 0; i < fileIDs.Length; i++)
                 {
                     fileEmployees.Add(new Employees(fileIDs[i], fileSalaries[i]));
                 }
 
+                //disable load button
                 UI_LoadFiles_Btn.Enabled = false;
                 
             } catch (Exception ex)
@@ -228,17 +241,21 @@ namespace ICA09_ANNA
             return (i + 1);
         }
 
+        //sort button click
         private void UI_N2Sorting_Btn_Click(object sender, EventArgs e)
         {
-            SortedGivenEmployees = new List<Employees> (givenEmployees);
+            sw.Reset();
+            sw.Start();
+            UI_Sorted_Lstbox.Items.Clear();
+            sortedGivenEmployees = new List<Employees> (givenEmployees);
             sortedFileEmployees= new List<Employees> (fileEmployees);
 
             if(UI_ProvList_Radbtn.Checked)
             {
-                BubbleSort(ref SortedGivenEmployees);
+                BubbleSort(ref sortedGivenEmployees);
                 for(int i = 0; i < givenEmployees.Count; i++)
                 {
-                    UI_Sorted_Lstbox.Items.Add(SortedGivenEmployees[i]);
+                    UI_Sorted_Lstbox.Items.Add(sortedGivenEmployees[i]);
                 }
             }else
             {
@@ -248,26 +265,35 @@ namespace ICA09_ANNA
                     UI_Sorted_Lstbox.Items.Add(sortedFileEmployees[i]);
                 }
             }
+            sw.Stop();
+            UI_Ticks_Tbx.Text = sw.ElapsedTicks.ToString();
         }
 
+        //quicksort button click
         private void UI_QuickSort_Btn_Click(object sender, EventArgs e)
         {
+            sw.Reset();
+            sw.Start();
+            UI_Sorted_Lstbox.Items.Clear();
+
             if (UI_ProvList_Radbtn.Checked)
             {
-                QuickSort(ref givenEmployees,0,givenEmployees.Count -1);
-                for (int i = 0; i < givenEmployees.Count; i++)
+                QuickSort(ref sortedGivenEmployees,0,sortedGivenEmployees.Count -1);
+                for (int i = 0; i < sortedGivenEmployees.Count; i++)
                 {
-                    UI_Sorted_Lstbox.Items.Add(givenEmployees[i]);
+                    UI_Sorted_Lstbox.Items.Add(sortedGivenEmployees[i]);
                 }
             }
             else
             {
-                QuickSort(ref fileEmployees, 0, fileEmployees.Count - 1);
-                for (int i = 0; i < fileEmployees.Count; i++)
+                QuickSort(ref sortedFileEmployees, 0, sortedFileEmployees.Count - 1);
+                for (int i = 0; i < sortedFileEmployees.Count; i++)
                 {
-                    UI_Sorted_Lstbox.Items.Add(fileEmployees[i]);
+                    UI_Sorted_Lstbox.Items.Add(sortedFileEmployees[i]);
                 }
             }
+            sw.Stop();
+            UI_Ticks_Tbx.Text = sw.ElapsedTicks.ToString();
         }
     }
 }
