@@ -7,6 +7,7 @@
  * 
  * Modification History:
  * 3 MAR 2023 - Created
+ * 6 MAR 2023 - Finished and Tested
  */
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,11 @@ namespace ICA09_ANNA
 {
     public partial class Form1 : Form
     {
+        List<Employees> fileEmployees;
+        List<Employees> givenEmployees;
+        List<Employees> sortedFileEmployees;
+        List<Employees> SortedGivenEmployees;
+
         public struct Employees
         {
             public int empID;
@@ -34,7 +40,6 @@ namespace ICA09_ANNA
             {
                 this.empID = empID;
                 this.empSalary = empSalary;
-
             }
             public override string ToString()
             {
@@ -43,9 +48,7 @@ namespace ICA09_ANNA
                 if(empID < 1000) return $"{empID}:            {empSalary}";
                 else return $"{empID}:          {empSalary}";
             }
-        };
-        List<Employees> fileEmployees;
-        List<Employees> givenEmployees;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -227,19 +230,22 @@ namespace ICA09_ANNA
 
         private void UI_N2Sorting_Btn_Click(object sender, EventArgs e)
         {
+            SortedGivenEmployees = new List<Employees> (givenEmployees);
+            sortedFileEmployees= new List<Employees> (fileEmployees);
+
             if(UI_ProvList_Radbtn.Checked)
             {
-                BubbleSort(ref givenEmployees);
+                BubbleSort(ref SortedGivenEmployees);
                 for(int i = 0; i < givenEmployees.Count; i++)
                 {
-                    UI_Sorted_Lstbox.Items.Add(givenEmployees[i]);
+                    UI_Sorted_Lstbox.Items.Add(SortedGivenEmployees[i]);
                 }
             }else
             {
-                BubbleSort(ref fileEmployees);
-                for (int i = 0; i < fileEmployees.Count; i++)
+                BubbleSort(ref sortedFileEmployees);
+                for (int i = 0; i < sortedFileEmployees.Count; i++)
                 {
-                    UI_Sorted_Lstbox.Items.Add(fileEmployees[i]);
+                    UI_Sorted_Lstbox.Items.Add(sortedFileEmployees[i]);
                 }
             }
         }
