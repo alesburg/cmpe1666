@@ -50,7 +50,7 @@
             // 
             this.UI_Unsorted_Lstbx.FormattingEnabled = true;
             this.UI_Unsorted_Lstbx.ItemHeight = 16;
-            this.UI_Unsorted_Lstbx.Location = new System.Drawing.Point(509, 46);
+            this.UI_Unsorted_Lstbx.Location = new System.Drawing.Point(12, 45);
             this.UI_Unsorted_Lstbx.Name = "UI_Unsorted_Lstbx";
             this.UI_Unsorted_Lstbx.Size = new System.Drawing.Size(279, 436);
             this.UI_Unsorted_Lstbx.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             this.UI_Sorted_Lstbox.FormattingEnabled = true;
             this.UI_Sorted_Lstbox.ItemHeight = 16;
-            this.UI_Sorted_Lstbox.Location = new System.Drawing.Point(12, 46);
+            this.UI_Sorted_Lstbox.Location = new System.Drawing.Point(509, 45);
             this.UI_Sorted_Lstbox.Name = "UI_Sorted_Lstbox";
             this.UI_Sorted_Lstbox.Size = new System.Drawing.Size(279, 436);
             this.UI_Sorted_Lstbox.TabIndex = 1;
@@ -110,6 +110,7 @@
             this.UI_DisplayUnsorted_Btn.TabIndex = 6;
             this.UI_DisplayUnsorted_Btn.Text = "Display Unsorted List";
             this.UI_DisplayUnsorted_Btn.UseVisualStyleBackColor = true;
+            this.UI_DisplayUnsorted_Btn.Click += new System.EventHandler(this.UI_DisplayUnsorted_Btn_Click);
             // 
             // UI_ClearUnsorted_Btn
             // 
@@ -169,6 +170,7 @@
             // UI_ProvList_Radbtn
             // 
             this.UI_ProvList_Radbtn.AutoSize = true;
+            this.UI_ProvList_Radbtn.Checked = true;
             this.UI_ProvList_Radbtn.Location = new System.Drawing.Point(6, 21);
             this.UI_ProvList_Radbtn.Name = "UI_ProvList_Radbtn";
             this.UI_ProvList_Radbtn.Size = new System.Drawing.Size(106, 20);
@@ -208,6 +210,7 @@
             this.Controls.Add(this.UI_Unsorted_Lstbx);
             this.Name = "Form1";
             this.Text = "ICA08-Sorting Structs";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.UI_Rad_Grpbx.ResumeLayout(false);
             this.UI_Rad_Grpbx.PerformLayout();
             this.ResumeLayout(false);
