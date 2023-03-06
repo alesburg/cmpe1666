@@ -83,5 +83,10 @@ namespace ICA09_ANNA
         {
             UI_Sorted_Lstbox.Items.Clear();
         }
+
+        private void UI_LoadFiles_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
