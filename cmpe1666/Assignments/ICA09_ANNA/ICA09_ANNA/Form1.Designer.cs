@@ -41,8 +41,8 @@
             this.UI_ClearSorted_Btn = new System.Windows.Forms.Button();
             this.UI_LoadFiles_Btn = new System.Windows.Forms.Button();
             this.UI_Rad_Grpbx = new System.Windows.Forms.GroupBox();
-            this.UI_ProvList_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_FileData_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_ProvList_Radbtn = new System.Windows.Forms.RadioButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.UI_Rad_Grpbx.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +131,7 @@
             this.UI_N2Sorting_Btn.TabIndex = 8;
             this.UI_N2Sorting_Btn.Text = "N^2 Sorting";
             this.UI_N2Sorting_Btn.UseVisualStyleBackColor = true;
+            this.UI_N2Sorting_Btn.Click += new System.EventHandler(this.UI_N2Sorting_Btn_Click);
             // 
             // UI_QuickSort_Btn
             // 
@@ -171,6 +172,16 @@
             this.UI_Rad_Grpbx.TabIndex = 12;
             this.UI_Rad_Grpbx.TabStop = false;
             // 
+            // UI_FileData_Radbtn
+            // 
+            this.UI_FileData_Radbtn.AutoSize = true;
+            this.UI_FileData_Radbtn.Location = new System.Drawing.Point(6, 47);
+            this.UI_FileData_Radbtn.Name = "UI_FileData_Radbtn";
+            this.UI_FileData_Radbtn.Size = new System.Drawing.Size(82, 20);
+            this.UI_FileData_Radbtn.TabIndex = 1;
+            this.UI_FileData_Radbtn.Text = "File Data";
+            this.UI_FileData_Radbtn.UseVisualStyleBackColor = true;
+            // 
             // UI_ProvList_Radbtn
             // 
             this.UI_ProvList_Radbtn.AutoSize = true;
@@ -182,16 +193,6 @@
             this.UI_ProvList_Radbtn.TabStop = true;
             this.UI_ProvList_Radbtn.Text = "Provided List";
             this.UI_ProvList_Radbtn.UseVisualStyleBackColor = true;
-            // 
-            // UI_FileData_Radbtn
-            // 
-            this.UI_FileData_Radbtn.AutoSize = true;
-            this.UI_FileData_Radbtn.Location = new System.Drawing.Point(6, 47);
-            this.UI_FileData_Radbtn.Name = "UI_FileData_Radbtn";
-            this.UI_FileData_Radbtn.Size = new System.Drawing.Size(82, 20);
-            this.UI_FileData_Radbtn.TabIndex = 1;
-            this.UI_FileData_Radbtn.Text = "File Data";
-            this.UI_FileData_Radbtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
