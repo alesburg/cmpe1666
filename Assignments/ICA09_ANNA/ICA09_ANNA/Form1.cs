@@ -86,7 +86,27 @@ namespace ICA09_ANNA
 
         private void UI_LoadFiles_Btn_Click(object sender, EventArgs e)
         {
+            string idsFile;
+            string salariesFile;
+            try
+            {
+                OpenFileDialog OpenIDs = new OpenFileDialog();
+                OpenIDs.Title = "Select Employee IDs: ";
+                if (OpenIDs.ShowDialog() == DialogResult.OK)
+                {
+                     idsFile = OpenIDs.FileName;
+                }
 
+                OpenFileDialog OpenSalaries = new OpenFileDialog();
+                OpenSalaries.Title = "Select Employee Salaries: ";
+                if (OpenSalaries.ShowDialog() == DialogResult.OK)
+                {
+                    salariesFile = OpenSalaries.FileName;
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.ToString()}");
+            }
         }
     }
 }
