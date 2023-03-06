@@ -79,7 +79,6 @@ namespace ICA09_ANNA
                 for (int i = 0; i < fileEmployees.Count; i++)
                 {
                     UI_Unsorted_Lstbx.Items.Add(fileEmployees[i]);
-
                 }
             }
         }
@@ -121,6 +120,18 @@ namespace ICA09_ANNA
                 if (OpenSalaries.ShowDialog() == DialogResult.OK)
                 {
                     salariesFile = OpenSalaries.FileName;
+                    temp = File.ReadAllLines(salariesFile);
+                    fileSalaries = new int[temp.Length];
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        int.TryParse(temp[i], out fileSalaries[i]);
+                    }
+                }
+
+                //how to get around this??
+                for (int i = 0; i < fileIDs.Length; i++)
+                {
+                    givenEmployees.Add(new Employees(fileIDs[i], fileSalaries[i]));
                 }
 
                 
