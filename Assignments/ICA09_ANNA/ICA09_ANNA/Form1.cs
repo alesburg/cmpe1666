@@ -13,7 +13,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +38,8 @@ namespace ICA09_ANNA
             }
             public override string ToString()
             {
-                return $"{empID}:   {empSalary}";
+                if (empID < 10) return $"{empID}:           {empSalary}";
+                else return $"{empID}:         {empSalary}";
             }
         };
         List<Employees> fileEmployees;
@@ -51,7 +54,7 @@ namespace ICA09_ANNA
             fileEmployees = new List<Employees>();
             givenEmployees = new List<Employees>();
             int[] givenIDs = { 28, 53, 12, 18, 8, 2, 19, 57, 62, 34, 23, 14, 48, 35, 55, 22, 26, 15, 7, 9, 32, 43, 41, 51 };
-            int[] givenSalaries = { 4500, 2800, 1900, 3100, 7000, 3500, 2200, 2800, 2850, 3150, 400, 4500, 600, 7200, 3700, 2100, 2450, 2500, 3250, 3700, 3800, 4200, 4100, 3900 };
+            int[] givenSalaries = { 4500, 2800, 1900, 3100, 7000, 3500, 2200, 2800, 2850, 3150, 4000, 4500, 6000, 7200, 3700, 2100, 2450, 2500, 3250, 3700, 3800, 4200, 4100, 3900 };
 
             for (int i = 0; i < givenIDs.Length; i++)
             {
@@ -71,6 +74,13 @@ namespace ICA09_ANNA
                     UI_Unsorted_Lstbx.Items.Add(givenEmployees[i]);
 
                 }
+            } else
+            {
+                for (int i = 0; i < fileEmployees.Count; i++)
+                {
+                    UI_Unsorted_Lstbx.Items.Add(fileEmployees[i]);
+
+                }
             }
         }
 
@@ -88,13 +98,22 @@ namespace ICA09_ANNA
         {
             string idsFile;
             string salariesFile;
+            string[] temp;
+            int[] fileIDs;
+            int[] fileSalaries;
             try
             {
                 OpenFileDialog OpenIDs = new OpenFileDialog();
                 OpenIDs.Title = "Select Employee IDs: ";
                 if (OpenIDs.ShowDialog() == DialogResult.OK)
                 {
-                     idsFile = OpenIDs.FileName;
+                    idsFile = OpenIDs.FileName;
+                    temp = File.ReadAllLines(idsFile);
+                    fileIDs = new int[temp.Length];
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        int.TryParse(temp[i], out fileIDs[i]);
+                    }
                 }
 
                 OpenFileDialog OpenSalaries = new OpenFileDialog();
@@ -103,9 +122,15 @@ namespace ICA09_ANNA
                 {
                     salariesFile = OpenSalaries.FileName;
                 }
+
+                
             } catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.ToString()}");
+            }
+            finally
+            {
+                UI_LoadFiles_Btn.Enabled = false;
             }
         }
     }
