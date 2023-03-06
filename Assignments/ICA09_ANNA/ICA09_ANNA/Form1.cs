@@ -38,8 +38,10 @@ namespace ICA09_ANNA
             }
             public override string ToString()
             {
-                if (empID < 10) return $"{empID}:           {empSalary}";
-                else return $"{empID}:         {empSalary}";
+                if (empID < 10) return $"{empID}:             {empSalary}";
+                if(empID < 100) return $"{empID}:           {empSalary}";
+                if(empID < 1000) return $"{empID}:         {empSalary}";
+                else return $"{empID}:       {empSalary}";
             }
         };
         List<Employees> fileEmployees;
@@ -98,8 +100,8 @@ namespace ICA09_ANNA
             string idsFile;
             string salariesFile;
             string[] temp;
-            int[] fileIDs;
-            int[] fileSalaries;
+            int[] fileIDs = {1};
+            int[] fileSalaries = {1};
             try
             {
                 OpenFileDialog OpenIDs = new OpenFileDialog();
@@ -128,10 +130,9 @@ namespace ICA09_ANNA
                     }
                 }
 
-                //how to get around this??
                 for (int i = 0; i < fileIDs.Length; i++)
                 {
-                    givenEmployees.Add(new Employees(fileIDs[i], fileSalaries[i]));
+                    fileEmployees.Add(new Employees(fileIDs[i], fileSalaries[i]));
                 }
 
                 
@@ -139,9 +140,106 @@ namespace ICA09_ANNA
             {
                 MessageBox.Show($"Error: {ex.ToString()}");
             }
-            finally
+        }
+
+        //********************************************************************************************
+        //Method: private void Swap(ref List<int> list, int posA, int posB)
+        //Purpose: Swaps two int values(with enums) in a list
+        //Parameters: ref List<int> list - list to preform swap
+        //int posA - first index to swap
+        //int posB - second index to swap
+        //*********************************************************************************************
+        private void Swap(ref List<Employees> list, int posA, int posB)
+        {
+            Employees temp = list[posA];
+            list[posA] = list[posB];
+            list[posB] = temp;
+        }
+
+        //********************************************************************************************
+        //Method: private void BubbleSort(ref List<int> list)
+        //Purpose: Sorts a list of ints (with enums) using bubble sort
+        //Parameters: ref List<int> list - list to preform sort
+        //*********************************************************************************************
+        private void BubbleSort(ref List<Employees> list)
+        {
+            int n = list.Count(); //list length
+
+            //outer loop
+            for (int i = 0; i < n; i++)
             {
-                UI_LoadFiles_Btn.Enabled = false;
+                //inner loop
+                for (int j = 0; j < (n - (i + 1)); j++)
+                {
+                    if (list[j].empID > list[j + 1].empID)
+                    {
+                        Swap(ref list, j, j + 1);
+                    }
+                }
+            }
+        }
+
+        //********************************************************************************************
+        //Method: private void QuickSort(ref List<int> list, int low, int high)
+        //Purpose: Sorts a list of ints using quick sort
+        //Parameters: ref List<int> list - list to preform sort
+        //int low - low index of sort region
+        //int high - high index of sort region
+        //*********************************************************************************************
+        private void QuickSort(ref List<Employees> list, int low, int high)
+        {
+            int partIndex; //partition index
+            if (low < high)
+            {
+                partIndex = Partition(ref list, low, high);
+
+                //recursion
+                QuickSort(ref list, low, partIndex - 1);
+                QuickSort(ref list, partIndex + 1, high);
+            }
+        }
+
+        //********************************************************************************************
+        //Method: private int Partition(ref List<Employees> list, int low, int high)
+        //Purpose: selects last index as pivot and relocates to correct position
+        //Parameters: ref List<Employees> list - list to preform sort
+        //int low - low index of sort region
+        //int high - high index of sort region
+        //Returns: int - partition index
+        //*********************************************************************************************
+        private int Partition(ref List<Employees> list, int low, int high)
+        {
+            int pivot = list[high].empID;
+            int i = low - 1;
+
+            for (int j = low; j <= high - 1; j++)
+            {
+                if (list[j].empID < pivot)
+                {
+                    i++;
+                    Swap(ref list, i, j);
+                }
+            }
+            Swap(ref list, i + 1, high);
+            return (i + 1);
+        }
+
+        private void UI_N2Sorting_Btn_Click(object sender, EventArgs e)
+        {
+            if(UI_ProvList_Radbtn.Checked)
+            {
+                BubbleSort(ref givenEmployees);
+                for(int i = 0; i < givenEmployees.Count; i++)
+                {
+                    UI_Sorted_Lstbox.Items.Add(givenEmployees[i]);
+                }
+            }else
+            {
+                BubbleSort(ref fileEmployees);
+                for (int i = 0; i < fileEmployees.Count; i++)
+                {
+                    UI_Sorted_Lstbox.Items.Add(fileEmployees[i]);
+                }
             }
         }
     }
