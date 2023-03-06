@@ -141,6 +141,7 @@
             this.UI_QuickSort_Btn.TabIndex = 9;
             this.UI_QuickSort_Btn.Text = "Quick Sort";
             this.UI_QuickSort_Btn.UseVisualStyleBackColor = true;
+            this.UI_QuickSort_Btn.Click += new System.EventHandler(this.UI_QuickSort_Btn_Click);
             // 
             // UI_ClearSorted_Btn
             // 

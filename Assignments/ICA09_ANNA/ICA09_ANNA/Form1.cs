@@ -143,9 +143,9 @@ namespace ICA09_ANNA
         }
 
         //********************************************************************************************
-        //Method: private void Swap(ref List<int> list, int posA, int posB)
+        //Method: private void Swap(ref List<Employees> list, int posA, int posB)
         //Purpose: Swaps two int values(with enums) in a list
-        //Parameters: ref List<int> list - list to preform swap
+        //Parameters: ref List<Employees> list - list to preform swap
         //int posA - first index to swap
         //int posB - second index to swap
         //*********************************************************************************************
@@ -157,9 +157,9 @@ namespace ICA09_ANNA
         }
 
         //********************************************************************************************
-        //Method: private void BubbleSort(ref List<int> list)
+        //Method: private void BubbleSort(ref List<Employees> list)
         //Purpose: Sorts a list of ints (with enums) using bubble sort
-        //Parameters: ref List<int> list - list to preform sort
+        //Parameters: ref List<Employees> list - list to preform sort
         //*********************************************************************************************
         private void BubbleSort(ref List<Employees> list)
         {
@@ -180,9 +180,9 @@ namespace ICA09_ANNA
         }
 
         //********************************************************************************************
-        //Method: private void QuickSort(ref List<int> list, int low, int high)
+        //Method: private void QuickSort(ref List<Employees> list, int low, int high)
         //Purpose: Sorts a list of ints using quick sort
-        //Parameters: ref List<int> list - list to preform sort
+        //Parameters: ref List<Employees> list - list to preform sort
         //int low - low index of sort region
         //int high - high index of sort region
         //*********************************************************************************************
@@ -236,6 +236,26 @@ namespace ICA09_ANNA
             }else
             {
                 BubbleSort(ref fileEmployees);
+                for (int i = 0; i < fileEmployees.Count; i++)
+                {
+                    UI_Sorted_Lstbox.Items.Add(fileEmployees[i]);
+                }
+            }
+        }
+
+        private void UI_QuickSort_Btn_Click(object sender, EventArgs e)
+        {
+            if (UI_ProvList_Radbtn.Checked)
+            {
+                QuickSort(ref givenEmployees,0,givenEmployees.Count -1);
+                for (int i = 0; i < givenEmployees.Count; i++)
+                {
+                    UI_Sorted_Lstbox.Items.Add(givenEmployees[i]);
+                }
+            }
+            else
+            {
+                QuickSort(ref fileEmployees, 0, fileEmployees.Count - 1);
                 for (int i = 0; i < fileEmployees.Count; i++)
                 {
                     UI_Sorted_Lstbox.Items.Add(fileEmployees[i]);
