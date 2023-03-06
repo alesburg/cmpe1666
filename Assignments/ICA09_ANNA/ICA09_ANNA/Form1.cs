@@ -52,9 +52,10 @@ namespace ICA09_ANNA
             givenEmployees = new List<Employees>();
             int[] givenIDs = { 28, 53, 12, 18, 8, 2, 19, 57, 62, 34, 23, 14, 48, 35, 55, 22, 26, 15, 7, 9, 32, 43, 41, 51 };
             int[] givenSalaries = { 4500, 2800, 1900, 3100, 7000, 3500, 2200, 2800, 2850, 3150, 400, 4500, 600, 7200, 3700, 2100, 2450, 2500, 3250, 3700, 3800, 4200, 4100, 3900 };
+
             for (int i = 0; i < givenIDs.Length; i++)
             {
-                givenEmployees.Add(new Employees(givenIDs[i], givenSalaries[i]).ToString);
+                givenEmployees.Add(new Employees(givenIDs[i], givenSalaries[i]));
             }
 
         }
@@ -71,6 +72,16 @@ namespace ICA09_ANNA
 
                 }
             }
+        }
+
+        private void UI_ClearUnsorted_Btn_Click(object sender, EventArgs e)
+        {
+            UI_Unsorted_Lstbx.Items.Clear();
+        }
+
+        private void UI_ClearSorted_Btn_Click(object sender, EventArgs e)
+        {
+            UI_Sorted_Lstbox.Items.Clear();
         }
     }
 }

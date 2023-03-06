@@ -120,6 +120,7 @@
             this.UI_ClearUnsorted_Btn.TabIndex = 7;
             this.UI_ClearUnsorted_Btn.Text = "Clear Unsorted Listbox";
             this.UI_ClearUnsorted_Btn.UseVisualStyleBackColor = true;
+            this.UI_ClearUnsorted_Btn.Click += new System.EventHandler(this.UI_ClearUnsorted_Btn_Click);
             // 
             // UI_N2Sorting_Btn
             // 
@@ -147,6 +148,7 @@
             this.UI_ClearSorted_Btn.TabIndex = 10;
             this.UI_ClearSorted_Btn.Text = "Clear Sorted Listbox";
             this.UI_ClearSorted_Btn.UseVisualStyleBackColor = true;
+            this.UI_ClearSorted_Btn.Click += new System.EventHandler(this.UI_ClearSorted_Btn_Click);
             // 
             // UI_LoadFiles_Btn
             // 
