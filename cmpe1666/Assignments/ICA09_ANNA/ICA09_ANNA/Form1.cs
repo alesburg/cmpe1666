@@ -38,10 +38,10 @@ namespace ICA09_ANNA
             }
             public override string ToString()
             {
-                if (empID < 10) return $"{empID}:             {empSalary}";
-                if(empID < 100) return $"{empID}:           {empSalary}";
-                if(empID < 1000) return $"{empID}:         {empSalary}";
-                else return $"{empID}:       {empSalary}";
+                if (empID < 10) return $"{empID}:                {empSalary}";
+                if(empID < 100) return $"{empID}:              {empSalary}";
+                if(empID < 1000) return $"{empID}:            {empSalary}";
+                else return $"{empID}:          {empSalary}";
             }
         };
         List<Employees> fileEmployees;
@@ -135,6 +135,7 @@ namespace ICA09_ANNA
                     fileEmployees.Add(new Employees(fileIDs[i], fileSalaries[i]));
                 }
 
+                UI_LoadFiles_Btn.Enabled = false;
                 
             } catch (Exception ex)
             {
