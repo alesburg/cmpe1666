@@ -43,6 +43,7 @@
             this.UI_Rad_Grpbx = new System.Windows.Forms.GroupBox();
             this.UI_ProvList_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_FileData_Radbtn = new System.Windows.Forms.RadioButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.UI_Rad_Grpbx.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +159,7 @@
             this.UI_LoadFiles_Btn.TabIndex = 11;
             this.UI_LoadFiles_Btn.Text = "Load Files";
             this.UI_LoadFiles_Btn.UseVisualStyleBackColor = true;
+            this.UI_LoadFiles_Btn.Click += new System.EventHandler(this.UI_LoadFiles_Btn_Click);
             // 
             // UI_Rad_Grpbx
             // 
@@ -188,7 +190,6 @@
             this.UI_FileData_Radbtn.Name = "UI_FileData_Radbtn";
             this.UI_FileData_Radbtn.Size = new System.Drawing.Size(82, 20);
             this.UI_FileData_Radbtn.TabIndex = 1;
-            this.UI_FileData_Radbtn.TabStop = true;
             this.UI_FileData_Radbtn.Text = "File Data";
             this.UI_FileData_Radbtn.UseVisualStyleBackColor = true;
             // 
@@ -237,6 +238,7 @@
         private System.Windows.Forms.GroupBox UI_Rad_Grpbx;
         private System.Windows.Forms.RadioButton UI_FileData_Radbtn;
         private System.Windows.Forms.RadioButton UI_ProvList_Radbtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
