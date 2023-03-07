@@ -40,22 +40,54 @@ namespace ICA10_ANNA
                 this.thickness = thickness;
             }
         }
+
         CDrawer canvas;
         Point startPoint;
         List<SLine> lines;
+        eState state;
+        private enum eState { State_Idle, State_Armed}
         public Form1()
         {
             InitializeComponent();
         }
 
-        private static void Render(SLine line)
+        private void Render(SLine line)
         {
-
+            canvas.AddLine(line.startPoint.X,line.startPoint.Y,line.endPoint.X,line.endPoint.Y,line.lineColor,line.thickness);
+            canvas.Render();
         }
 
-        private static void Render()
+        private void Render()
         {
+            canvas.Clear();
+            foreach(SLine line in lines)
+            {
+                Render(line);
+            }
+            canvas.Render();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            canvas = new CDrawer(800,800,false,false);
+            state = eState.State_Idle;
+        }
+
+        private void MouseTimer_Tick(object sender, EventArgs e)
+        {
+            if (state == eState.State_Armed)
+            {
+                Point endPoint;
+                canvas.GetLastMouseLeftClick(out endPoint);
+                SLine line = new SLine(startPoint,endPoint,Color.Red,5);
+                Render(line);
+                state= eState.State_Idle;
+            }
+            else
+            {
+                canvas.GetLastMouseLeftClick(out startPoint);
+                state = eState.State_Armed;
+            }
         }
     }
 }
