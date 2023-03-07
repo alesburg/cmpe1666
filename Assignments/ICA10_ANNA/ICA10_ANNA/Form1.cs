@@ -32,7 +32,7 @@ namespace ICA10_ANNA
             public byte thickness;
 
             //constructor
-            public SLine(Point startPoint, Point endPoint , Color lineColor, byte thickness)
+            public SLine(Point startPoint, Point endPoint, Color lineColor, byte thickness)
             {
                 this.startPoint = startPoint;
                 this.endPoint = endPoint;
@@ -45,7 +45,7 @@ namespace ICA10_ANNA
         Point startPoint;
         List<SLine> lines;
         eState state;
-        private enum eState { State_Idle, State_Armed}
+        private enum eState { State_Idle, State_Armed }
         public Form1()
         {
             InitializeComponent();
@@ -53,14 +53,14 @@ namespace ICA10_ANNA
 
         private void Render(SLine line)
         {
-            canvas.AddLine(line.startPoint.X,line.startPoint.Y,line.endPoint.X,line.endPoint.Y,line.lineColor,line.thickness);
+            canvas.AddLine(line.startPoint.X, line.startPoint.Y, line.endPoint.X, line.endPoint.Y, line.lineColor, line.thickness);
             canvas.Render();
         }
 
         private void Render()
         {
             canvas.Clear();
-            foreach(SLine line in lines)
+            foreach (SLine line in lines)
             {
                 Render(line);
             }
@@ -69,25 +69,32 @@ namespace ICA10_ANNA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            canvas = new CDrawer(800,800,false,false);
+            canvas = new CDrawer(800, 800, false, true);
             state = eState.State_Idle;
         }
 
         private void MouseTimer_Tick(object sender, EventArgs e)
         {
-            if (state == eState.State_Armed)
+            Point endPoint;
+            SLine line;
+            if (state == eState.State_Armed )
             {
-                Point endPoint;
                 canvas.GetLastMouseLeftClick(out endPoint);
-                SLine line = new SLine(startPoint,endPoint,Color.Red,5);
+                line = new SLine(startPoint, endPoint, Color.Red, 5);
                 Render(line);
-                state= eState.State_Idle;
-            }
-            else
+                state = eState.State_Idle;
+                UI_State_Lbl.Text = "IDLE";
+                UI_State_Lbl.ForeColor = Color.Blue;
+            }                                                                 //shoot me
+            else if (state == eState.State_Idle && startPoint != endPoint)
             {
                 canvas.GetLastMouseLeftClick(out startPoint);
                 state = eState.State_Armed;
+                UI_State_Lbl.Text = "ARMED";
+                UI_State_Lbl.ForeColor = Color.Red;
             }
+
+
         }
     }
 }
