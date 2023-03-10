@@ -43,7 +43,7 @@
             // 
             this.UI_State_Lbl.AutoSize = true;
             this.UI_State_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UI_State_Lbl.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.UI_State_Lbl.ForeColor = System.Drawing.Color.Blue;
             this.UI_State_Lbl.Location = new System.Drawing.Point(101, 67);
             this.UI_State_Lbl.Name = "UI_State_Lbl";
             this.UI_State_Lbl.Size = new System.Drawing.Size(167, 69);
