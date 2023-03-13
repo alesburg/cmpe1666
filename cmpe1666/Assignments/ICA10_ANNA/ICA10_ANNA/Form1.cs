@@ -80,7 +80,6 @@ namespace ICA10_ANNA
             {
                 Render(line);
             }
-            canvas.Render();
         }
 
         //on form load
@@ -136,7 +135,8 @@ namespace ICA10_ANNA
         //*********************************************************************************************
         private void ChangeLines()
         {
-            List<SLine> modLines = new List<SLine>();
+            canvas.Clear();
+            List<SLine> modLines = new List<SLine>(); //list of modified lines
             Random random = new Random(); //random thickness generator
 
             foreach (SLine line in lines)
