@@ -76,7 +76,7 @@ namespace ICA10_ANNA
         private void Render()
         {
             canvas.Clear();
-            foreach (SLine line in lines.ToList())
+            foreach(SLine line in lines)
             {
                 Render(line);
             }
@@ -143,7 +143,8 @@ namespace ICA10_ANNA
             {
                 modLines.Add(new SLine(line.startPoint, line.endPoint, RandColor.GetColor(), (byte)random.Next(1, 16)));
             }
-            lines = modLines;
+            lines = new List<SLine>(modLines);
+            canvas.Clear();
             Render();
         }
     }
