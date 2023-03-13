@@ -26,5 +26,10 @@ namespace ICA11_ANNA
         {
             InitializeComponent();
         }
+
+        private void UI_FontSample_Lbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
