@@ -16,5 +16,10 @@ namespace ICA11_ANNA
         {
             InitializeComponent();
         }
+
+        private void UI_OK_Btn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
     }
 }
