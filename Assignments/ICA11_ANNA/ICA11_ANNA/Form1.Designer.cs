@@ -40,6 +40,7 @@
             this.UI_FontSample_Lbl.Size = new System.Drawing.Size(406, 341);
             this.UI_FontSample_Lbl.TabIndex = 0;
             this.UI_FontSample_Lbl.Text = "This is the selected font!";
+            this.UI_FontSample_Lbl.Click += new System.EventHandler(this.UI_FontSample_Lbl_Click);
             // 
             // Form1
             // 
