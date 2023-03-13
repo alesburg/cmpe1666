@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ICA11_ANNA
 {
-    public partial class Form2 : Form
+    public partial class Format : Form
     {
-        public Form2()
+        public Format()
         {
             InitializeComponent();
         }
