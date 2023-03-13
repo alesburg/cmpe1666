@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.UI_FontSample_Lbl = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // UI_FontSample_Lbl
+            // 
+            this.UI_FontSample_Lbl.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UI_FontSample_Lbl.ForeColor = System.Drawing.Color.Navy;
+            this.UI_FontSample_Lbl.Location = new System.Drawing.Point(12, 9);
+            this.UI_FontSample_Lbl.Name = "UI_FontSample_Lbl";
+            this.UI_FontSample_Lbl.Size = new System.Drawing.Size(406, 341);
+            this.UI_FontSample_Lbl.TabIndex = 0;
+            this.UI_FontSample_Lbl.Text = "This is the selected font!";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(430, 359);
+            this.Controls.Add(this.UI_FontSample_Lbl);
+            this.Name = "Form1";
+            this.Text = "Fontify";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label UI_FontSample_Lbl;
     }
 }
 
