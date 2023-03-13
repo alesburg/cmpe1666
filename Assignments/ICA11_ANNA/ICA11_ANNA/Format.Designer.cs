@@ -1,6 +1,6 @@
 ﻿namespace ICA11_ANNA
 {
-    partial class Form2
+    partial class Format
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Format
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            this.ClientSize = new System.Drawing.Size(736, 180);
+            this.Name = "Format";
+            this.Text = "Select Font/Color";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
