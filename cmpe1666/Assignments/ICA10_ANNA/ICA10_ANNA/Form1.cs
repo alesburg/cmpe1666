@@ -61,18 +61,17 @@ namespace ICA10_ANNA
         //Method: private void Render(SLine line)
         //Purpose: draws passed line to GDIDrawer
         //Parameters: Sline line - line to draw
-        //*********************************************************************************************
+        //********************************************************************************************
         private void Render(SLine line)
         {
             canvas.AddLine(line.startPoint.X, line.startPoint.Y, line.endPoint.X, line.endPoint.Y, line.lineColor, line.thickness);
-            lines.Add(line);
             canvas.Render();
         }
 
         //********************************************************************************************
         //Method: private void Render()
         //Purpose: draws entire list to GDIDrawer
-        //*********************************************************************************************
+        //********************************************************************************************
         private void Render()
         {
             canvas.Clear();
@@ -115,6 +114,7 @@ namespace ICA10_ANNA
                 endPoint = clickLeft;
                 line = new SLine(startPoint, endPoint, Color.Red, 5);
                 Render(line);
+                lines.Add(line);
                 state = eState.State_Idle;
                 UI_State_Lbl.Text = "IDLE";
                 UI_State_Lbl.ForeColor = Color.Blue;
@@ -132,7 +132,7 @@ namespace ICA10_ANNA
         //********************************************************************************************
         //Method: private void ChangeLines()
         //Purpose: copies list and randomizes color and thickness
-        //*********************************************************************************************
+        //********************************************************************************************
         private void ChangeLines()
         {
             canvas.Clear();
