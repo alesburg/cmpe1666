@@ -33,10 +33,13 @@
             this.UI_Color_Btn = new System.Windows.Forms.Button();
             this.UI_Font_Txtbx = new System.Windows.Forms.TextBox();
             this.UI_Color_Txtbx = new System.Windows.Forms.TextBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // UI_OK_Btn
             // 
+            this.UI_OK_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_OK_Btn.Location = new System.Drawing.Point(319, 98);
             this.UI_OK_Btn.Name = "UI_OK_Btn";
             this.UI_OK_Btn.Size = new System.Drawing.Size(99, 30);
@@ -47,21 +50,25 @@
             // 
             // UI_Font_Btn
             // 
+            this.UI_Font_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Font_Btn.Location = new System.Drawing.Point(12, 12);
             this.UI_Font_Btn.Name = "UI_Font_Btn";
             this.UI_Font_Btn.Size = new System.Drawing.Size(99, 30);
             this.UI_Font_Btn.TabIndex = 1;
             this.UI_Font_Btn.Text = "Select Font";
             this.UI_Font_Btn.UseVisualStyleBackColor = true;
+            this.UI_Font_Btn.Click += new System.EventHandler(this.UI_Font_Btn_Click);
             // 
             // UI_Color_Btn
             // 
+            this.UI_Color_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Color_Btn.Location = new System.Drawing.Point(12, 55);
             this.UI_Color_Btn.Name = "UI_Color_Btn";
             this.UI_Color_Btn.Size = new System.Drawing.Size(99, 30);
             this.UI_Color_Btn.TabIndex = 2;
             this.UI_Color_Btn.Text = "Select Color";
             this.UI_Color_Btn.UseVisualStyleBackColor = true;
+            this.UI_Color_Btn.Click += new System.EventHandler(this.UI_Color_Btn_Click);
             // 
             // UI_Font_Txtbx
             // 
@@ -106,5 +113,7 @@
         private System.Windows.Forms.Button UI_Color_Btn;
         private System.Windows.Forms.TextBox UI_Font_Txtbx;
         private System.Windows.Forms.TextBox UI_Color_Txtbx;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.FontDialog fontDialog;
     }
 }

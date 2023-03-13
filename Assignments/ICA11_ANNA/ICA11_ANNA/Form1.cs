@@ -30,7 +30,10 @@ namespace ICA11_ANNA
         private void UI_FontSample_Lbl_Click(object sender, EventArgs e)
         {
             Format formatDialog = new Format();
-            formatDialog.ShowDialog();
+            if(formatDialog.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

@@ -21,5 +21,23 @@ namespace ICA11_ANNA
         {
             DialogResult = DialogResult.OK;
         }
+
+        private void UI_Font_Btn_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            if(fontDialog.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void UI_Color_Btn_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
