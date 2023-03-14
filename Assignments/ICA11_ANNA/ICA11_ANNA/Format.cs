@@ -12,6 +12,20 @@ namespace ICA11_ANNA
 {
     public partial class Format : Form
     {
+        public Font dialogFont
+        {
+            get
+            {
+                return (fontDialog.Font);
+            }
+        }
+        public Color dialogColor
+        {
+            get
+            {
+                return (colorDialog.Color);
+            }
+        }
         public Format()
         {
             InitializeComponent();
@@ -22,7 +36,7 @@ namespace ICA11_ANNA
 
         }
 
-        private void UI_OK_Btn_Click(object sender, EventArgs e)
+        private void UI_FormatOK_Btn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
         }
@@ -44,5 +58,6 @@ namespace ICA11_ANNA
                 UI_Color_Txtbx.Text = colorDialog.Color.ToString();
             }
         }
+
     }
 }

@@ -32,7 +32,8 @@ namespace ICA11_ANNA
             Format formatDialog = new Format();
             if(formatDialog.ShowDialog() == DialogResult.OK)
             {
-
+                UI_FontSample_Lbl.Font = formatDialog.dialogFont;
+                UI_FontSample_Lbl.ForeColor = formatDialog.dialogColor;
             }
         }
     }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UI_OK_Btn = new System.Windows.Forms.Button();
+            this.UI_FormatOK_Btn = new System.Windows.Forms.Button();
             this.UI_Font_Btn = new System.Windows.Forms.Button();
             this.UI_Color_Btn = new System.Windows.Forms.Button();
             this.UI_Font_Txtbx = new System.Windows.Forms.TextBox();
@@ -37,20 +37,19 @@
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
-            // UI_OK_Btn
+            // UI_FormatOK_Btn
             // 
-            this.UI_OK_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.UI_OK_Btn.Location = new System.Drawing.Point(319, 98);
-            this.UI_OK_Btn.Name = "UI_OK_Btn";
-            this.UI_OK_Btn.Size = new System.Drawing.Size(99, 30);
-            this.UI_OK_Btn.TabIndex = 0;
-            this.UI_OK_Btn.Text = "OK";
-            this.UI_OK_Btn.UseVisualStyleBackColor = true;
-            this.UI_OK_Btn.Click += new System.EventHandler(this.UI_OK_Btn_Click);
+            this.UI_FormatOK_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.UI_FormatOK_Btn.Location = new System.Drawing.Point(319, 98);
+            this.UI_FormatOK_Btn.Name = "UI_FormatOK_Btn";
+            this.UI_FormatOK_Btn.Size = new System.Drawing.Size(99, 30);
+            this.UI_FormatOK_Btn.TabIndex = 0;
+            this.UI_FormatOK_Btn.Text = "OK";
+            this.UI_FormatOK_Btn.UseVisualStyleBackColor = true;
+            this.UI_FormatOK_Btn.Click += new System.EventHandler(this.UI_FormatOK_Btn_Click);
             // 
             // UI_Font_Btn
             // 
-            this.UI_Font_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Font_Btn.Location = new System.Drawing.Point(12, 12);
             this.UI_Font_Btn.Name = "UI_Font_Btn";
             this.UI_Font_Btn.Size = new System.Drawing.Size(99, 30);
@@ -61,7 +60,6 @@
             // 
             // UI_Color_Btn
             // 
-            this.UI_Color_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Color_Btn.Location = new System.Drawing.Point(12, 55);
             this.UI_Color_Btn.Name = "UI_Color_Btn";
             this.UI_Color_Btn.Size = new System.Drawing.Size(99, 30);
@@ -96,7 +94,7 @@
             this.Controls.Add(this.UI_Font_Txtbx);
             this.Controls.Add(this.UI_Color_Btn);
             this.Controls.Add(this.UI_Font_Btn);
-            this.Controls.Add(this.UI_OK_Btn);
+            this.Controls.Add(this.UI_FormatOK_Btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
             this.Name = "Format";
@@ -109,7 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button UI_OK_Btn;
+        private System.Windows.Forms.Button UI_FormatOK_Btn;
         private System.Windows.Forms.Button UI_Font_Btn;
         private System.Windows.Forms.Button UI_Color_Btn;
         private System.Windows.Forms.TextBox UI_Font_Txtbx;
