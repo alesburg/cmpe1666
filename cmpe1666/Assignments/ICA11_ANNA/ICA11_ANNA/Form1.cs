@@ -7,6 +7,7 @@
  * 
  * Modification History:
  * 13 MAR 2023 - Created
+ * 14 MAR 2023 - Finished and Tested
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,10 @@ namespace ICA11_ANNA
         private void UI_FontSample_Lbl_Click(object sender, EventArgs e)
         {
             Format formatDialog = new Format();
-            //formatDialog.dialogFont = UI_FontSample_Lbl.Font;
-            //formatDialog.dialogColor = UI_FontSample_Lbl.ForeColor;
+
+            formatDialog.dialogFont = UI_FontSample_Lbl.Font;
+            formatDialog.dialogColor = UI_FontSample_Lbl.ForeColor;
+
             if(formatDialog.ShowDialog() == DialogResult.OK)
             {
                 UI_FontSample_Lbl.Font = formatDialog.dialogFont;
