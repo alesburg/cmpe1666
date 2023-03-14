@@ -39,11 +39,6 @@ namespace ICA11_ANNA
             InitializeComponent();
         }
 
-        private void Format_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void UI_FormatOK_Btn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
