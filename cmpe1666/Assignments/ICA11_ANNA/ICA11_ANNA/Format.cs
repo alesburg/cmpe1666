@@ -17,6 +17,11 @@ namespace ICA11_ANNA
             InitializeComponent();
         }
 
+        private void Format_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void UI_OK_Btn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -27,7 +32,7 @@ namespace ICA11_ANNA
             FontDialog fontDialog = new FontDialog();
             if(fontDialog.ShowDialog() == DialogResult.OK)
             {
-
+                UI_Font_Txtbx.Text = fontDialog.Font.ToString();
             }
         }
 
@@ -36,7 +41,7 @@ namespace ICA11_ANNA
             ColorDialog colorDialog = new ColorDialog();
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
-
+                UI_Color_Txtbx.Text = colorDialog.Color.ToString();
             }
         }
     }
