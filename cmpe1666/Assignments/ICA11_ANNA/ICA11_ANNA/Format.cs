@@ -18,12 +18,20 @@ namespace ICA11_ANNA
             {
                 return (fontDialog.Font);
             }
+            set
+            {
+                fontDialog.Font = value;
+            }
         }
         public Color dialogColor
         {
             get
             {
                 return (colorDialog.Color);
+            }
+            set
+            {
+                colorDialog.Color = value;
             }
         }
         public Format()
