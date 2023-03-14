@@ -12,6 +12,8 @@ namespace ICA11_ANNA
 {
     public partial class Format : Form
     {
+
+        //properties
         public Font dialogFont
         {
             get
@@ -48,18 +50,21 @@ namespace ICA11_ANNA
         {
             FontDialog fontDialog = new FontDialog();
             fontDialog.Font = dialogFont;
+
+            //when ok button clicked set textbox and label
             if(fontDialog.ShowDialog() == DialogResult.OK)
             {
                 UI_Font_Txtbx.Text = fontDialog.Font.ToString();
                 dialogFont = fontDialog.Font;
             }
-            
         }
 
         private void UI_Color_Btn_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
             fontDialog.Color = dialogColor;
+             
+            //when ok button clicked set textbox and label
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 UI_Color_Txtbx.Text = colorDialog.Color.ToString();
@@ -67,6 +72,7 @@ namespace ICA11_ANNA
             }
         }
 
+        //on load get preview label properties in textboxes
         private void Format_Load(object sender, EventArgs e)
         {
             UI_Color_Txtbx.Text = dialogColor.ToString();

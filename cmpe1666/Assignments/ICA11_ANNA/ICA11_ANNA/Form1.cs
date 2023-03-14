@@ -28,15 +28,19 @@ namespace ICA11_ANNA
             InitializeComponent();
         }
 
+        //click font sample
         private void UI_FontSample_Lbl_Click(object sender, EventArgs e)
         {
-            Format formatDialog = new Format();
+            Format formatDialog = new Format(); //Format Dialog
 
+            //sends current font to format 
             formatDialog.dialogFont = UI_FontSample_Lbl.Font;
             formatDialog.dialogColor = UI_FontSample_Lbl.ForeColor;
 
+            //when ok on format dialog clicked
             if(formatDialog.ShowDialog() == DialogResult.OK)
             {
+                //gets color and font from format dialog
                 UI_FontSample_Lbl.Font = formatDialog.dialogFont;
                 UI_FontSample_Lbl.ForeColor = formatDialog.dialogColor;
             }
