@@ -43,7 +43,7 @@
             this.UI_FormatOK_Btn.Location = new System.Drawing.Point(319, 98);
             this.UI_FormatOK_Btn.Name = "UI_FormatOK_Btn";
             this.UI_FormatOK_Btn.Size = new System.Drawing.Size(99, 30);
-            this.UI_FormatOK_Btn.TabIndex = 0;
+            this.UI_FormatOK_Btn.TabIndex = 3;
             this.UI_FormatOK_Btn.Text = "OK";
             this.UI_FormatOK_Btn.UseVisualStyleBackColor = true;
             this.UI_FormatOK_Btn.Click += new System.EventHandler(this.UI_FormatOK_Btn_Click);
@@ -76,6 +76,7 @@
             this.UI_Font_Txtbx.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UI_Font_Txtbx.Size = new System.Drawing.Size(606, 22);
             this.UI_Font_Txtbx.TabIndex = 3;
+            this.UI_Font_Txtbx.TabStop = false;
             // 
             // UI_Color_Txtbx
             // 
@@ -84,6 +85,7 @@
             this.UI_Color_Txtbx.ReadOnly = true;
             this.UI_Color_Txtbx.Size = new System.Drawing.Size(606, 22);
             this.UI_Color_Txtbx.TabIndex = 4;
+            this.UI_Color_Txtbx.TabStop = false;
             // 
             // colorDialog
             // 
