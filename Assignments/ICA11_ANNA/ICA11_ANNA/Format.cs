@@ -16,7 +16,7 @@ namespace ICA11_ANNA
         {
             get
             {
-                return (fontDialog.Font);
+                return fontDialog.Font;
             }
             set
             {
@@ -27,7 +27,7 @@ namespace ICA11_ANNA
         {
             get
             {
-                return (colorDialog.Color);
+                return colorDialog.Color;
             }
             set
             {

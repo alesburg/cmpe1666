@@ -85,6 +85,11 @@
             this.UI_Color_Txtbx.Size = new System.Drawing.Size(606, 22);
             this.UI_Color_Txtbx.TabIndex = 4;
             // 
+            // colorDialog
+            // 
+            this.colorDialog.AnyColor = true;
+            this.colorDialog.FullOpen = true;
+            // 
             // Format
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
