@@ -31,7 +31,7 @@ namespace ICA12_ANNA
 
         //*******************************************************************************************
         //Method: private string Uppercase(string input)
-        //Purpose: returns lowercase string
+        //Purpose: returns uppercase string
         //Parameters: string input - string to edit
         //Returns: string - edited string
         //********************************************************************************************
@@ -40,20 +40,34 @@ namespace ICA12_ANNA
             return input.ToUpper();
         }
 
+        //*******************************************************************************************
+        //Method: private string Lowercase(string input)
+        //Purpose: returns lowercase string
+        //Parameters: string input - string to edit
+        //Returns: string - edited string
+        //********************************************************************************************
         private string Lowercase(string input)
         {
             return input.ToLower();
         }
 
+        //*******************************************************************************************
+        //Method: private string Flipcase(string input)
+        //Purpose: returns string with flipped cases
+        //Parameters: string input - string to edit
+        //Returns: string - edited string
+        //********************************************************************************************
         private string Flipcase(string input)
         {
-            string output = "";
+            string output = ""; //start of output string
+
+            //iterates over string and flips cases, adds to output
             foreach (char c in input)
             {
                 if (char.IsLetter(c))
                 {
-                    if (char.IsUpper(c)) output += c.ToString().ToUpper();
-                    else if (char.IsLower(c)) output += c.ToString().ToLower();
+                    if (char.IsUpper(c)) output += c.ToString().ToLower();
+                    else if (char.IsLower(c)) output += c.ToString().ToUpper();
                 }
             }
             return output;
