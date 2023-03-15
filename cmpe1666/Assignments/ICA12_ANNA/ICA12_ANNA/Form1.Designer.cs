@@ -56,7 +56,7 @@
             this.UI_Input_Txtbx.Name = "UI_Input_Txtbx";
             this.UI_Input_Txtbx.Size = new System.Drawing.Size(625, 22);
             this.UI_Input_Txtbx.TabIndex = 1;
-            this.UI_Input_Txtbx.TextChanged += new System.EventHandler(this.UI_Input_Txtbx_TextChanged);
+            this.UI_Input_Txtbx.TextChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
             // 
             // UI_ModType_Grpbox
             // 
