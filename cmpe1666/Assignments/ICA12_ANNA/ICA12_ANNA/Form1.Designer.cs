@@ -50,6 +50,8 @@
             // 
             // UI_Input_Txtbx
             // 
+            this.UI_Input_Txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Input_Txtbx.Location = new System.Drawing.Point(12, 28);
             this.UI_Input_Txtbx.Name = "UI_Input_Txtbx";
             this.UI_Input_Txtbx.Size = new System.Drawing.Size(625, 22);
@@ -58,6 +60,9 @@
             // 
             // UI_ModType_Grpbox
             // 
+            this.UI_ModType_Grpbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_ModType_Grpbox.Controls.Add(this.UI_Flipcase_Radbtn);
             this.UI_ModType_Grpbox.Controls.Add(this.UI_Lowercase_Radbtn);
             this.UI_ModType_Grpbox.Controls.Add(this.UI_Uppercase_Radbtn);
@@ -83,6 +88,8 @@
             // 
             // UI_Lowercase_Radbtn
             // 
+            this.UI_Lowercase_Radbtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Lowercase_Radbtn.AutoSize = true;
             this.UI_Lowercase_Radbtn.Location = new System.Drawing.Point(263, 38);
             this.UI_Lowercase_Radbtn.Name = "UI_Lowercase_Radbtn";
@@ -107,6 +114,7 @@
             // 
             // UI_Output_Lbl
             // 
+            this.UI_Output_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UI_Output_Lbl.AutoSize = true;
             this.UI_Output_Lbl.Location = new System.Drawing.Point(12, 171);
             this.UI_Output_Lbl.Name = "UI_Output_Lbl";
@@ -116,11 +124,14 @@
             // 
             // UI_Output_Txtbx
             // 
+            this.UI_Output_Txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Output_Txtbx.Location = new System.Drawing.Point(12, 190);
             this.UI_Output_Txtbx.Name = "UI_Output_Txtbx";
             this.UI_Output_Txtbx.ReadOnly = true;
             this.UI_Output_Txtbx.Size = new System.Drawing.Size(625, 22);
             this.UI_Output_Txtbx.TabIndex = 4;
+            this.UI_Output_Txtbx.TabStop = false;
             // 
             // Form1
             // 
@@ -132,8 +143,10 @@
             this.Controls.Add(this.UI_ModType_Grpbox);
             this.Controls.Add(this.UI_Input_Txtbx);
             this.Controls.Add(this.UI_Input_Lbl);
+            this.MinimumSize = new System.Drawing.Size(667, 279);
             this.Name = "Form1";
             this.Text = "StringBender";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.UI_ModType_Grpbox.ResumeLayout(false);
             this.UI_ModType_Grpbox.PerformLayout();
             this.ResumeLayout(false);

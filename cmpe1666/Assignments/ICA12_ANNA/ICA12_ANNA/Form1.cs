@@ -23,10 +23,11 @@ namespace ICA12_ANNA
 {
     public partial class Form1 : Form
     {
+        delegate string StringDel(string input);
+        StringDel StringEdit;
         public Form1()
         {
             InitializeComponent();
-            
         }
 
         //*******************************************************************************************
@@ -69,6 +70,10 @@ namespace ICA12_ANNA
                     if (char.IsUpper(c)) output += c.ToString().ToLower();
                     else if (char.IsLower(c)) output += c.ToString().ToUpper();
                 }
+                else
+                {
+                    output += c;
+                }
             }
             return output;
         }
@@ -77,19 +82,38 @@ namespace ICA12_ANNA
         {
             if (UI_Uppercase_Radbtn.Checked)
             {
-
-            }else if (UI_Lowercase_Radbtn.Checked)
+                StringEdit = new StringDel(Uppercase);
+                UpdateText();
+            }
+            else if (UI_Lowercase_Radbtn.Checked)
             {
-
-            }else if (UI_Flipcase_Radbtn.Checked)
+                StringEdit = new StringDel(Lowercase);
+                UpdateText();
+            }
+            else if (UI_Flipcase_Radbtn.Checked)
             {
-
+                StringEdit = new StringDel(Flipcase);
+                UpdateText();
             }
         }
 
         private void UI_Input_Txtbx_TextChanged(object sender, EventArgs e)
         {
-            
+            UpdateText();
+        }
+
+        //*******************************************************************************************
+        //Method: private void UpdateText()
+        //Purpose: updates textbox text based on radio button selection
+        //********************************************************************************************
+        private void UpdateText()
+        {
+            UI_Output_Txtbx.Text = StringEdit.Invoke(UI_Input_Txtbx.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StringEdit = new StringDel(Flipcase);
         }
     }
 }
