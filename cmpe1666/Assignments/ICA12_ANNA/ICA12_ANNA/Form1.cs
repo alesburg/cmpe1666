@@ -83,22 +83,16 @@ namespace ICA12_ANNA
             if (UI_Uppercase_Radbtn.Checked)
             {
                 StringEdit = new StringDel(Uppercase);
-                UpdateText();
             }
             else if (UI_Lowercase_Radbtn.Checked)
             {
                 StringEdit = new StringDel(Lowercase);
-                UpdateText();
             }
             else if (UI_Flipcase_Radbtn.Checked)
             {
                 StringEdit = new StringDel(Flipcase);
-                UpdateText();
             }
-        }
 
-        private void UI_Input_Txtbx_TextChanged(object sender, EventArgs e)
-        {
             UpdateText();
         }
 
