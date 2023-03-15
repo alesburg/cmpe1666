@@ -109,6 +109,7 @@
             // UI_Flipcase_Radbtn
             // 
             this.UI_Flipcase_Radbtn.AutoSize = true;
+            this.UI_Flipcase_Radbtn.Checked = true;
             this.UI_Flipcase_Radbtn.Location = new System.Drawing.Point(522, 38);
             this.UI_Flipcase_Radbtn.Name = "UI_Flipcase_Radbtn";
             this.UI_Flipcase_Radbtn.Size = new System.Drawing.Size(80, 20);
