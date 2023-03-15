@@ -72,6 +72,25 @@ namespace ICA12_ANNA
             }
             return output;
         }
+
+        private void UI_Radbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UI_Uppercase_Radbtn.Checked)
+            {
+
+            }else if (UI_Lowercase_Radbtn.Checked)
+            {
+
+            }else if (UI_Flipcase_Radbtn.Checked)
+            {
+
+            }
+        }
+
+        private void UI_Input_Txtbx_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
 

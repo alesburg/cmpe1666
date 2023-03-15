@@ -31,11 +31,11 @@
             this.UI_Input_Lbl = new System.Windows.Forms.Label();
             this.UI_Input_Txtbx = new System.Windows.Forms.TextBox();
             this.UI_ModType_Grpbox = new System.Windows.Forms.GroupBox();
+            this.UI_Flipcase_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Lowercase_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Uppercase_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_Output_Lbl = new System.Windows.Forms.Label();
             this.UI_Output_Txtbx = new System.Windows.Forms.TextBox();
-            this.UI_Uppercase_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Lowercase_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Flipcase_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_ModType_Grpbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@
             this.UI_Input_Txtbx.Name = "UI_Input_Txtbx";
             this.UI_Input_Txtbx.Size = new System.Drawing.Size(625, 22);
             this.UI_Input_Txtbx.TabIndex = 1;
+            this.UI_Input_Txtbx.TextChanged += new System.EventHandler(this.UI_Input_Txtbx_TextChanged);
             // 
             // UI_ModType_Grpbox
             // 
@@ -66,6 +67,43 @@
             this.UI_ModType_Grpbox.TabIndex = 2;
             this.UI_ModType_Grpbox.TabStop = false;
             this.UI_ModType_Grpbox.Text = "Modification Type:";
+            // 
+            // UI_Flipcase_Radbtn
+            // 
+            this.UI_Flipcase_Radbtn.AutoSize = true;
+            this.UI_Flipcase_Radbtn.Checked = true;
+            this.UI_Flipcase_Radbtn.Location = new System.Drawing.Point(522, 38);
+            this.UI_Flipcase_Radbtn.Name = "UI_Flipcase_Radbtn";
+            this.UI_Flipcase_Radbtn.Size = new System.Drawing.Size(80, 20);
+            this.UI_Flipcase_Radbtn.TabIndex = 2;
+            this.UI_Flipcase_Radbtn.TabStop = true;
+            this.UI_Flipcase_Radbtn.Text = "Flipcase";
+            this.UI_Flipcase_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Flipcase_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
+            // 
+            // UI_Lowercase_Radbtn
+            // 
+            this.UI_Lowercase_Radbtn.AutoSize = true;
+            this.UI_Lowercase_Radbtn.Location = new System.Drawing.Point(263, 38);
+            this.UI_Lowercase_Radbtn.Name = "UI_Lowercase_Radbtn";
+            this.UI_Lowercase_Radbtn.Size = new System.Drawing.Size(94, 20);
+            this.UI_Lowercase_Radbtn.TabIndex = 1;
+            this.UI_Lowercase_Radbtn.TabStop = true;
+            this.UI_Lowercase_Radbtn.Text = "Lowercase";
+            this.UI_Lowercase_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Lowercase_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
+            // 
+            // UI_Uppercase_Radbtn
+            // 
+            this.UI_Uppercase_Radbtn.AutoSize = true;
+            this.UI_Uppercase_Radbtn.Location = new System.Drawing.Point(6, 38);
+            this.UI_Uppercase_Radbtn.Name = "UI_Uppercase_Radbtn";
+            this.UI_Uppercase_Radbtn.Size = new System.Drawing.Size(96, 20);
+            this.UI_Uppercase_Radbtn.TabIndex = 0;
+            this.UI_Uppercase_Radbtn.TabStop = true;
+            this.UI_Uppercase_Radbtn.Text = "Uppercase";
+            this.UI_Uppercase_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Uppercase_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
             // 
             // UI_Output_Lbl
             // 
@@ -83,40 +121,6 @@
             this.UI_Output_Txtbx.ReadOnly = true;
             this.UI_Output_Txtbx.Size = new System.Drawing.Size(625, 22);
             this.UI_Output_Txtbx.TabIndex = 4;
-            // 
-            // UI_Uppercase_Radbtn
-            // 
-            this.UI_Uppercase_Radbtn.AutoSize = true;
-            this.UI_Uppercase_Radbtn.Location = new System.Drawing.Point(6, 38);
-            this.UI_Uppercase_Radbtn.Name = "UI_Uppercase_Radbtn";
-            this.UI_Uppercase_Radbtn.Size = new System.Drawing.Size(96, 20);
-            this.UI_Uppercase_Radbtn.TabIndex = 0;
-            this.UI_Uppercase_Radbtn.TabStop = true;
-            this.UI_Uppercase_Radbtn.Text = "Uppercase";
-            this.UI_Uppercase_Radbtn.UseVisualStyleBackColor = true;
-            // 
-            // UI_Lowercase_Radbtn
-            // 
-            this.UI_Lowercase_Radbtn.AutoSize = true;
-            this.UI_Lowercase_Radbtn.Location = new System.Drawing.Point(263, 38);
-            this.UI_Lowercase_Radbtn.Name = "UI_Lowercase_Radbtn";
-            this.UI_Lowercase_Radbtn.Size = new System.Drawing.Size(94, 20);
-            this.UI_Lowercase_Radbtn.TabIndex = 1;
-            this.UI_Lowercase_Radbtn.TabStop = true;
-            this.UI_Lowercase_Radbtn.Text = "Lowercase";
-            this.UI_Lowercase_Radbtn.UseVisualStyleBackColor = true;
-            // 
-            // UI_Flipcase_Radbtn
-            // 
-            this.UI_Flipcase_Radbtn.AutoSize = true;
-            this.UI_Flipcase_Radbtn.Checked = true;
-            this.UI_Flipcase_Radbtn.Location = new System.Drawing.Point(522, 38);
-            this.UI_Flipcase_Radbtn.Name = "UI_Flipcase_Radbtn";
-            this.UI_Flipcase_Radbtn.Size = new System.Drawing.Size(80, 20);
-            this.UI_Flipcase_Radbtn.TabIndex = 2;
-            this.UI_Flipcase_Radbtn.TabStop = true;
-            this.UI_Flipcase_Radbtn.Text = "Flipcase";
-            this.UI_Flipcase_Radbtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
