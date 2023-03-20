@@ -32,27 +32,30 @@ namespace ICA13_ANNA
         //on click
         private void Form1_Click(object sender, EventArgs e)
         {
-            //show form, attach methods to delegates
-            colorForm.Show();
+            //attach methods to delegates then show form
             colorForm._color = CallBackColor;
             colorForm._opacity = CallBackOpacity;
+            colorForm.Show();
         }
 
         //on load
         private void Form1_Load(object sender, EventArgs e)
         {
+            Color bcolor = this.BackColor; //holds form backcolor on load
 
-            Color bcolor = this.BackColor;
-
+            //set slider values using properties
             colorForm.R = bcolor.R;
             colorForm.G = bcolor.G;
             colorForm.B = bcolor.B;
         }
 
+        //callback for form rgb
         private void CallBackColor(int r, int g, int b)
         {
-            this.BackColor = Color.FromArgb(r, g, b); 
+            this.BackColor = Color.FromArgb(r, g, b);
         }
+
+        //callback for form opacity
         private void CallBackOpacity(int o)
         {
             double opacity = (double)(o / 100.0);
