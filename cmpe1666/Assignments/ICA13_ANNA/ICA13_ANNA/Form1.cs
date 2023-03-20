@@ -12,6 +12,7 @@ namespace ICA13_ANNA
 {
     public partial class Form1 : Form
     {
+        colorForm colorForm = new colorForm();
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace ICA13_ANNA
 
         private void Form1_Click(object sender, EventArgs e)
         {
-            
+            colorForm.Show();
         }
     }
 }

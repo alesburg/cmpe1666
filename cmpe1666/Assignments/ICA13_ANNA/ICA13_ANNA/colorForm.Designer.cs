@@ -50,6 +50,7 @@
             this.UI_R_Trckbar.Size = new System.Drawing.Size(824, 56);
             this.UI_R_Trckbar.TabIndex = 0;
             this.UI_R_Trckbar.TickFrequency = 16;
+            this.UI_R_Trckbar.Scroll += new System.EventHandler(this.UI_Trckbar_Scroll);
             // 
             // UI_RGB_Grpbx
             // 
@@ -71,6 +72,7 @@
             this.UI_G_Trckbar.Size = new System.Drawing.Size(824, 56);
             this.UI_G_Trckbar.TabIndex = 1;
             this.UI_G_Trckbar.TickFrequency = 16;
+            this.UI_G_Trckbar.Scroll += new System.EventHandler(this.UI_Trckbar_Scroll);
             // 
             // UI_B_Trckbar
             // 
@@ -80,6 +82,7 @@
             this.UI_B_Trckbar.Size = new System.Drawing.Size(824, 56);
             this.UI_B_Trckbar.TabIndex = 2;
             this.UI_B_Trckbar.TickFrequency = 16;
+            this.UI_B_Trckbar.Scroll += new System.EventHandler(this.UI_Trckbar_Scroll);
             // 
             // UI_Opacity_Grpbx
             // 
@@ -99,6 +102,7 @@
             this.UI_Opacity_Trckbar.Size = new System.Drawing.Size(830, 56);
             this.UI_Opacity_Trckbar.TabIndex = 3;
             this.UI_Opacity_Trckbar.TickFrequency = 10;
+            this.UI_Opacity_Trckbar.Scroll += new System.EventHandler(this.UI_Trckbar_Scroll);
             // 
             // colorForm
             // 
