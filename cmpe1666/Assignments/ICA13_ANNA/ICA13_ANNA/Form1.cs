@@ -40,7 +40,8 @@ namespace ICA13_ANNA
         }
         private void CallBackOpacity(int o)
         {
-            this.Opacity = o/100;
+            double opacity = (double)(o / 100.0);
+            this.Opacity = opacity;
         }
 
     }
