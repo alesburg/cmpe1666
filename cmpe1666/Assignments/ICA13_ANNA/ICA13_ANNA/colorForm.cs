@@ -12,6 +12,34 @@ namespace ICA13_ANNA
 {
     public partial class colorForm : Form
     {
+        public int R
+        {
+            set
+            {
+                UI_R_Trckbar.Value = value;
+            }
+        }
+        public int G
+        {
+            set
+            {
+                UI_G_Trckbar.Value = value;
+            }
+        }
+        public int B
+        {
+            set
+            {
+                UI_B_Trckbar.Value = value;
+            }
+        }
+        public int O
+        {
+            set
+            {
+                UI_Opacity_Trckbar.Value = value;
+            }
+        }
         public colorForm()
         {
             InitializeComponent();
