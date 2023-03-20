@@ -130,7 +130,8 @@
             this.Controls.Add(this.UI_RGB_Grpbx);
             this.MinimumSize = new System.Drawing.Size(876, 407);
             this.Name = "colorForm";
-            this.Text = "colorForm";
+            this.Text = "Select Color/Opacity";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.colorForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.UI_R_Trckbar)).EndInit();
             this.UI_RGB_Grpbx.ResumeLayout(false);
             this.UI_RGB_Grpbx.PerformLayout();
