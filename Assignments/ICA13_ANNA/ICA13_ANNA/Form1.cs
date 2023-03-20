@@ -22,5 +22,14 @@ namespace ICA13_ANNA
         {
             colorForm.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Color bcolor = Form.DefaultBackColor;
+
+            colorForm.R = bcolor.R;
+            colorForm.G = bcolor.G;
+            colorForm.B = bcolor.B;
+        }
     }
 }
