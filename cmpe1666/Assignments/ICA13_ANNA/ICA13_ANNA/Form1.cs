@@ -21,6 +21,8 @@ namespace ICA13_ANNA
         private void Form1_Click(object sender, EventArgs e)
         {
             colorForm.Show();
+            colorForm._color = CallBackColor;
+            colorForm._opacity = CallBackOpacity;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,5 +33,15 @@ namespace ICA13_ANNA
             colorForm.G = bcolor.G;
             colorForm.B = bcolor.B;
         }
+
+        private void CallBackColor(int r, int g, int b)
+        {
+            this.BackColor = Color.FromArgb(r, g, b); 
+        }
+        private void CallBackOpacity(int o)
+        {
+            this.Opacity = o/100;
+        }
+
     }
 }
