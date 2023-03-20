@@ -16,5 +16,10 @@ namespace ICA13_ANNA
         {
             InitializeComponent();
         }
+
+        private void UI_Trckbar_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }
