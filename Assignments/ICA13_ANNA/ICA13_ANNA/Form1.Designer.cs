@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(385, 138);
             this.Name = "Form1";
             this.Text = "Color This!";
+            this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
 
         }
