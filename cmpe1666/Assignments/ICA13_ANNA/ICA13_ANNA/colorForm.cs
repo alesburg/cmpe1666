@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ICA13_ANNA
 {
-    public partial class Form1 : Form
+    public partial class colorForm : Form
     {
-        public Form1()
+        public colorForm()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
