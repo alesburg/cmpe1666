@@ -18,14 +18,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace ICA14_ANNA
 {
     public partial class Form1 : Form
     {
         List<string> lines; //list of strings from file
-
-        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch(); //stopwatch
+        Thread thread;
+        public delegate void delDisplay(List<string> palindromes);
 
         public Form1()
         {
@@ -57,7 +59,7 @@ namespace ICA14_ANNA
         //simple test button
         private void UI_Test_Btn_Click(object sender, EventArgs e)
         {
-            if (IsPalindrome(UI_Test_Tbx.Text, 0, UI_Test_Tbx.Text.Length-1))
+            if (IsPalindrome(UI_Test_Tbx.Text, 0, UI_Test_Tbx.Text.Length - 1))
             {
                 UI_Test_Tbx.Text = $"'{UI_Test_Tbx.Text}' is a palindrome!";
             }
@@ -79,6 +81,13 @@ namespace ICA14_ANNA
         }
 
         private void UI_Find_Btn_Click(object sender, EventArgs e)
+        {
+            thread = new Thread(FindPali);
+            thread.IsBackground = true;
+            thread.Start();
+        }
+
+        private void FindPali()
         {
             stopwatch.Restart(); //reset and start stopwatch
             List<string> palindromes = new List<string>(); //list of found palindromes
