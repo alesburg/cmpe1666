@@ -6,7 +6,7 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 25 MAR 2023 - Created
+ * 25 MAR 2023 - Created, tested, finished
  */
 using System;
 using System.Collections.Generic;
@@ -26,8 +26,8 @@ namespace ICA14_ANNA
     {
         List<string> lines; //list of strings from file
         System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch(); //stopwatch
-        Thread thread;
-        public delegate void delDisplay(List<string> palindromes);
+        Thread thread; //thread
+        public delegate void delDisplay(List<string> palindromes); //delegate for display
 
         public Form1()
         {
@@ -69,6 +69,7 @@ namespace ICA14_ANNA
             }
         }
 
+        //load file into list
         private void UI_Load_Btn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -80,6 +81,7 @@ namespace ICA14_ANNA
 
         }
 
+        //finds palindromes using threading
         private void UI_Find_Btn_Click(object sender, EventArgs e)
         {
             thread = new Thread(FindPali);
@@ -87,8 +89,14 @@ namespace ICA14_ANNA
             thread.Start();
         }
 
+
+        //********************************************************************************************
+        //Method: private void FindPali()
+        //Purpose: Checks if strings in list are palindromes and adds to list
+        //*********************************************************************************************
         private void FindPali()
         {
+            delDisplay displayPali = DisplayPali; //delegate for display
             stopwatch.Restart(); //reset and start stopwatch
             List<string> palindromes = new List<string>(); //list of found palindromes
 
@@ -101,9 +109,15 @@ namespace ICA14_ANNA
                 }
             }
             stopwatch.Stop();
-            DisplayPali(palindromes);
+            //invoke display delegate
+            Invoke(displayPali, palindromes); 
         }
 
+        //********************************************************************************************
+        //Method: private void DisplayPali(List<string> palindromes)
+        //Purpose: Adds found palindromes to form
+        //Parameters: List<string> palindromes - list to display
+        //*********************************************************************************************
         private void DisplayPali(List<string> palindromes)
         {
             UI_Result_Tbx.Text = "";
