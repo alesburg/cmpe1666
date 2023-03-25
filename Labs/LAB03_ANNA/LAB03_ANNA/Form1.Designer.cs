@@ -36,7 +36,7 @@
             // UI_ShowScore_Chkbx
             // 
             this.UI_ShowScore_Chkbx.AutoSize = true;
-            this.UI_ShowScore_Chkbx.Location = new System.Drawing.Point(113, 39);
+            this.UI_ShowScore_Chkbx.Location = new System.Drawing.Point(100, 28);
             this.UI_ShowScore_Chkbx.Name = "UI_ShowScore_Chkbx";
             this.UI_ShowScore_Chkbx.Size = new System.Drawing.Size(101, 20);
             this.UI_ShowScore_Chkbx.TabIndex = 0;
@@ -46,7 +46,7 @@
             // UI_ShowSpeed_Chkbx
             // 
             this.UI_ShowSpeed_Chkbx.AutoSize = true;
-            this.UI_ShowSpeed_Chkbx.Location = new System.Drawing.Point(113, 87);
+            this.UI_ShowSpeed_Chkbx.Location = new System.Drawing.Point(100, 76);
             this.UI_ShowSpeed_Chkbx.Name = "UI_ShowSpeed_Chkbx";
             this.UI_ShowSpeed_Chkbx.Size = new System.Drawing.Size(168, 20);
             this.UI_ShowSpeed_Chkbx.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // UI_Play_Btn
             // 
-            this.UI_Play_Btn.Location = new System.Drawing.Point(142, 131);
+            this.UI_Play_Btn.Location = new System.Drawing.Point(129, 120);
             this.UI_Play_Btn.Name = "UI_Play_Btn";
             this.UI_Play_Btn.Size = new System.Drawing.Size(111, 40);
             this.UI_Play_Btn.TabIndex = 2;
@@ -66,10 +66,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 194);
+            this.ClientSize = new System.Drawing.Size(369, 172);
             this.Controls.Add(this.UI_Play_Btn);
             this.Controls.Add(this.UI_ShowSpeed_Chkbx);
             this.Controls.Add(this.UI_ShowScore_Chkbx);
+            this.MaximumSize = new System.Drawing.Size(387, 219);
+            this.MinimumSize = new System.Drawing.Size(387, 219);
             this.Name = "Form1";
             this.Text = "LAB03 Ballz";
             this.ResumeLayout(false);
