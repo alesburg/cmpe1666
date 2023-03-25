@@ -13,6 +13,7 @@ namespace LAB03_ANNA
 {
     public partial class Form1 : Form
     {
+        CDrawer game;
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace LAB03_ANNA
             modal DifficultySelect = new modal();
             if(DifficultySelect.ShowDialog() == DialogResult.OK)
             {
-
+                game = new CDrawer();
             }
         }
     }
