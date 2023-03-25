@@ -54,6 +54,7 @@
             this.UI_Find_Btn.TabIndex = 1;
             this.UI_Find_Btn.Text = "Find";
             this.UI_Find_Btn.UseVisualStyleBackColor = true;
+            this.UI_Find_Btn.Click += new System.EventHandler(this.UI_Find_Btn_Click);
             // 
             // UI_Test_Btn
             // 
@@ -61,7 +62,7 @@
             this.UI_Test_Btn.Location = new System.Drawing.Point(615, 12);
             this.UI_Test_Btn.Name = "UI_Test_Btn";
             this.UI_Test_Btn.Size = new System.Drawing.Size(94, 30);
-            this.UI_Test_Btn.TabIndex = 2;
+            this.UI_Test_Btn.TabIndex = 3;
             this.UI_Test_Btn.Text = "Simple Test";
             this.UI_Test_Btn.UseVisualStyleBackColor = true;
             this.UI_Test_Btn.Click += new System.EventHandler(this.UI_Test_Btn_Click);
@@ -73,7 +74,7 @@
             this.UI_Test_Tbx.Location = new System.Drawing.Point(374, 16);
             this.UI_Test_Tbx.Name = "UI_Test_Tbx";
             this.UI_Test_Tbx.Size = new System.Drawing.Size(235, 22);
-            this.UI_Test_Tbx.TabIndex = 3;
+            this.UI_Test_Tbx.TabIndex = 2;
             // 
             // UI_Result_Tbx
             // 
