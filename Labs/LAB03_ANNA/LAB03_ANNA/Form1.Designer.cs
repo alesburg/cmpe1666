@@ -61,6 +61,7 @@
             this.UI_Play_Btn.TabIndex = 2;
             this.UI_Play_Btn.Text = "Play";
             this.UI_Play_Btn.UseVisualStyleBackColor = true;
+            this.UI_Play_Btn.Click += new System.EventHandler(this.UI_Play_Btn_Click);
             // 
             // Form1
             // 

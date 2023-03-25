@@ -7,24 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GDIDrawer;
 
 namespace LAB03_ANNA
 {
-    public partial class Form1 : Form
+    public partial class modal : Form
     {
-        public Form1()
+        public modal()
         {
             InitializeComponent();
-        }
-
-        private void UI_Play_Btn_Click(object sender, EventArgs e)
-        {
-            modal DifficultySelect = new modal();
-            if(DifficultySelect.ShowDialog() == DialogResult.OK)
-            {
-
-            }
         }
     }
 }
