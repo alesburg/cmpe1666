@@ -42,7 +42,7 @@ namespace LAB03_ANNA
                 this.state = state;
             }
         }
-        Ball[,] balls = new Ball[RowCount,ColCount];
+        Ball[,] balls = new Ball[ColCount,RowCount];
         public Form1()
         {
             InitializeComponent();
@@ -53,7 +53,8 @@ namespace LAB03_ANNA
             modal DifficultySelect = new modal();
             if(DifficultySelect.ShowDialog() == DialogResult.OK)
             {
-                game = new CDrawer();
+                game = new CDrawer(GameWidth,GameHeight,false,false);
+                Randomize();
             }
         }
 
@@ -65,8 +66,17 @@ namespace LAB03_ANNA
             {
                 for(int x = 0; x < ColCount; x++)
                 {
-                    balls[x, y] = new Ball(colors[random.Next(0, modal.difficulty)], eState.Alive);
+                    balls[x, y] = new Ball(colors[random.Next(0,5)], eState.Alive);
                 }
+            }
+        }
+
+        private void Display()
+        {
+            game.Clear();
+            foreach(Ball ball in balls)
+            {
+                if (ball.state == eState.Alive)
             }
         }
     }
