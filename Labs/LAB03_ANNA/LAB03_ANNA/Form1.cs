@@ -74,10 +74,14 @@ namespace LAB03_ANNA
         private void Display()
         {
             game.Clear();
-            foreach(Ball ball in balls)
+            for (int y = 0; y < RowCount; y++)
             {
-                if (ball.state == eState.Alive)
+                for (int x = 0; x < ColCount; x++)
+                {
+                    if (balls[x, y].state == eState.Alive) game.AddEllipse(x * BallSize, y * BallSize, BallSize, BallSize, balls[x, y].color);
+                }
             }
+
         }
     }
 }
