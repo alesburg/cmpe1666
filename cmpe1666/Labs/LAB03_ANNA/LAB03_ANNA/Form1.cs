@@ -65,7 +65,7 @@ namespace LAB03_ANNA
             {
                 for(int x = 0; x < ColCount; x++)
                 {
-
+                    balls[x, y] = new Ball(colors[random.Next(0, modal.difficulty)], eState.Alive);
                 }
             }
         }
