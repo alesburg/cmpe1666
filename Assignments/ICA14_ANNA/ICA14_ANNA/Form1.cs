@@ -1,5 +1,5 @@
 ﻿/* 
- * ICA #14 - Palidnrome Hunter! (CMPE1666)
+ * ICA #14 - Palindrome Hunter! (CMPE1666)
  * 
  * Forms application that uses threading to find palindromes
  *
