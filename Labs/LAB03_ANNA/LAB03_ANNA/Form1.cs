@@ -1,4 +1,15 @@
-﻿using System;
+﻿/* 
+ * LAB #03 - BallZ (CMPE1666)
+ * 
+ * Forms and GDIDrawer game
+ *
+ * Author: Anna Lesburg
+ * 
+ * Modification History:
+ * 25 MAR 2023 - Created forms and game start UI
+ * 27 MAR 2023 - 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +24,25 @@ namespace LAB03_ANNA
 {
     public partial class Form1 : Form
     {
+        const int GameWidth = 800;
+        const int GameHeight = 600;
+        const int BallSize = 50;
+        const int RowCount = GameHeight / BallSize;
+        const int ColCount = GameWidth / BallSize;
         CDrawer game;
+        public enum eState { Alive,Dead};
+        public struct Ball
+        {
+            public Color color;
+            public eState state;
+
+            public Ball(Color color,eState state)
+            {
+                this.color = color;
+                this.state = state;
+            }
+        }
+        Ball[,] balls = new Ball[RowCount,ColCount];
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +55,12 @@ namespace LAB03_ANNA
             {
                 game = new CDrawer();
             }
+        }
+
+        private void Randomize()
+        {
+            Color[] colors = { Color.Red,Color.Blue,Color.Yellow,Color.Green,Color.Purple};
+            Random random = new Random();
         }
     }
 }
