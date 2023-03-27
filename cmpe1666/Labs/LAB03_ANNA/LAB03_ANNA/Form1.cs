@@ -61,6 +61,13 @@ namespace LAB03_ANNA
         {
             Color[] colors = { Color.Red,Color.Blue,Color.Yellow,Color.Green,Color.Purple};
             Random random = new Random();
+            for(int y = 0; y < RowCount; y++)
+            {
+                for(int x = 0; x < ColCount; x++)
+                {
+
+                }
+            }
         }
     }
 }

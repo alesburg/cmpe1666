@@ -6,12 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace LAB03_ANNA
 {
     public partial class modal : Form
     {
+        public int difficulty
+        {
+            get
+            {
+                if (UI_Easy_Radbtn.Checked) return 3;
+                else if (UI_Med_RadBtn.Checked) return 4;
+                else return 5;
+            }
+        }
+
         public modal()
         {
             InitializeComponent();
