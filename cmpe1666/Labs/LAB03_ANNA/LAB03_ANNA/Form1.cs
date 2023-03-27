@@ -69,6 +69,7 @@ namespace LAB03_ANNA
                     balls[x, y] = new Ball(colors[random.Next(0,5)], eState.Alive);
                 }
             }
+            Display();
         }
 
         private void Display()
@@ -81,6 +82,7 @@ namespace LAB03_ANNA
                     if (balls[x, y].state == eState.Alive) game.AddEllipse(x * BallSize, y * BallSize, BallSize, BallSize, balls[x, y].color);
                 }
             }
+            game.Render();
 
         }
     }
