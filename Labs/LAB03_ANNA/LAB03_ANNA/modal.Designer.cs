@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.UI_Difficulty_Grpbx = new System.Windows.Forms.GroupBox();
-            this.UI_Easy_Radbtn = new System.Windows.Forms.RadioButton();
-            this.UI_Med_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_Hard_Radbtn = new System.Windows.Forms.RadioButton();
+            this.UI_Med_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_Easy_Radbtn = new System.Windows.Forms.RadioButton();
             this.UI_OK_Btn = new System.Windows.Forms.Button();
             this.UI_Cancel_Btn = new System.Windows.Forms.Button();
             this.UI_Difficulty_Grpbx.SuspendLayout();
@@ -49,16 +49,16 @@
             this.UI_Difficulty_Grpbx.TabStop = false;
             this.UI_Difficulty_Grpbx.Text = "Difficulty";
             // 
-            // UI_Easy_Radbtn
+            // UI_Hard_Radbtn
             // 
-            this.UI_Easy_Radbtn.AutoSize = true;
-            this.UI_Easy_Radbtn.Location = new System.Drawing.Point(15, 30);
-            this.UI_Easy_Radbtn.Name = "UI_Easy_Radbtn";
-            this.UI_Easy_Radbtn.Size = new System.Drawing.Size(59, 20);
-            this.UI_Easy_Radbtn.TabIndex = 0;
-            this.UI_Easy_Radbtn.TabStop = true;
-            this.UI_Easy_Radbtn.Text = "Easy";
-            this.UI_Easy_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Hard_Radbtn.AutoSize = true;
+            this.UI_Hard_Radbtn.Location = new System.Drawing.Point(15, 106);
+            this.UI_Hard_Radbtn.Name = "UI_Hard_Radbtn";
+            this.UI_Hard_Radbtn.Size = new System.Drawing.Size(58, 20);
+            this.UI_Hard_Radbtn.TabIndex = 2;
+            this.UI_Hard_Radbtn.TabStop = true;
+            this.UI_Hard_Radbtn.Text = "Hard";
+            this.UI_Hard_Radbtn.UseVisualStyleBackColor = true;
             // 
             // UI_Med_RadBtn
             // 
@@ -72,16 +72,16 @@
             this.UI_Med_RadBtn.Text = "Medium";
             this.UI_Med_RadBtn.UseVisualStyleBackColor = true;
             // 
-            // UI_Hard_Radbtn
+            // UI_Easy_Radbtn
             // 
-            this.UI_Hard_Radbtn.AutoSize = true;
-            this.UI_Hard_Radbtn.Location = new System.Drawing.Point(15, 106);
-            this.UI_Hard_Radbtn.Name = "UI_Hard_Radbtn";
-            this.UI_Hard_Radbtn.Size = new System.Drawing.Size(58, 20);
-            this.UI_Hard_Radbtn.TabIndex = 2;
-            this.UI_Hard_Radbtn.TabStop = true;
-            this.UI_Hard_Radbtn.Text = "Hard";
-            this.UI_Hard_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Easy_Radbtn.AutoSize = true;
+            this.UI_Easy_Radbtn.Location = new System.Drawing.Point(15, 30);
+            this.UI_Easy_Radbtn.Name = "UI_Easy_Radbtn";
+            this.UI_Easy_Radbtn.Size = new System.Drawing.Size(59, 20);
+            this.UI_Easy_Radbtn.TabIndex = 0;
+            this.UI_Easy_Radbtn.TabStop = true;
+            this.UI_Easy_Radbtn.Text = "Easy";
+            this.UI_Easy_Radbtn.UseVisualStyleBackColor = true;
             // 
             // UI_OK_Btn
             // 
@@ -91,15 +91,18 @@
             this.UI_OK_Btn.TabIndex = 3;
             this.UI_OK_Btn.Text = "OK";
             this.UI_OK_Btn.UseVisualStyleBackColor = true;
+            this.UI_OK_Btn.Click += new System.EventHandler(this.UI_OK_Btn_Click);
             // 
             // UI_Cancel_Btn
             // 
+            this.UI_Cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Cancel_Btn.Location = new System.Drawing.Point(190, 178);
             this.UI_Cancel_Btn.Name = "UI_Cancel_Btn";
             this.UI_Cancel_Btn.Size = new System.Drawing.Size(92, 37);
             this.UI_Cancel_Btn.TabIndex = 4;
             this.UI_Cancel_Btn.Text = "Cancel";
             this.UI_Cancel_Btn.UseVisualStyleBackColor = true;
+            this.UI_Cancel_Btn.Click += new System.EventHandler(this.UI_Cancel_Btn_Click);
             // 
             // modal
             // 
