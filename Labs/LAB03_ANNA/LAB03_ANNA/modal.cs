@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace LAB03_ANNA
 {
+    public delegate void delDifficulty(int d);
     public partial class modal : Form
     {
+        public delDifficulty _diff = null;
         public int difficulty
         {
             get
@@ -30,12 +32,14 @@ namespace LAB03_ANNA
 
         private void UI_OK_Btn_Click(object sender, EventArgs e)
         {
+            _diff.Invoke(difficulty);
             DialogResult = DialogResult.OK;
         }
 
         private void UI_Cancel_Btn_Click(object sender, EventArgs e)
         {
-            DialogResult= DialogResult.Cancel;  
+            DialogResult = DialogResult.Cancel;  
         }
+
     }
 }

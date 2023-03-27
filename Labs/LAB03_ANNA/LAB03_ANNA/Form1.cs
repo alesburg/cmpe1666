@@ -50,6 +50,7 @@ namespace LAB03_ANNA
 
         private void UI_Play_Btn_Click(object sender, EventArgs e)
         {
+            //modal._diff = CallBackDifficulty;
             modal DifficultySelect = new modal();
             if(DifficultySelect.ShowDialog() == DialogResult.OK)
             {
@@ -57,6 +58,11 @@ namespace LAB03_ANNA
                 Randomize();
             }
         }
+
+        //private void CallBackDifficulty(int d)
+        //{
+
+        //}
 
         private void Randomize()
         {
@@ -85,5 +91,24 @@ namespace LAB03_ANNA
             game.Render();
 
         }
+
+        private int BallsAlive()
+        {
+            int alive = 0;
+            for (int y = 0; y < RowCount; y++)
+            {
+                for (int x = 0; x < ColCount; x++)
+                {
+                    if (balls[x, y].state == eState.Alive) alive++;
+                }
+            }
+            return alive;
+        }
+
+        private void CheckBalls(int row, int col)
+        {
+
+        }
+
     }
 }
