@@ -111,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.UI_Cancel_Btn;
             this.ClientSize = new System.Drawing.Size(328, 241);
+            this.ControlBox = false;
             this.Controls.Add(this.UI_Cancel_Btn);
             this.Controls.Add(this.UI_OK_Btn);
             this.Controls.Add(this.UI_Difficulty_Grpbx);
