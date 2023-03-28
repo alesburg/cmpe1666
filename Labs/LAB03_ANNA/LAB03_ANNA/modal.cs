@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -11,17 +12,18 @@ using System.Windows.Forms;
 
 namespace LAB03_ANNA
 {
-    public delegate void delDifficulty(int d);
     public partial class modal : Form
     {
-        public delDifficulty _diff = null;
+        int selection = 3;
         public int difficulty
         {
             get
             {
-                if (UI_Easy_Radbtn.Checked) return 3;
-                else if (UI_Med_RadBtn.Checked) return 4;
-                else return 5;
+                return selection;
+            }
+            set
+            {
+                selection = value;
             }
         }
 
@@ -32,7 +34,6 @@ namespace LAB03_ANNA
 
         private void UI_OK_Btn_Click(object sender, EventArgs e)
         {
-            _diff.Invoke(difficulty);
             DialogResult = DialogResult.OK;
         }
 
@@ -41,5 +42,11 @@ namespace LAB03_ANNA
             DialogResult = DialogResult.Cancel;  
         }
 
+        private void UI_Radbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UI_Easy_Radbtn.Checked) selection = 3;
+            else if (UI_Med_RadBtn.Checked) selection = 4;
+            else if (UI_Hard_Radbtn.Checked) selection = 5;
+        }
     }
 }

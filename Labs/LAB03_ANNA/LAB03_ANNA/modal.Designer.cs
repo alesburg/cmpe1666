@@ -63,18 +63,17 @@
             // UI_Med_RadBtn
             // 
             this.UI_Med_RadBtn.AutoSize = true;
-            this.UI_Med_RadBtn.Checked = true;
             this.UI_Med_RadBtn.Location = new System.Drawing.Point(15, 68);
             this.UI_Med_RadBtn.Name = "UI_Med_RadBtn";
             this.UI_Med_RadBtn.Size = new System.Drawing.Size(76, 20);
             this.UI_Med_RadBtn.TabIndex = 1;
-            this.UI_Med_RadBtn.TabStop = true;
             this.UI_Med_RadBtn.Text = "Medium";
             this.UI_Med_RadBtn.UseVisualStyleBackColor = true;
             // 
             // UI_Easy_Radbtn
             // 
             this.UI_Easy_Radbtn.AutoSize = true;
+            this.UI_Easy_Radbtn.Checked = true;
             this.UI_Easy_Radbtn.Location = new System.Drawing.Point(15, 30);
             this.UI_Easy_Radbtn.Name = "UI_Easy_Radbtn";
             this.UI_Easy_Radbtn.Size = new System.Drawing.Size(59, 20);
@@ -82,6 +81,7 @@
             this.UI_Easy_Radbtn.TabStop = true;
             this.UI_Easy_Radbtn.Text = "Easy";
             this.UI_Easy_Radbtn.UseVisualStyleBackColor = true;
+            this.UI_Easy_Radbtn.CheckedChanged += new System.EventHandler(this.UI_Radbtn_CheckedChanged);
             // 
             // UI_OK_Btn
             // 

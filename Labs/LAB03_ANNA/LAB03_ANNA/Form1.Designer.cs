@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_ShowScore_Chkbx = new System.Windows.Forms.CheckBox();
             this.UI_ShowSpeed_Chkbx = new System.Windows.Forms.CheckBox();
             this.UI_Play_Btn = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UI_ShowScore_Chkbx
@@ -63,6 +65,10 @@
             this.UI_Play_Btn.UseVisualStyleBackColor = true;
             this.UI_Play_Btn.Click += new System.EventHandler(this.UI_Play_Btn_Click);
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,6 +91,7 @@
         private System.Windows.Forms.CheckBox UI_ShowScore_Chkbx;
         private System.Windows.Forms.CheckBox UI_ShowSpeed_Chkbx;
         private System.Windows.Forms.Button UI_Play_Btn;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
