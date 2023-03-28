@@ -54,6 +54,11 @@ namespace LAB03_ANNA
 
         private void UI_Play_Btn_Click(object sender, EventArgs e)
         {
+            Score score = new Score();
+            if (UI_ShowScore_Chkbx.Checked)
+            {
+                score.Show();
+            }
             modal DifficultySelect = new modal();
             if (DifficultySelect.ShowDialog() == DialogResult.OK)
             {
