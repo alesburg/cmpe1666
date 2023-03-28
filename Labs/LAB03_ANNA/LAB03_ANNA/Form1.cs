@@ -7,7 +7,8 @@
  * 
  * Modification History:
  * 25 MAR 2023 - Created forms and game start UI
- * 27 MAR 2023 - 
+ * 27 MAR 2023 - Created Randomize and Display methods
+ * 28 MAR 2023 - 
  */
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace LAB03_ANNA
         const int ColCount = GameWidth / BallSize;
         CDrawer game;
         int diffSelect;
+        Point lastrClick = new Point(-1,-1);
         public enum eState { Alive, Dead };
         public struct Ball
         {
@@ -59,6 +61,7 @@ namespace LAB03_ANNA
                 game = new CDrawer(GameWidth, GameHeight, false, false);
                 timer.Start();
                 Randomize();
+                UI_Play_Btn.Enabled = false;
             }
         }
 
@@ -107,7 +110,7 @@ namespace LAB03_ANNA
         private int CheckBalls(int row, int col, Color color)
         {
             int ballsKilled;
-            if (col < 0 || col > ColCount || row < 0 || row > RowCount) return 0;
+            if (col < 0 || col > ColCount-1 || row < 0 || row > RowCount-1) return 0;
             else if (balls[col, row].state == eState.Dead) return 0;
             else if (balls[col, row].color != color) return 0;
             else
@@ -151,6 +154,7 @@ namespace LAB03_ANNA
             do
             {
                 steps += StepDown();
+                System.Threading.Thread.Sleep(1000);
             }while (steps != 0);
             return steps;
         }
@@ -165,14 +169,16 @@ namespace LAB03_ANNA
             col = rClick.X/BallSize;
             if (balls[col, row].state == eState.Dead) return 0;
             CheckBalls(row, col, balls[col,row].color);
-            FallDown();
             return 1;
 
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            Pick();
+            if(Pick() != 0)
+            {
+                Display();
+            }
         }
     }
 }
