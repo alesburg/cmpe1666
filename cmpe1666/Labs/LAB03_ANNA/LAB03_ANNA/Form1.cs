@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,19 +31,20 @@ namespace LAB03_ANNA
         const int RowCount = GameHeight / BallSize;
         const int ColCount = GameWidth / BallSize;
         CDrawer game;
-        public enum eState { Alive,Dead};
+        int diffSelect;
+        public enum eState { Alive, Dead };
         public struct Ball
         {
             public Color color;
             public eState state;
 
-            public Ball(Color color,eState state)
+            public Ball(Color color, eState state)
             {
                 this.color = color;
                 this.state = state;
             }
         }
-        Ball[,] balls = new Ball[ColCount,RowCount];
+        Ball[,] balls = new Ball[ColCount, RowCount];
         public Form1()
         {
             InitializeComponent();
@@ -50,29 +52,26 @@ namespace LAB03_ANNA
 
         private void UI_Play_Btn_Click(object sender, EventArgs e)
         {
-            //modal._diff = CallBackDifficulty;
             modal DifficultySelect = new modal();
-            if(DifficultySelect.ShowDialog() == DialogResult.OK)
+            if (DifficultySelect.ShowDialog() == DialogResult.OK)
             {
-                game = new CDrawer(GameWidth,GameHeight,false,false);
+                diffSelect = DifficultySelect.difficulty;
+                game = new CDrawer(GameWidth, GameHeight, false, false);
+                timer.Start();
                 Randomize();
             }
         }
 
-        //private void CallBackDifficulty(int d)
-        //{
-
-        //}
 
         private void Randomize()
         {
-            Color[] colors = { Color.Red,Color.Blue,Color.Yellow,Color.Green,Color.Purple};
+            Color[] colors = { Color.Red, Color.Blue, Color.Yellow, Color.Green, Color.Purple };
             Random random = new Random();
-            for(int y = 0; y < RowCount; y++)
+            for (int y = 0; y < RowCount; y++)
             {
-                for(int x = 0; x < ColCount; x++)
+                for (int x = 0; x < ColCount; x++)
                 {
-                    balls[x, y] = new Ball(colors[random.Next(0,5)], eState.Alive);
+                    balls[x, y] = new Ball(colors[random.Next(0, diffSelect)], eState.Alive);
                 }
             }
             Display();
@@ -105,10 +104,75 @@ namespace LAB03_ANNA
             return alive;
         }
 
-        private void CheckBalls(int row, int col)
+        private int CheckBalls(int row, int col, Color color)
         {
+            int ballsKilled;
+            if (col < 0 || col > ColCount || row < 0 || row > RowCount) return 0;
+            else if (balls[col, row].state == eState.Dead) return 0;
+            else if (balls[col, row].color != color) return 0;
+            else
+            {
+                balls[col, row].state = eState.Dead;
+                ballsKilled = 1;
+                ballsKilled += CheckBalls(row + 1, col, color);
+                ballsKilled += CheckBalls(row - 1, col, color);
+                ballsKilled += CheckBalls(row, col + 1, color);
+                ballsKilled += CheckBalls(row, col - 1, color);
+            }
+            return ballsKilled;
+        }
+
+        private int StepDown()
+        {
+            int dropped = 0;
+            for (int y = 0; y < RowCount; y++)
+            {
+                for (int x = 0; x < ColCount; x++)
+                {
+                    if (balls[x, y].state == eState.Dead && y > 0)
+                    {
+                        if (balls[x,y-1].state == eState.Alive)
+                        {
+                            balls[x, y].state = eState.Alive;
+                            balls[x, y].color = balls[x, y - 1].color;
+                            balls[x, y - 1].state = eState.Alive;
+                            dropped++;
+                        }
+                    }
+                }
+            }
+            Display();
+            return dropped;
+        }
+
+        private int FallDown()
+        {
+            int steps = 0;
+            do
+            {
+                steps += StepDown();
+            }while (steps != 0);
+            return steps;
+        }
+
+        private int Pick()
+        {
+            Point rClick;
+            int row;
+            int col;
+            if (!game.GetLastMouseRightClick(out rClick)) return 0;
+            row = rClick.Y/BallSize;
+            col = rClick.X/BallSize;
+            if (balls[col, row].state == eState.Dead) return 0;
+            CheckBalls(row, col, balls[col,row].color);
+            FallDown();
+            return 1;
 
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Pick();
+        }
     }
 }
