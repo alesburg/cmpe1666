@@ -62,12 +62,14 @@
             // 
             // UI_Cancel_Btn
             // 
+            this.UI_Cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.UI_Cancel_Btn.Location = new System.Drawing.Point(208, 76);
             this.UI_Cancel_Btn.Name = "UI_Cancel_Btn";
             this.UI_Cancel_Btn.Size = new System.Drawing.Size(98, 29);
             this.UI_Cancel_Btn.TabIndex = 3;
             this.UI_Cancel_Btn.Text = "Cancel";
             this.UI_Cancel_Btn.UseVisualStyleBackColor = true;
+            this.UI_Cancel_Btn.Click += new System.EventHandler(this.UI_Cancel_Btn_Click);
             // 
             // HighScore
             // 

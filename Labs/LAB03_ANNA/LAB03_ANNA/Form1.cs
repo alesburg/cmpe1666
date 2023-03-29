@@ -24,6 +24,7 @@ using GDIDrawer;
 
 namespace LAB03_ANNA
 {
+    public delegate void checkHighScore
     public partial class Form1 : Form
     {
         //constants
@@ -71,7 +72,6 @@ namespace LAB03_ANNA
                 timer.Start();
                 Randomize();
                 UI_Play_Btn.Enabled = false;
-                speed._Speed = CallbackSpeed;
             }
         }
 
@@ -252,16 +252,29 @@ namespace LAB03_ANNA
             return score;
         }
 
-        //build CDrawer on load
+        //build CDrawer on load, attach methods to delegates
         private void Form1_Load(object sender, EventArgs e)
         {
             game = new CDrawer(GameWidth, GameHeight, false, false);
+            speed._Speed = CallbackSpeed;
+            score._scoreCheck = CallbackScoreCheck;
+            speed._speedCheck= CallbackSpeedCheck;
         }
 
         //callback for animation speed
         private void CallbackSpeed(int speed)
         {
             animationSpeed = speed;
+        }
+
+        //callbacks for checkboxes
+        private void CallbackScoreCheck(bool show)
+        {
+            UI_ShowScore_Chkbx.Checked = show;
+        }
+        private void CallbackSpeedCheck(bool show)
+        {
+            UI_ShowSpeed_Chkbx.Checked = show;
         }
 
         //checkbox dialogs
