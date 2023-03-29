@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -40,6 +41,7 @@ namespace LAB03_ANNA
         Score score = new Score(); //score modeless
         Speed speed = new Speed(); //speed modeless
         HighScore highscore = new HighScore(); //score modal
+        StreamReader swIn; //streamreader 
         public enum eState { Alive, Dead }; //ball state enum
 
         //ball struct
@@ -144,7 +146,7 @@ namespace LAB03_ANNA
         private int CheckBalls(int row, int col, Color color)
         {
             int ballsKilled = 0;
-            if (col < 0 || col > ColCount-1 || row < 0 || row > RowCount-1) return 0;
+            if (col < 0 || col > ColCount - 1 || row < 0 || row > RowCount - 1) return 0;
             else if (balls[col, row].state == eState.Dead) return 0;
             else if (balls[col, row].color != color) return 0;
             else
@@ -181,11 +183,11 @@ namespace LAB03_ANNA
                             balls[x, y].color = balls[x, y - 1].color;
                             balls[x, y - 1].state = eState.Dead;
                             dropped++;
-                            System.Threading.Thread.Sleep(animationSpeed);
                         }
                     }
                 }
             }
+            System.Threading.Thread.Sleep(animationSpeed);
             Display();
             return dropped;
         }
@@ -219,13 +221,18 @@ namespace LAB03_ANNA
             if (!game.GetLastMouseRightClick(out rClick)) return 0;
             row = rClick.Y/BallSize;
             col = rClick.X/BallSize;
-            if (balls[col, row].state == eState.Dead) return 0;
+            if (balls[col, row].state == eState.Dead)
+            {
+                Console.Beep();
+                return 0;
+            }
             return CheckBalls(row, col, balls[col, row].color);
         }
 
         //on timer tick
         private void timer_Tick(object sender, EventArgs e)
         {
+            int oldhighscore;
             int roundScore = ProcessScore(Pick());
             if(roundScore > 0)
             {
@@ -235,13 +242,25 @@ namespace LAB03_ANNA
             }
             if(BallsAlive() < 1) //game end case
             {
+                //check for high score
+                if (File.Exists($"{diffSelect}highscore.txt"))
+                {
+                    swIn = new StreamReader($"{diffSelect}highscore.txt");
+                    swIn.ReadLine();
+                    string oldscore = swIn.ReadLine();
+                    int.TryParse(oldscore, out oldhighscore);
+                    swIn.Close();
+                } else oldhighscore = 0;
+                //reset game 
                 game.Clear();
                 game.AddText("Game Over!", 32, Color.White);
-                highscore.Mode = diffSelect;
                 UI_Play_Btn.Enabled = true;
                 timer.Stop();
-                if (Score > highscore.pHighScore)
+                //show dialog if new high score acheived
+                if (Score > oldhighscore)
                 {
+                    highscore.Mode = diffSelect;
+                    highscore.newHS = Score;
                     highscore.Show();
                 }
             }

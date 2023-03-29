@@ -14,6 +14,7 @@ namespace LAB03_ANNA
     
     public partial class HighScore : Form
     {
+        //get mode from main form
         public int Mode
         {
             set
@@ -21,47 +22,36 @@ namespace LAB03_ANNA
                 mode = value;
             }
         }
-        public int pHighScore
+        //new score from main form
+        public int newHS
         {
-            get
+            set
             {
-                return highscore;
+                newscore = value;
             }
         }
+        int newscore; 
         int mode;
-        int highscore;
-        string player;
-        string newscore;
-        StreamWriter swOut;
-        StreamReader swIn;
+        StreamWriter swOut; //streamwriter
+        
         public HighScore()
         {
             InitializeComponent();
-            if (File.Exists($"{mode}highscore.txt"))
-            {
-                swIn = new StreamReader($"{mode}highscore.txt");
-                player = swIn.ReadLine();
-                newscore = swIn.ReadLine();
-                int.TryParse(newscore,out highscore);
-                swIn.Close();
-            }
-            else
-            {
-                highscore = 0;
-            }
         }
 
         private void UI_OK_Btn_Click(object sender, EventArgs e)
         {
+            //write highscore to file
             swOut = new StreamWriter($"{mode}highscore.txt");
-            swOut.WriteLine(player);
-            swOut.WriteLine(highscore);
+            swOut.WriteLine(UI_PlayerName_Tbx.Text);
+            swOut.WriteLine(newscore);
             swOut.Close();
             Hide();
         }
 
         private void UI_Cancel_Btn_Click(object sender, EventArgs e)
         {
+            //cancel
             Hide();
         }
     }
