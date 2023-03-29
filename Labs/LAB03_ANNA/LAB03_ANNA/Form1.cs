@@ -24,7 +24,6 @@ using GDIDrawer;
 
 namespace LAB03_ANNA
 {
-    public delegate void checkHighScore
     public partial class Form1 : Form
     {
         //constants
@@ -40,6 +39,7 @@ namespace LAB03_ANNA
         int Score; //total score
         Score score = new Score(); //score modeless
         Speed speed = new Speed(); //speed modeless
+        HighScore highscore = new HighScore(); //score modal
         public enum eState { Alive, Dead }; //ball state enum
 
         //ball struct
@@ -237,7 +237,12 @@ namespace LAB03_ANNA
             {
                 game.Clear();
                 game.AddText("Game Over!", 32, Color.White);
+                highscore.Mode = diffSelect;
                 UI_Play_Btn.Enabled = true;
+                if(Score > highscore.pHighScore)
+                {
+                    highscore.Show();
+                }
             }
         }
         

@@ -87,6 +87,7 @@
             this.MinimumSize = new System.Drawing.Size(365, 164);
             this.Name = "HighScore";
             this.Text = "High Score";
+            this.Load += new System.EventHandler(this.HighScore_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
