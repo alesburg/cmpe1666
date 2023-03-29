@@ -37,9 +37,14 @@
             // UI_Speed_Trckbar
             // 
             this.UI_Speed_Trckbar.Location = new System.Drawing.Point(12, 12);
+            this.UI_Speed_Trckbar.Maximum = 200;
+            this.UI_Speed_Trckbar.Minimum = 10;
             this.UI_Speed_Trckbar.Name = "UI_Speed_Trckbar";
             this.UI_Speed_Trckbar.Size = new System.Drawing.Size(338, 56);
             this.UI_Speed_Trckbar.TabIndex = 0;
+            this.UI_Speed_Trckbar.TickFrequency = 10;
+            this.UI_Speed_Trckbar.Value = 10;
+            this.UI_Speed_Trckbar.Scroll += new System.EventHandler(this.UI_Speed_Trckbar_Scroll);
             // 
             // UI_Min_Lbl
             // 
@@ -67,8 +72,13 @@
             this.Controls.Add(this.UI_Max_Lbl);
             this.Controls.Add(this.UI_Min_Lbl);
             this.Controls.Add(this.UI_Speed_Trckbar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(380, 125);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(380, 125);
             this.Name = "Speed";
             this.Text = "Animation Speed";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Speed_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.UI_Speed_Trckbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

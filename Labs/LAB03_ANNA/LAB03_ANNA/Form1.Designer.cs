@@ -44,6 +44,7 @@
             this.UI_ShowScore_Chkbx.TabIndex = 0;
             this.UI_ShowScore_Chkbx.Text = "Show Score";
             this.UI_ShowScore_Chkbx.UseVisualStyleBackColor = true;
+            this.UI_ShowScore_Chkbx.CheckedChanged += new System.EventHandler(this.UI_Chkbx_CheckedChanged);
             // 
             // UI_ShowSpeed_Chkbx
             // 
@@ -54,6 +55,7 @@
             this.UI_ShowSpeed_Chkbx.TabIndex = 1;
             this.UI_ShowSpeed_Chkbx.Text = "Show Animation Speed";
             this.UI_ShowSpeed_Chkbx.UseVisualStyleBackColor = true;
+            this.UI_ShowSpeed_Chkbx.CheckedChanged += new System.EventHandler(this.UI_Chkbx_CheckedChanged);
             // 
             // UI_Play_Btn
             // 
@@ -81,6 +83,7 @@
             this.MinimumSize = new System.Drawing.Size(387, 219);
             this.Name = "Form1";
             this.Text = "LAB03 Ballz";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
