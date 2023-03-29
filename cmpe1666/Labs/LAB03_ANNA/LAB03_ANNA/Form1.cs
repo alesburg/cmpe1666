@@ -239,7 +239,8 @@ namespace LAB03_ANNA
                 game.AddText("Game Over!", 32, Color.White);
                 highscore.Mode = diffSelect;
                 UI_Play_Btn.Enabled = true;
-                if(Score > highscore.pHighScore)
+                timer.Stop();
+                if (Score > highscore.pHighScore)
                 {
                     highscore.Show();
                 }
