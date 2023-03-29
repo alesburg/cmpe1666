@@ -48,9 +48,9 @@
             this.UI_Score_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_Score_Lbl.Location = new System.Drawing.Point(146, 49);
             this.UI_Score_Lbl.Name = "UI_Score_Lbl";
-            this.UI_Score_Lbl.Size = new System.Drawing.Size(65, 29);
+            this.UI_Score_Lbl.Size = new System.Drawing.Size(26, 29);
             this.UI_Score_Lbl.TabIndex = 1;
-            this.UI_Score_Lbl.Text = "0000";
+            this.UI_Score_Lbl.Text = "0";
             // 
             // Score
             // 
@@ -65,6 +65,7 @@
             this.MinimumSize = new System.Drawing.Size(312, 174);
             this.Name = "Score";
             this.Text = "Score";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Score_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
