@@ -14,7 +14,9 @@ namespace LAB03_ANNA
 {
     public partial class modal : Form
     {
-        int selection = 3;
+        int selection = 3; //difficulty selection
+
+        //property for difficulty setting
         public int difficulty
         {
             get
@@ -42,6 +44,7 @@ namespace LAB03_ANNA
             DialogResult = DialogResult.Cancel;  
         }
 
+        //select difficulty
         private void UI_Radbtn_CheckedChanged(object sender, EventArgs e)
         {
             if (UI_Easy_Radbtn.Checked) selection = 3;

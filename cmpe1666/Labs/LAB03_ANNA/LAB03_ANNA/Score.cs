@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace LAB03_ANNA
 {
+    public delegate void delScoreCheck(bool show); //delegate for clearing checkbox
     public partial class Score : Form
     {
+        public delScoreCheck _scoreCheck = null; //initialize delegate
+        
+        //property for updateing score
         public int scoreSet
         {
             set
@@ -28,6 +32,7 @@ namespace LAB03_ANNA
         {
             if(e.CloseReason == CloseReason.UserClosing)
             {
+                _scoreCheck.Invoke(false); 
                 e.Cancel = true;
                 Hide();
             }
