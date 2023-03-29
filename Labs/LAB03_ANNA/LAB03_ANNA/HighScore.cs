@@ -64,10 +64,5 @@ namespace LAB03_ANNA
         {
             Hide();
         }
-
-        private void HighScore_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
