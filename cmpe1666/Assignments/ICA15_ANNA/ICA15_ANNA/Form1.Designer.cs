@@ -58,6 +58,10 @@
             this.UI_Go_Btn.UseVisualStyleBackColor = true;
             this.UI_Go_Btn.Click += new System.EventHandler(this.UI_Go_Btn_Click);
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";

@@ -6,7 +6,7 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 02 APR 2023 - Created 
+ * 02 APR 2023 - Created, tested, finished
  */
 using System;
 using System.Collections.Generic;
@@ -21,8 +21,10 @@ using System.Threading;
 
 namespace ICA15_ANNA
 {
+    public delegate void delDisplay(string filename, double rPercent, double gPercent, double bPercent);
     public partial class Form1 : Form
     {
+        delDisplay delDisplay;
         List<Thread> threads = new List<Thread>(); //list of threads
         public Form1()
         {
@@ -61,6 +63,7 @@ namespace ICA15_ANNA
             {
                 try
                 {
+                    delDisplay = Display;
                     bm = (Bitmap)Bitmap.FromFile(filename);
                     for (int x = 0; x < bm.Width; x++)
                     {
@@ -73,9 +76,10 @@ namespace ICA15_ANNA
                         }
                     }
                     total = rTotal + gTotal + bTotal;
-                    rPercent = rTotal/ total;
-                    gPercent = gTotal/ total;
-                    bPercent = bTotal/ total;
+                    rPercent = (double)rTotal / total;
+                    gPercent = (double)gTotal/ total;
+                    bPercent = (double)bTotal/ total;
+                    Invoke(delDisplay, filename, rPercent, gPercent, bPercent);
                 }
                 catch (Exception ex)
                 {
@@ -86,7 +90,21 @@ namespace ICA15_ANNA
 
         private void Display(string filename,double rPercent, double gPercent, double bPercent)
         {
+            UI_Listbx.Items.Add($"(R:{rPercent:P1}, G:{gPercent:P1}, B:{bPercent:P1}) : {filename}");
+        }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            bool running = false;
+            foreach(Thread thread in threads)
+            {
+                if (thread.IsAlive) running = true;
+            }
+            if (!running)
+            {
+                timer.Stop();
+                UI_Listbx.Items.Add("Done..");
+            }
         }
     }
 }
