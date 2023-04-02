@@ -34,7 +34,6 @@ namespace ICA15_ANNA
             openFileDialog.Filter = "All Files (Images) | *.*";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                UI_Listbx.Items.Clear();
                 UI_Listbx.Items.Add("Starting...");
                 timer.Start();
                 foreach(string filename in openFileDialog.FileNames)
@@ -49,31 +48,45 @@ namespace ICA15_ANNA
 
         private void ProcessImage(object arg)
         {
+            Bitmap bm;
             int rTotal = 0;
             int gTotal = 0;
             int bTotal = 0;
+            int total;
+            double rPercent;
+            double gPercent;
+            double bPercent;
+
             if (arg is string filename)
             {
                 try
                 {
-                    Bitmap bm = (Bitmap)Bitmap.FromFile(filename);
+                    bm = (Bitmap)Bitmap.FromFile(filename);
                     for (int x = 0; x < bm.Width; x++)
                     {
                         for (int y = 0; y < bm.Height; y++)
                         {
                             Color rgb = bm.GetPixel(x, y);
                             rTotal += rgb.R;
-                            g = rgb.G;
-                            b = rgb.B;
+                            gTotal += rgb.G;
+                            bTotal += rgb.B;
                         }
                     }
+                    total = rTotal + gTotal + bTotal;
+                    rPercent = rTotal/ total;
+                    gPercent = gTotal/ total;
+                    bPercent = bTotal/ total;
                 }
                 catch (Exception ex)
                 {
                     return;
                 }
             }
-            
+        }
+
+        private void Display(string filename,double rPercent, double gPercent, double bPercent)
+        {
+
         }
     }
 }
