@@ -49,6 +49,9 @@ namespace ICA15_ANNA
 
         private void ProcessImage(object arg)
         {
+            int rTotal = 0;
+            int gTotal = 0;
+            int bTotal = 0;
             if (arg is string filename)
             {
                 try
@@ -58,7 +61,10 @@ namespace ICA15_ANNA
                     {
                         for (int y = 0; y < bm.Height; y++)
                         {
-
+                            Color rgb = bm.GetPixel(x, y);
+                            rTotal += rgb.R;
+                            g = rgb.G;
+                            b = rgb.B;
                         }
                     }
                 }
