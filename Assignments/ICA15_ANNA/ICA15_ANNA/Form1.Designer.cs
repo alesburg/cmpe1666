@@ -56,10 +56,12 @@
             this.UI_Go_Btn.TabIndex = 1;
             this.UI_Go_Btn.Text = "Go!";
             this.UI_Go_Btn.UseVisualStyleBackColor = true;
+            this.UI_Go_Btn.Click += new System.EventHandler(this.UI_Go_Btn_Click);
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Multiselect = true;
             // 
             // Form1
             // 

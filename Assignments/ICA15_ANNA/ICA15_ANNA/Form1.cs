@@ -23,10 +23,27 @@ namespace ICA15_ANNA
 {
     public partial class Form1 : Form
     {
-        List<Thread> threads = new List<Thread>();
+        List<Thread> threads = new List<Thread>(); //list of threads
         public Form1()
         {
             InitializeComponent();
         }
+
+        private void UI_Go_Btn_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "All Files (Images) | *.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                UI_Listbx.Items.Clear();
+                UI_Listbx.Items.Add("Starting...");
+                timer.Start();
+                foreach(string filename in openFileDialog.FileNames)
+                {
+
+                }
+            }
+        }
+
+        //private void Analyze()
     }
 }
