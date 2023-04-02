@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_Listbx = new System.Windows.Forms.ListBox();
             this.UI_Go_Btn = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // UI_Listbx
@@ -41,18 +44,22 @@
             this.UI_Listbx.ItemHeight = 16;
             this.UI_Listbx.Location = new System.Drawing.Point(12, 12);
             this.UI_Listbx.Name = "UI_Listbx";
-            this.UI_Listbx.Size = new System.Drawing.Size(632, 212);
+            this.UI_Listbx.Size = new System.Drawing.Size(632, 228);
             this.UI_Listbx.TabIndex = 0;
             // 
             // UI_Go_Btn
             // 
             this.UI_Go_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Go_Btn.Location = new System.Drawing.Point(555, 242);
+            this.UI_Go_Btn.Location = new System.Drawing.Point(555, 246);
             this.UI_Go_Btn.Name = "UI_Go_Btn";
             this.UI_Go_Btn.Size = new System.Drawing.Size(89, 34);
             this.UI_Go_Btn.TabIndex = 1;
             this.UI_Go_Btn.Text = "Go!";
             this.UI_Go_Btn.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -71,6 +78,8 @@
 
         private System.Windows.Forms.ListBox UI_Listbx;
         private System.Windows.Forms.Button UI_Go_Btn;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

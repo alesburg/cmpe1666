@@ -23,6 +23,7 @@ namespace ICA15_ANNA
 {
     public partial class Form1 : Form
     {
+        List<Thread> threads = new List<Thread>();
         public Form1()
         {
             InitializeComponent();
