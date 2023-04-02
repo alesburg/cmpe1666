@@ -39,11 +39,35 @@ namespace ICA15_ANNA
                 timer.Start();
                 foreach(string filename in openFileDialog.FileNames)
                 {
-
+                    Thread th = new Thread(new ParameterizedThreadStart(ProcessImage));
+                    th.IsBackground = true;
+                    threads.Add(th);
+                    th.Start(filename);
                 }
             }
         }
 
-        //private void Analyze()
+        private void ProcessImage(object arg)
+        {
+            if (arg is string filename)
+            {
+                try
+                {
+                    Bitmap bm = (Bitmap)Bitmap.FromFile(filename);
+                    for (int x = 0; x < bm.Width; x++)
+                    {
+                        for (int y = 0; y < bm.Height; y++)
+                        {
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+            }
+            
+        }
     }
 }
