@@ -68,6 +68,7 @@
             this.UI_GenerateFixed_Btn.TabIndex = 2;
             this.UI_GenerateFixed_Btn.Text = "Generate Fixed Range";
             this.UI_GenerateFixed_Btn.UseVisualStyleBackColor = true;
+            this.UI_GenerateFixed_Btn.Click += new System.EventHandler(this.UI_GenerateFixed_Btn_Click);
             // 
             // UI_Variable_Lbl
             // 
@@ -116,6 +117,7 @@
             this.UI_GenerateVariable_Btn.TabIndex = 8;
             this.UI_GenerateVariable_Btn.Text = "Generate Fixed Range";
             this.UI_GenerateVariable_Btn.UseVisualStyleBackColor = true;
+            this.UI_GenerateVariable_Btn.Click += new System.EventHandler(this.UI_GenerateVariable_Btn_Click);
             // 
             // UI_Min_Lbl
             // 
