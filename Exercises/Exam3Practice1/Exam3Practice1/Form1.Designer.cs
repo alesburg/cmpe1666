@@ -30,7 +30,7 @@
         {
             this.UI_Result_Tbx = new System.Windows.Forms.TextBox();
             this.UI_Result_Lbl = new System.Windows.Forms.Label();
-            this.UI_Show_Btn = new System.Windows.Forms.CheckBox();
+            this.UI_Show_Chkbx = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // UI_Result_Tbx
@@ -50,26 +50,28 @@
             this.UI_Result_Lbl.TabIndex = 1;
             this.UI_Result_Lbl.Text = "Result: ";
             // 
-            // UI_Show_Btn
+            // UI_Show_Chkbx
             // 
-            this.UI_Show_Btn.AutoSize = true;
-            this.UI_Show_Btn.Location = new System.Drawing.Point(184, 81);
-            this.UI_Show_Btn.Name = "UI_Show_Btn";
-            this.UI_Show_Btn.Size = new System.Drawing.Size(125, 20);
-            this.UI_Show_Btn.TabIndex = 2;
-            this.UI_Show_Btn.Text = "Show Modeless";
-            this.UI_Show_Btn.UseVisualStyleBackColor = true;
+            this.UI_Show_Chkbx.AutoSize = true;
+            this.UI_Show_Chkbx.Location = new System.Drawing.Point(184, 81);
+            this.UI_Show_Chkbx.Name = "UI_Show_Chkbx";
+            this.UI_Show_Chkbx.Size = new System.Drawing.Size(125, 20);
+            this.UI_Show_Chkbx.TabIndex = 2;
+            this.UI_Show_Chkbx.Text = "Show Modeless";
+            this.UI_Show_Chkbx.UseVisualStyleBackColor = true;
+            this.UI_Show_Chkbx.CheckedChanged += new System.EventHandler(this.UI_Show_Chkbx_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 259);
-            this.Controls.Add(this.UI_Show_Btn);
+            this.Controls.Add(this.UI_Show_Chkbx);
             this.Controls.Add(this.UI_Result_Lbl);
             this.Controls.Add(this.UI_Result_Tbx);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +81,7 @@
 
         private System.Windows.Forms.TextBox UI_Result_Tbx;
         private System.Windows.Forms.Label UI_Result_Lbl;
-        private System.Windows.Forms.CheckBox UI_Show_Btn;
+        private System.Windows.Forms.CheckBox UI_Show_Chkbx;
     }
 }
 

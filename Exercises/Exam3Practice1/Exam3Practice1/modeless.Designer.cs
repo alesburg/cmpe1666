@@ -45,6 +45,7 @@
             this.UI_Val1_Txtbx.Name = "UI_Val1_Txtbx";
             this.UI_Val1_Txtbx.Size = new System.Drawing.Size(100, 22);
             this.UI_Val1_Txtbx.TabIndex = 0;
+            this.UI_Val1_Txtbx.TextChanged += new System.EventHandler(this.UI_Changed);
             // 
             // UI_Val1_Lbl
             // 
@@ -70,6 +71,7 @@
             this.UI_Val2_Tbx.Name = "UI_Val2_Tbx";
             this.UI_Val2_Tbx.Size = new System.Drawing.Size(100, 22);
             this.UI_Val2_Tbx.TabIndex = 2;
+            this.UI_Val2_Tbx.TextChanged += new System.EventHandler(this.UI_Changed);
             // 
             // UI_Operation_Grpbx
             // 
@@ -94,6 +96,7 @@
             this.UI_Add_RadBtn.TabStop = true;
             this.UI_Add_RadBtn.Text = "Addition";
             this.UI_Add_RadBtn.UseVisualStyleBackColor = true;
+            this.UI_Add_RadBtn.CheckedChanged += new System.EventHandler(this.UI_Changed);
             // 
             // UI_Subtract_RadBtn
             // 
@@ -102,9 +105,9 @@
             this.UI_Subtract_RadBtn.Name = "UI_Subtract_RadBtn";
             this.UI_Subtract_RadBtn.Size = new System.Drawing.Size(95, 20);
             this.UI_Subtract_RadBtn.TabIndex = 1;
-            this.UI_Subtract_RadBtn.TabStop = true;
             this.UI_Subtract_RadBtn.Text = "Subtraction";
             this.UI_Subtract_RadBtn.UseVisualStyleBackColor = true;
+            this.UI_Subtract_RadBtn.CheckedChanged += new System.EventHandler(this.UI_Changed);
             // 
             // UI_Multiply_RadBtn
             // 
@@ -113,9 +116,9 @@
             this.UI_Multiply_RadBtn.Name = "UI_Multiply_RadBtn";
             this.UI_Multiply_RadBtn.Size = new System.Drawing.Size(105, 20);
             this.UI_Multiply_RadBtn.TabIndex = 2;
-            this.UI_Multiply_RadBtn.TabStop = true;
             this.UI_Multiply_RadBtn.Text = "Multiplication";
             this.UI_Multiply_RadBtn.UseVisualStyleBackColor = true;
+            this.UI_Multiply_RadBtn.CheckedChanged += new System.EventHandler(this.UI_Changed);
             // 
             // modeless
             // 
@@ -129,6 +132,7 @@
             this.Controls.Add(this.UI_Val1_Txtbx);
             this.Name = "modeless";
             this.Text = "modeless";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modeless_FormClosing);
             this.UI_Operation_Grpbx.ResumeLayout(false);
             this.UI_Operation_Grpbx.PerformLayout();
             this.ResumeLayout(false);
