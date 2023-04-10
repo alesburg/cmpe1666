@@ -33,7 +33,7 @@ namespace Exam3Practice1
 
         private void CallbackShow(bool show)
         {
-            if (!show) modeless.Hide();
+            UI_Show_Chkbx.Checked = show;
         }
 
         private void CallbackResult(int result)
