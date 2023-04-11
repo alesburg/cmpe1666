@@ -36,7 +36,7 @@
             this.UI_DelLast_Btn = new System.Windows.Forms.Button();
             this.UI_Id_Tbx = new System.Windows.Forms.TextBox();
             this.UI_Id_Lbl = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.UI_DelById_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UI_NewPost_Txtbx
@@ -102,6 +102,7 @@
             this.UI_DelLast_Btn.TabIndex = 5;
             this.UI_DelLast_Btn.Text = "Delete Last Post";
             this.UI_DelLast_Btn.UseVisualStyleBackColor = true;
+            this.UI_DelLast_Btn.Click += new System.EventHandler(this.UI_DelLast_Btn_Click);
             // 
             // UI_Id_Tbx
             // 
@@ -122,22 +123,23 @@
             this.UI_Id_Lbl.TabIndex = 7;
             this.UI_Id_Lbl.Text = "ID to Delete";
             // 
-            // button1
+            // UI_DelById_Btn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(621, 338);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 49);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Delete Post by ID";
-            this.button1.UseVisualStyleBackColor = true;
+            this.UI_DelById_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UI_DelById_Btn.Location = new System.Drawing.Point(621, 338);
+            this.UI_DelById_Btn.Name = "UI_DelById_Btn";
+            this.UI_DelById_Btn.Size = new System.Drawing.Size(167, 49);
+            this.UI_DelById_Btn.TabIndex = 8;
+            this.UI_DelById_Btn.Text = "Delete Post by ID";
+            this.UI_DelById_Btn.UseVisualStyleBackColor = true;
+            this.UI_DelById_Btn.Click += new System.EventHandler(this.UI_DelById_Btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 543);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.UI_DelById_Btn);
             this.Controls.Add(this.UI_Id_Lbl);
             this.Controls.Add(this.UI_Id_Tbx);
             this.Controls.Add(this.UI_DelLast_Btn);
@@ -164,7 +166,7 @@
         private System.Windows.Forms.Button UI_DelLast_Btn;
         private System.Windows.Forms.TextBox UI_Id_Tbx;
         private System.Windows.Forms.Label UI_Id_Lbl;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button UI_DelById_Btn;
     }
 }
 
