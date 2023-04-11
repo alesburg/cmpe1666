@@ -68,6 +68,7 @@
             this.UI_AddPost_Btn.TabIndex = 2;
             this.UI_AddPost_Btn.Text = "Add Post";
             this.UI_AddPost_Btn.UseVisualStyleBackColor = true;
+            this.UI_AddPost_Btn.Click += new System.EventHandler(this.UI_AddPost_Btn_Click);
             // 
             // UI_Messages_Lstbx
             // 
