@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* 
+ * ICA #18 - Linked Lists (CMPE1666)
+ * 
+ * Posting Messages to Listbox
+ *
+ * Author: Anna Lesburg
+ * 
+ * Modification History:
+ * 11 APR 2023 - Created, tested, finished
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
