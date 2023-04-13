@@ -6,7 +6,7 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 11 APR 2023 - Created, tested, finished
+ * 13 APR 2023 - Created
  */
 using System;
 using System.Collections.Generic;
@@ -23,22 +23,28 @@ namespace ICA18_ANNA
 {
     public partial class Form1 : Form
     {
+        //customer info struct
         public struct CustomerAmount
         {
             public int id;
             public decimal amount;
 
+            //constructor
             public CustomerAmount(int id, decimal amount)
             {
                 this.id = id;
                 this.amount = amount;
             }
 
+            //tostring override
             public override string ToString()
             {
                 return $"{id:D3} : {amount:C2}";
             }
         }
+
+        Random Random = new Random(); //random generator object
+
         public Form1()
         {
             InitializeComponent();
