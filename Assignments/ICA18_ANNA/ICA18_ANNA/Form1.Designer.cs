@@ -116,6 +116,7 @@
             this.UI_DisplaySum_Btn.TabIndex = 7;
             this.UI_DisplaySum_Btn.Text = "Display Amounts Above Minimum and Sum";
             this.UI_DisplaySum_Btn.UseVisualStyleBackColor = true;
+            this.UI_DisplaySum_Btn.Click += new System.EventHandler(this.UI_DisplaySum_Btn_Click);
             // 
             // UI_CustInfo_Lbl
             // 
@@ -191,7 +192,7 @@
             this.UI_Sum_Lbl.Size = new System.Drawing.Size(66, 25);
             this.UI_Sum_Lbl.TabIndex = 12;
             this.UI_Sum_Lbl.Text = "$0.00";
-            this.UI_Sum_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UI_Sum_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UI_MinSum_Lbl
             // 
@@ -204,7 +205,7 @@
             this.UI_MinSum_Lbl.Size = new System.Drawing.Size(66, 25);
             this.UI_MinSum_Lbl.TabIndex = 13;
             this.UI_MinSum_Lbl.Text = "$0.00";
-            this.UI_MinSum_Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UI_MinSum_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
