@@ -43,6 +43,8 @@ namespace ICA18_ANNA
             }
         }
 
+        LinkedList<CustomerAmount> linkedList; //linked list
+
         Random Random = new Random(); //random generator object
 
         public Form1()
@@ -52,6 +54,39 @@ namespace ICA18_ANNA
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //initialize
+            linkedList = new LinkedList<CustomerAmount>();
+        }
+
+        //clear all
+        private void UI_ClearAll_Btn_Click(object sender, EventArgs e)
+        {
+            UI_CustID_UpDown.Value = 1;
+            UI_MinAmt_UpDown.Value = (decimal)0.00;
+            UI_Selected_Lstbx.Items.Clear();
+            UI_CustLinfo_Lstbx.Items.Clear();
+            linkedList.Clear();
+        }
+
+        private void UI_AddAmt_Btn_Click(object sender, EventArgs e)
+        {
+            //random customer
+            CustomerAmount customer = new CustomerAmount((int)UI_CustID_UpDown.Value, (decimal)(Random.Next(0, 10000) + Random.NextDouble()));
+
+            //add to listbox in order of creation
+            UI_CustLinfo_Lstbx.Items.Add(customer);
+
+            //add in ascending order of amount due to linked list
+            if (linkedList.Count > 0)
+            {
+                LinkedListNode<CustomerAmount> temp = linkedList.First;
+                while (temp.Value.amount < customer.amount)
+                {
+                    if (temp != null) temp = temp.Next;
+                }
+                linkedList.AddAfter(temp, customer);
+            }
+            else linkedList.AddFirst(customer);
 
         }
     }
