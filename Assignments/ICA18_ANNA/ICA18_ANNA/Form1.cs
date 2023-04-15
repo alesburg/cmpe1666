@@ -63,6 +63,8 @@ namespace ICA18_ANNA
         {
             UI_CustID_UpDown.Value = 1;
             UI_MinAmt_UpDown.Value = (decimal)0.00;
+            UI_Sum_Lbl.Text = $"{0:C2}";
+            UI_MinSum_Lbl.Text = $"{0:C2}";
             UI_Selected_Lstbx.Items.Clear();
             UI_CustLinfo_Lstbx.Items.Clear();
             linkedList.Clear();
@@ -78,15 +80,53 @@ namespace ICA18_ANNA
 
             //add in ascending order of amount due to linked list
             LinkedListNode<CustomerAmount> temp = linkedList.First;
-            if (temp != null || temp.Value.amount > customer.amount)
+            if (temp == null || temp.Value.amount > customer.amount) linkedList.AddFirst(customer);
+            else
             {
-                while (temp.Value.amount < customer.amount)
+                while (temp != null)
                 {
-                    temp = temp.Next;
+                    if (temp.Next == null || temp.Next.Value.amount > customer.amount)
+                    {
+                        linkedList.AddAfter(temp, customer);
+                        temp = null;
+                    }
+                    else temp = temp.Next;
                 }
-                linkedList.AddAfter(temp, customer);
-            }else linkedList.AddFirst(customer);
-            
+            }
+        }
+
+        private void UI_Display_Btn_Click(object sender, EventArgs e)
+        {
+            //new linked list
+            LinkedList<CustomerAmount> customerList = new LinkedList<CustomerAmount>();
+
+            //add customers with specified id to new list in descending order
+            foreach (CustomerAmount customer in linkedList)
+            {
+                if (customer.id == UI_CustID_UpDown.Value)
+                {
+                    LinkedListNode<CustomerAmount> temp = customerList.First;
+                    if (temp == null || temp.Value.amount < customer.amount) customerList.AddFirst(customer);
+                    else
+                    {
+                        while (temp != null)
+                        {
+                            if (temp.Next == null || temp.Next.Value.amount < customer.amount)
+                            {
+                                customerList.AddAfter(temp, customer);
+                                temp = null;
+                            }
+                            else temp = temp.Next;
+                        }
+                    }
+                }
+            }
+
+            //show list in right listbox and sum
+            foreach (CustomerAmount customer in customerList)
+            {
+
+            }
         }
     }
 }

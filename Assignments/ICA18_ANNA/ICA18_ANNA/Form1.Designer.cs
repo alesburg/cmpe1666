@@ -104,6 +104,7 @@
             this.UI_Display_Btn.TabIndex = 5;
             this.UI_Display_Btn.Text = "Display Amounts and Sum for Customer";
             this.UI_Display_Btn.UseVisualStyleBackColor = true;
+            this.UI_Display_Btn.Click += new System.EventHandler(this.UI_Display_Btn_Click);
             // 
             // UI_DisplaySum_Btn
             // 
