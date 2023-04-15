@@ -7,6 +7,7 @@
  * 
  * Modification History:
  * 13 APR 2023 - Created
+ * 15 APR 2023 - Finished and tested
  */
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ICA18_ANNA
 {
@@ -79,20 +81,7 @@ namespace ICA18_ANNA
             UI_CustLinfo_Lstbx.Items.Add(customer);
 
             //add in ascending order of amount due to linked list
-            LinkedListNode<CustomerAmount> temp = linkedList.First;
-            if (temp == null || temp.Value.amount > customer.amount) linkedList.AddFirst(customer);
-            else
-            {
-                while (temp != null)
-                {
-                    if (temp.Next == null || temp.Next.Value.amount > customer.amount)
-                    {
-                        linkedList.AddAfter(temp, customer);
-                        temp = null;
-                    }
-                    else temp = temp.Next;
-                }
-            }
+            AddToListSortedAsc(ref linkedList, linkedList.First, customer);
         }
 
         private void UI_Display_Btn_Click(object sender, EventArgs e)
@@ -100,33 +89,63 @@ namespace ICA18_ANNA
             //new linked list
             LinkedList<CustomerAmount> customerList = new LinkedList<CustomerAmount>();
 
+
             //add customers with specified id to new list in descending order
             foreach (CustomerAmount customer in linkedList)
             {
                 if (customer.id == UI_CustID_UpDown.Value)
                 {
-                    LinkedListNode<CustomerAmount> temp = customerList.First;
-                    if (temp == null || temp.Value.amount < customer.amount) customerList.AddFirst(customer);
-                    else
-                    {
-                        while (temp != null)
-                        {
-                            if (temp.Next == null || temp.Next.Value.amount < customer.amount)
-                            {
-                                customerList.AddAfter(temp, customer);
-                                temp = null;
-                            }
-                            else temp = temp.Next;
-                        }
-                    }
+                    AddToListSortedDesc(ref customerList, customerList.First, customer);
                 }
             }
 
             //show list in right listbox and sum
+            UI_Selected_Lstbx.Items.Clear();
             foreach (CustomerAmount customer in customerList)
             {
-
+                UI_Selected_Lstbx.Items.Add(customer.ToString());
             }
+            UI_Sum_Lbl.Text = $"{SumAmount(customerList,customerList.First):C2}";
         }
+
+        private void UI_DisplaySum_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddToListSortedAsc(ref LinkedList<CustomerAmount> list,LinkedListNode<CustomerAmount> node, CustomerAmount customer)
+        {
+            if (node == null) list.AddLast(customer);
+            else if (node.Value.amount > customer.amount) list.AddBefore(node, customer);
+            else AddToListSortedAsc(ref list, node.Next, customer);
+        }
+
+        private void AddToListSortedDesc(ref LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, CustomerAmount customer)
+        {
+            if (node == null) list.AddLast(customer);
+            else if (node.Value.amount < customer.amount) list.AddBefore(node, customer);
+            else AddToListSortedDesc(ref list, node.Next, customer);
+        }
+
+        private decimal SumAmount(LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node)
+        {
+            if(node != null)
+            {
+                return node.Value.amount + SumAmount(list, node.Next);
+            }
+            else return 0;
+        }
+
+        private decimal SumAmount(LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, decimal min)
+        {
+            if (node != null)
+            {
+                if(node.Value.amount > min) return node.Value.amount + SumAmount(list, node.Next);
+                else return SumAmount(list, node.Next, min);
+            }
+            else return 0;
+        }
+
+        
     }
 }
