@@ -74,6 +74,7 @@
             this.UI_ClearAll_Btn.TabIndex = 2;
             this.UI_ClearAll_Btn.Text = "Clear All Customer Data";
             this.UI_ClearAll_Btn.UseVisualStyleBackColor = true;
+            this.UI_ClearAll_Btn.Click += new System.EventHandler(this.UI_ClearAll_Btn_Click);
             // 
             // UI_AddAmt_Btn
             // 
@@ -83,6 +84,7 @@
             this.UI_AddAmt_Btn.TabIndex = 4;
             this.UI_AddAmt_Btn.Text = "Add Customer Amount";
             this.UI_AddAmt_Btn.UseVisualStyleBackColor = true;
+            this.UI_AddAmt_Btn.Click += new System.EventHandler(this.UI_AddAmt_Btn_Click);
             // 
             // UI_Display_Btn
             // 
@@ -150,6 +152,7 @@
             // 
             // UI_MinAmt_UpDown
             // 
+            this.UI_MinAmt_UpDown.DecimalPlaces = 2;
             this.UI_MinAmt_UpDown.Location = new System.Drawing.Point(461, 410);
             this.UI_MinAmt_UpDown.Name = "UI_MinAmt_UpDown";
             this.UI_MinAmt_UpDown.Size = new System.Drawing.Size(120, 22);
