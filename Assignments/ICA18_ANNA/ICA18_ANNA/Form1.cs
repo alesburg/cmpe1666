@@ -89,14 +89,10 @@ namespace ICA18_ANNA
             //new linked list
             LinkedList<CustomerAmount> customerList = new LinkedList<CustomerAmount>();
 
-
             //add customers with specified id to new list in descending order
             foreach (CustomerAmount customer in linkedList)
             {
-                if (customer.id == UI_CustID_UpDown.Value)
-                {
-                    AddToListSortedDesc(ref customerList, customerList.First, customer);
-                }
+                if (customer.id == UI_CustID_UpDown.Value) AddToListSortedDesc(ref customerList, customerList.First, customer);
             }
 
             //show list in right listbox and sum
@@ -105,21 +101,51 @@ namespace ICA18_ANNA
             {
                 UI_Selected_Lstbx.Items.Add(customer.ToString());
             }
-            UI_Sum_Lbl.Text = $"{SumAmount(customerList,customerList.First):C2}";
+            UI_Sum_Lbl.Text = $"{SumAmount(customerList, customerList.First):C2}";
         }
 
         private void UI_DisplaySum_Btn_Click(object sender, EventArgs e)
         {
+            //new linked list
+            LinkedList<CustomerAmount> customerList = new LinkedList<CustomerAmount>();
 
+            //add customers with specified minimum amount to new list in descending order
+            foreach (CustomerAmount customer in linkedList)
+            {
+                if (customer.amount > UI_MinAmt_UpDown.Value) AddToListSortedDesc(ref customerList, customerList.First, customer);
+            }
+
+            //show list in right listbox and sum
+            UI_Selected_Lstbx.Items.Clear();
+            foreach (CustomerAmount customer in customerList)
+            {
+                UI_Selected_Lstbx.Items.Add(customer.ToString());
+            }
+            UI_MinSum_Lbl.Text = $"{SumAmount(customerList, customerList.First):C2}";
         }
 
-        private void AddToListSortedAsc(ref LinkedList<CustomerAmount> list,LinkedListNode<CustomerAmount> node, CustomerAmount customer)
+
+        //********************************************************************************************
+        //Method: private void AddToListSortedAsc(ref LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, CustomerAmount customer)
+        //Purpose: Recursively adds new customers to linked list in ascending order of amount
+        //Parameters: ref LinkedList<CustomerAmount> list - list to add to
+        // LinkedListNode<CustomerAmount> node - pointer node
+        //CustomerAmount customer - customer to add
+        //*********************************************************************************************
+        private void AddToListSortedAsc(ref LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, CustomerAmount customer)
         {
             if (node == null) list.AddLast(customer);
             else if (node.Value.amount > customer.amount) list.AddBefore(node, customer);
             else AddToListSortedAsc(ref list, node.Next, customer);
         }
 
+        //********************************************************************************************
+        //Method: private void AddToListSortedDesc(ref LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, CustomerAmount customer)
+        //Purpose: Recursively adds new customers to linked list in descending order of amount
+        //Parameters: ref LinkedList<CustomerAmount> list - list to add to
+        // LinkedListNode<CustomerAmount> node - pointer node
+        //CustomerAmount customer - customer to add
+        //*********************************************************************************************
         private void AddToListSortedDesc(ref LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, CustomerAmount customer)
         {
             if (node == null) list.AddLast(customer);
@@ -127,25 +153,20 @@ namespace ICA18_ANNA
             else AddToListSortedDesc(ref list, node.Next, customer);
         }
 
+        //********************************************************************************************
+        //Method: private decimal SumAmount(LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node)
+        //Purpose: Recursively sums customer amounts in linked list
+        //Parameters: LinkedList<CustomerAmount> list - list to sum
+        //LinkedListNode<CustomerAmount> node - pointer node
+        //Returns: decimal - sum of amounts
+        //*********************************************************************************************
         private decimal SumAmount(LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node)
         {
-            if(node != null)
+            if (node != null)
             {
                 return node.Value.amount + SumAmount(list, node.Next);
             }
             else return 0;
         }
-
-        private decimal SumAmount(LinkedList<CustomerAmount> list, LinkedListNode<CustomerAmount> node, decimal min)
-        {
-            if (node != null)
-            {
-                if(node.Value.amount > min) return node.Value.amount + SumAmount(list, node.Next);
-                else return SumAmount(list, node.Next, min);
-            }
-            else return 0;
-        }
-
-        
     }
 }
