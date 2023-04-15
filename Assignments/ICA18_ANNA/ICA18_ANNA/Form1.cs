@@ -76,8 +76,17 @@ namespace ICA18_ANNA
             //add to listbox in order of creation
             UI_CustLinfo_Lstbx.Items.Add(customer);
 
-            //add in ascending order of amount due to linked list
-
+            //add in ascending order of amount due to linked list //this dont workk yet
+            if(linkedList.Count > 0)
+            {
+                LinkedListNode<CustomerAmount> temp = linkedList.First;
+                while (temp.Value.amount < customer.amount)
+                {
+                    temp = temp.Next;
+                }
+                linkedList.AddAfter(temp, customer);
+            }else linkedList.AddFirst(customer);
+            
         }
     }
 }

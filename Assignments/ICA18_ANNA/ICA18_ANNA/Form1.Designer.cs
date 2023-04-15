@@ -48,6 +48,8 @@
             // 
             // UI_CustLinfo_Lstbx
             // 
+            this.UI_CustLinfo_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.UI_CustLinfo_Lstbx.FormattingEnabled = true;
             this.UI_CustLinfo_Lstbx.ItemHeight = 16;
             this.UI_CustLinfo_Lstbx.Location = new System.Drawing.Point(12, 75);
@@ -58,6 +60,8 @@
             // 
             // UI_Selected_Lstbx
             // 
+            this.UI_Selected_Lstbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Selected_Lstbx.FormattingEnabled = true;
             this.UI_Selected_Lstbx.ItemHeight = 16;
             this.UI_Selected_Lstbx.Location = new System.Drawing.Point(688, 75);
@@ -68,6 +72,8 @@
             // 
             // UI_ClearAll_Btn
             // 
+            this.UI_ClearAll_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_ClearAll_Btn.Location = new System.Drawing.Point(333, 75);
             this.UI_ClearAll_Btn.Name = "UI_ClearAll_Btn";
             this.UI_ClearAll_Btn.Size = new System.Drawing.Size(298, 53);
@@ -78,6 +84,8 @@
             // 
             // UI_AddAmt_Btn
             // 
+            this.UI_AddAmt_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_AddAmt_Btn.Location = new System.Drawing.Point(333, 224);
             this.UI_AddAmt_Btn.Name = "UI_AddAmt_Btn";
             this.UI_AddAmt_Btn.Size = new System.Drawing.Size(298, 53);
@@ -88,6 +96,8 @@
             // 
             // UI_Display_Btn
             // 
+            this.UI_Display_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Display_Btn.Location = new System.Drawing.Point(333, 306);
             this.UI_Display_Btn.Name = "UI_Display_Btn";
             this.UI_Display_Btn.Size = new System.Drawing.Size(298, 53);
@@ -97,6 +107,8 @@
             // 
             // UI_DisplaySum_Btn
             // 
+            this.UI_DisplaySum_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_DisplaySum_Btn.Location = new System.Drawing.Point(333, 443);
             this.UI_DisplaySum_Btn.Name = "UI_DisplaySum_Btn";
             this.UI_DisplaySum_Btn.Size = new System.Drawing.Size(298, 53);
@@ -114,6 +126,7 @@
             // 
             // UI_Selected_Lbl
             // 
+            this.UI_Selected_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Selected_Lbl.Location = new System.Drawing.Point(685, 39);
             this.UI_Selected_Lbl.Name = "UI_Selected_Lbl";
             this.UI_Selected_Lbl.Size = new System.Drawing.Size(218, 33);
@@ -122,6 +135,8 @@
             // 
             // UI_CustID_Lbl
             // 
+            this.UI_CustID_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_CustID_Lbl.AutoSize = true;
             this.UI_CustID_Lbl.Location = new System.Drawing.Point(330, 169);
             this.UI_CustID_Lbl.Name = "UI_CustID_Lbl";
@@ -131,6 +146,8 @@
             // 
             // UI_CustID_UpDown
             // 
+            this.UI_CustID_UpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_CustID_UpDown.Location = new System.Drawing.Point(461, 169);
             this.UI_CustID_UpDown.Name = "UI_CustID_UpDown";
             this.UI_CustID_UpDown.Size = new System.Drawing.Size(120, 22);
@@ -143,6 +160,8 @@
             // 
             // UI_MinAmt_Lbl
             // 
+            this.UI_MinAmt_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_MinAmt_Lbl.AutoSize = true;
             this.UI_MinAmt_Lbl.Location = new System.Drawing.Point(330, 412);
             this.UI_MinAmt_Lbl.Name = "UI_MinAmt_Lbl";
@@ -152,6 +171,8 @@
             // 
             // UI_MinAmt_UpDown
             // 
+            this.UI_MinAmt_UpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_MinAmt_UpDown.DecimalPlaces = 2;
             this.UI_MinAmt_UpDown.Location = new System.Drawing.Point(461, 410);
             this.UI_MinAmt_UpDown.Name = "UI_MinAmt_UpDown";
@@ -160,6 +181,8 @@
             // 
             // UI_Sum_Lbl
             // 
+            this.UI_Sum_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_Sum_Lbl.AutoSize = true;
             this.UI_Sum_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_Sum_Lbl.Location = new System.Drawing.Point(449, 366);
@@ -171,6 +194,8 @@
             // 
             // UI_MinSum_Lbl
             // 
+            this.UI_MinSum_Lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_MinSum_Lbl.AutoSize = true;
             this.UI_MinSum_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UI_MinSum_Lbl.Location = new System.Drawing.Point(449, 525);
