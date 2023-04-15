@@ -177,6 +177,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UI_MinAmt_UpDown.DecimalPlaces = 2;
             this.UI_MinAmt_UpDown.Location = new System.Drawing.Point(461, 410);
+            this.UI_MinAmt_UpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.UI_MinAmt_UpDown.Name = "UI_MinAmt_UpDown";
             this.UI_MinAmt_UpDown.Size = new System.Drawing.Size(120, 22);
             this.UI_MinAmt_UpDown.TabIndex = 6;
