@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_UndoLine_Btn = new System.Windows.Forms.Button();
             this.UI_UndoSeg_Btn = new System.Windows.Forms.Button();
             this.UI_Reduce_Btn = new System.Windows.Forms.Button();
             this.UI_Color_Btn = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.UI_Status_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UI_UndoLine_Btn
             // 
-            this.UI_UndoLine_Btn.Location = new System.Drawing.Point(12, 52);
+            this.UI_UndoLine_Btn.Location = new System.Drawing.Point(12, 42);
             this.UI_UndoLine_Btn.Name = "UI_UndoLine_Btn";
             this.UI_UndoLine_Btn.Size = new System.Drawing.Size(409, 28);
             this.UI_UndoLine_Btn.TabIndex = 0;
@@ -45,7 +48,7 @@
             // 
             // UI_UndoSeg_Btn
             // 
-            this.UI_UndoSeg_Btn.Location = new System.Drawing.Point(12, 86);
+            this.UI_UndoSeg_Btn.Location = new System.Drawing.Point(12, 76);
             this.UI_UndoSeg_Btn.Name = "UI_UndoSeg_Btn";
             this.UI_UndoSeg_Btn.Size = new System.Drawing.Size(409, 28);
             this.UI_UndoSeg_Btn.TabIndex = 1;
@@ -54,7 +57,7 @@
             // 
             // UI_Reduce_Btn
             // 
-            this.UI_Reduce_Btn.Location = new System.Drawing.Point(12, 120);
+            this.UI_Reduce_Btn.Location = new System.Drawing.Point(12, 110);
             this.UI_Reduce_Btn.Name = "UI_Reduce_Btn";
             this.UI_Reduce_Btn.Size = new System.Drawing.Size(409, 28);
             this.UI_Reduce_Btn.TabIndex = 2;
@@ -63,24 +66,41 @@
             // 
             // UI_Color_Btn
             // 
-            this.UI_Color_Btn.Location = new System.Drawing.Point(12, 154);
+            this.UI_Color_Btn.Location = new System.Drawing.Point(12, 144);
             this.UI_Color_Btn.Name = "UI_Color_Btn";
             this.UI_Color_Btn.Size = new System.Drawing.Size(409, 28);
             this.UI_Color_Btn.TabIndex = 3;
             this.UI_Color_Btn.Text = "Color";
             this.UI_Color_Btn.UseVisualStyleBackColor = true;
             // 
+            // timer
+            // 
+            this.timer.Interval = 10;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // UI_Status_Label
+            // 
+            this.UI_Status_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UI_Status_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UI_Status_Label.Location = new System.Drawing.Point(12, 9);
+            this.UI_Status_Label.Name = "UI_Status_Label";
+            this.UI_Status_Label.Size = new System.Drawing.Size(409, 30);
+            this.UI_Status_Label.TabIndex = 4;
+            this.UI_Status_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 291);
+            this.Controls.Add(this.UI_Status_Label);
             this.Controls.Add(this.UI_Color_Btn);
             this.Controls.Add(this.UI_Reduce_Btn);
             this.Controls.Add(this.UI_UndoSeg_Btn);
             this.Controls.Add(this.UI_UndoLine_Btn);
             this.Name = "Form1";
             this.Text = "StackyListDraw";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -91,6 +111,8 @@
         private System.Windows.Forms.Button UI_UndoSeg_Btn;
         private System.Windows.Forms.Button UI_Reduce_Btn;
         private System.Windows.Forms.Button UI_Color_Btn;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label UI_Status_Label;
     }
 }
 
