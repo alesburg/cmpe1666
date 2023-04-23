@@ -35,6 +35,10 @@
             this.UI_Color_Btn = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.UI_Status_Label = new System.Windows.Forms.Label();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.UI_Thickness_Trkbar = new System.Windows.Forms.TrackBar();
+            this.UI_Thickness_Lbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.UI_Thickness_Trkbar)).BeginInit();
             this.SuspendLayout();
             // 
             // UI_UndoLine_Btn
@@ -75,6 +79,7 @@
             this.UI_Color_Btn.TabIndex = 3;
             this.UI_Color_Btn.Text = "Color";
             this.UI_Color_Btn.UseVisualStyleBackColor = true;
+            this.UI_Color_Btn.Click += new System.EventHandler(this.UI_Color_Btn_Click);
             // 
             // timer
             // 
@@ -91,11 +96,35 @@
             this.UI_Status_Label.TabIndex = 4;
             this.UI_Status_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // UI_Thickness_Trkbar
+            // 
+            this.UI_Thickness_Trkbar.Location = new System.Drawing.Point(4, 214);
+            this.UI_Thickness_Trkbar.Maximum = 255;
+            this.UI_Thickness_Trkbar.Minimum = 1;
+            this.UI_Thickness_Trkbar.Name = "UI_Thickness_Trkbar";
+            this.UI_Thickness_Trkbar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UI_Thickness_Trkbar.Size = new System.Drawing.Size(417, 56);
+            this.UI_Thickness_Trkbar.TabIndex = 5;
+            this.UI_Thickness_Trkbar.TickFrequency = 16;
+            this.UI_Thickness_Trkbar.Value = 16;
+            this.UI_Thickness_Trkbar.Scroll += new System.EventHandler(this.UI_Thickness_Trkbar_Scroll);
+            // 
+            // UI_Thickness_Lbl
+            // 
+            this.UI_Thickness_Lbl.AutoSize = true;
+            this.UI_Thickness_Lbl.Location = new System.Drawing.Point(9, 254);
+            this.UI_Thickness_Lbl.Name = "UI_Thickness_Lbl";
+            this.UI_Thickness_Lbl.Size = new System.Drawing.Size(89, 16);
+            this.UI_Thickness_Lbl.TabIndex = 6;
+            this.UI_Thickness_Lbl.Text = "Thickness: 16";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 291);
+            this.Controls.Add(this.UI_Thickness_Lbl);
+            this.Controls.Add(this.UI_Thickness_Trkbar);
             this.Controls.Add(this.UI_Status_Label);
             this.Controls.Add(this.UI_Color_Btn);
             this.Controls.Add(this.UI_Reduce_Btn);
@@ -104,7 +133,9 @@
             this.Name = "Form1";
             this.Text = "StackyListDraw";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UI_Thickness_Trkbar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,6 +147,9 @@
         private System.Windows.Forms.Button UI_Color_Btn;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label UI_Status_Label;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.TrackBar UI_Thickness_Trkbar;
+        private System.Windows.Forms.Label UI_Thickness_Lbl;
     }
 }
 
