@@ -38,7 +38,10 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.UI_Thickness_Trkbar = new System.Windows.Forms.TrackBar();
             this.UI_Thickness_Lbl = new System.Windows.Forms.Label();
+            this.UI_Opacity_Trckbar = new System.Windows.Forms.TrackBar();
+            this.UI_Opacity_Lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UI_Thickness_Trkbar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UI_Opacity_Trckbar)).BeginInit();
             this.SuspendLayout();
             // 
             // UI_UndoLine_Btn
@@ -98,12 +101,12 @@
             // 
             // UI_Thickness_Trkbar
             // 
-            this.UI_Thickness_Trkbar.Location = new System.Drawing.Point(4, 214);
+            this.UI_Thickness_Trkbar.Location = new System.Drawing.Point(5, 178);
             this.UI_Thickness_Trkbar.Maximum = 255;
             this.UI_Thickness_Trkbar.Minimum = 1;
             this.UI_Thickness_Trkbar.Name = "UI_Thickness_Trkbar";
             this.UI_Thickness_Trkbar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UI_Thickness_Trkbar.Size = new System.Drawing.Size(417, 56);
+            this.UI_Thickness_Trkbar.Size = new System.Drawing.Size(210, 56);
             this.UI_Thickness_Trkbar.TabIndex = 5;
             this.UI_Thickness_Trkbar.TickFrequency = 16;
             this.UI_Thickness_Trkbar.Value = 16;
@@ -112,17 +115,41 @@
             // UI_Thickness_Lbl
             // 
             this.UI_Thickness_Lbl.AutoSize = true;
-            this.UI_Thickness_Lbl.Location = new System.Drawing.Point(9, 254);
+            this.UI_Thickness_Lbl.Location = new System.Drawing.Point(9, 218);
             this.UI_Thickness_Lbl.Name = "UI_Thickness_Lbl";
             this.UI_Thickness_Lbl.Size = new System.Drawing.Size(89, 16);
             this.UI_Thickness_Lbl.TabIndex = 6;
             this.UI_Thickness_Lbl.Text = "Thickness: 16";
             // 
+            // UI_Opacity_Trckbar
+            // 
+            this.UI_Opacity_Trckbar.Location = new System.Drawing.Point(212, 178);
+            this.UI_Opacity_Trckbar.Maximum = 255;
+            this.UI_Opacity_Trckbar.Minimum = 1;
+            this.UI_Opacity_Trckbar.Name = "UI_Opacity_Trckbar";
+            this.UI_Opacity_Trckbar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UI_Opacity_Trckbar.Size = new System.Drawing.Size(210, 56);
+            this.UI_Opacity_Trckbar.TabIndex = 7;
+            this.UI_Opacity_Trckbar.TickFrequency = 16;
+            this.UI_Opacity_Trckbar.Value = 255;
+            this.UI_Opacity_Trckbar.Scroll += new System.EventHandler(this.UI_Opacity_Trckbar_Scroll);
+            // 
+            // UI_Opacity_Lbl
+            // 
+            this.UI_Opacity_Lbl.AutoSize = true;
+            this.UI_Opacity_Lbl.Location = new System.Drawing.Point(332, 221);
+            this.UI_Opacity_Lbl.Name = "UI_Opacity_Lbl";
+            this.UI_Opacity_Lbl.Size = new System.Drawing.Size(80, 16);
+            this.UI_Opacity_Lbl.TabIndex = 8;
+            this.UI_Opacity_Lbl.Text = "Opacity: 255";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 291);
+            this.ClientSize = new System.Drawing.Size(434, 246);
+            this.Controls.Add(this.UI_Opacity_Lbl);
+            this.Controls.Add(this.UI_Opacity_Trckbar);
             this.Controls.Add(this.UI_Thickness_Lbl);
             this.Controls.Add(this.UI_Thickness_Trkbar);
             this.Controls.Add(this.UI_Status_Label);
@@ -134,6 +161,7 @@
             this.Text = "StackyListDraw";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UI_Thickness_Trkbar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UI_Opacity_Trckbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +178,8 @@
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.TrackBar UI_Thickness_Trkbar;
         private System.Windows.Forms.Label UI_Thickness_Lbl;
+        private System.Windows.Forms.TrackBar UI_Opacity_Trckbar;
+        private System.Windows.Forms.Label UI_Opacity_Lbl;
     }
 }
 
