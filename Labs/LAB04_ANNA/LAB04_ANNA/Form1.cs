@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -89,7 +90,7 @@ namespace LAB04_ANNA
             UpdateUI();
         }
 
-        private void UpdateUI()
+        private int UpdateUI()
         {
             int segcount = 0;
             foreach (LinkedList<LineSeg> l in lineStack)
@@ -97,6 +98,47 @@ namespace LAB04_ANNA
                 segcount += l.Count;
             }
             UI_Status_Label.Text = $"{lineStack.Count} lines, {segcount} total segments.";
+
+            if (lineStack.Count < 1) UI_UndoLine_Btn.Enabled = false;
+            else UI_UndoLine_Btn.Enabled = true;
+
+            if (lineStack.Count < 1 || lineStack.Peek().Count < 1) UI_UndoSeg_Btn.Enabled = false;
+            else UI_UndoSeg_Btn.Enabled = true;
+
+            return segcount;
+        }
+
+        private void RenderAll()
+        {
+            canvas.Clear();
+           foreach(LinkedList<LineSeg> l in lineStack)
+            {
+                foreach(LineSeg line in l)
+                {
+                    canvas.AddLine(line.start.X,line.start.Y,line.end.X,line.end.Y,line.color,line.thickness);
+                }
+            }
+        }
+
+        private void UI_UndoLine_Btn_Click(object sender, EventArgs e)
+        {
+            drawing = false;
+            if (lineStack.Count > 0) lineStack.Pop();
+            RenderAll();
+        }
+
+        private void UI_UndoSeg_Btn_Click(object sender, EventArgs e)
+        {
+            drawing = false;
+            if (lineStack.Peek().Count < 1 && lineStack.Count > 0) lineStack.Pop(); 
+            else if(UpdateUI() > 0) lineStack.Peek().RemoveLast();
+            
+            RenderAll();
+        }
+
+        private void UI_Reduce_Btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
