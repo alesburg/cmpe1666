@@ -49,44 +49,50 @@ namespace LAB04_ANNA
         CDrawer canvas; //cdrawer
         bool drawing; //currently drawing flag
         Point lastMousePos; //last mouse position
-        Point leftclick = new Point(-1, -1); //left click for start of line
-        Point mousepos = new Point(-1, -1); //mouse position
-        Point rightclick = new Point(-1, -1); //right click for end of line
+        Point leftclick; //left click for start of line
+        Point mousepos; //mouse position
+        Point rightclick; //right click for end of line
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        //every 10ms
         private void timer_Tick(object sender, EventArgs e)
         {
+            //if not drawing and new left click detected - start line 
             if (!drawing && canvas.GetLastMouseLeftClick(out leftclick))
             {
                 drawing = true;
                 lastMousePos = leftclick;
                 lineStack.Push(new LinkedList<LineSeg>());
             }
+            //if drawing and mouse is moved - add line segment
             else if (drawing && canvas.GetLastMousePosition(out mousepos))
             {
                 lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos,(byte)UI_Thickness_Trkbar.Value,1,colorDialog.Color)); //alpha???
                 canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, colorDialog.Color, (byte)UI_Thickness_Trkbar.Value);
                 lastMousePos = mousepos;
             }
+            //if drawing and new right click detected - end line
             else if (drawing && canvas.GetLastMouseRightClick(out rightclick))
             {
                 drawing = false;
             }
 
+            //call status update
             UpdateUI();
         }
 
+        //on load
         private void Form1_Load(object sender, EventArgs e)
         {
-            lineStack = new Stack<LinkedList<LineSeg>>();
-            canvas = new CDrawer(1024, 768);
-            timer.Start();
-            drawing = false;
-            lastMousePos = new Point(-1, -1);
+            lineStack = new Stack<LinkedList<LineSeg>>(); //initialize line stack
+            canvas = new CDrawer(1024, 768); //initialize GDIDrawer
+            timer.Start(); //start timer
+            drawing = false; //not drawing
+            //lastMousePos = new Point(-1, -1);
             colorDialog.Color = Color.Red;
             UpdateUI();
         }
@@ -145,10 +151,7 @@ namespace LAB04_ANNA
         {
             if(UpdateUI() > 1)
             {
-                foreach()
-                {
-                    lineStack.
-                }
+                
             }
         }
 
