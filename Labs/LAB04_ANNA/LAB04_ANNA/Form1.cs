@@ -31,11 +31,11 @@ namespace LAB04_ANNA
             public Point start;
             public Point end;
             public byte thickness;
-            public float alpha;
+            public int alpha;
             public Color color;
 
             //constructor
-            public LineSeg(Point start, Point end, byte thickness, float alpha, Color color)
+            public LineSeg(Point start, Point end, byte thickness, int alpha, Color color)
             {
                 this.start = start;
                 this.end = end;
@@ -71,8 +71,8 @@ namespace LAB04_ANNA
             //if drawing and mouse is moved - add line segment
             else if (drawing && canvas.GetLastMousePosition(out mousepos))
             {
-                lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos,(byte)UI_Thickness_Trkbar.Value,1,colorDialog.Color)); //alpha???
-                canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, colorDialog.Color, (byte)UI_Thickness_Trkbar.Value);
+                lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos, (byte)UI_Thickness_Trkbar.Value, UI_Opacity_Trckbar.Value, colorDialog.Color));
+                canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, Color.FromArgb(UI_Opacity_Trckbar.Value,colorDialog.Color.R,colorDialog.Color.G,colorDialog.Color.B), (byte)UI_Thickness_Trkbar.Value);
                 lastMousePos = mousepos;
             }
             //if drawing and new right click detected - end line
@@ -92,13 +92,18 @@ namespace LAB04_ANNA
             canvas = new CDrawer(1024, 768); //initialize GDIDrawer
             timer.Start(); //start timer
             drawing = false; //not drawing
-            //lastMousePos = new Point(-1, -1);
-            colorDialog.Color = Color.Red;
-            UpdateUI();
+            colorDialog.Color = Color.Red; //default color
+            UpdateUI(); //call status update
         }
 
+        //********************************************************************************************
+        //Method: private int UpdateUI()
+        //Purpose: Updates status label for line and segment count
+        //Returns: int - segments total
+        //********************************************************************************************
         private int UpdateUI()
         {
+            //iterate over linked lists in stack to count segments
             int segcount = 0;
             foreach (LinkedList<LineSeg> l in lineStack)
             {
@@ -106,6 +111,8 @@ namespace LAB04_ANNA
             }
             UI_Status_Label.Text = $"{lineStack.Count} lines, {segcount} total segments.";
 
+
+            //enable/disable UI buttons
             if (lineStack.Count < 1) UI_UndoLine_Btn.Enabled = false;
             else UI_UndoLine_Btn.Enabled = true;
 
@@ -118,18 +125,23 @@ namespace LAB04_ANNA
             return segcount;
         }
 
+        //********************************************************************************************
+        //Method:  private void RenderAll()
+        //Purpose: Clears and re-renders all lines from list
+        //********************************************************************************************
         private void RenderAll()
         {
             canvas.Clear();
-           foreach(LinkedList<LineSeg> l in lineStack)
+            foreach (LinkedList<LineSeg> l in lineStack)
             {
-                foreach(LineSeg line in l)
+                foreach (LineSeg line in l)
                 {
-                    canvas.AddLine(line.start.X,line.start.Y,line.end.X,line.end.Y,line.color,line.thickness);
+                    canvas.AddLine(line.start.X, line.start.Y, line.end.X, line.end.Y, Color.FromArgb(line.alpha,line.color), line.thickness);
                 }
             }
         }
 
+        //undo line button
         private void UI_UndoLine_Btn_Click(object sender, EventArgs e)
         {
             drawing = false;
@@ -137,32 +149,45 @@ namespace LAB04_ANNA
             RenderAll();
         }
 
+        //undo segment button
         private void UI_UndoSeg_Btn_Click(object sender, EventArgs e)
         {
             drawing = false;
-                
-            if(lineStack.Count > 0 && lineStack.Peek().Count > 0) lineStack.Peek().RemoveLast();
+
+            if (lineStack.Count > 0 && lineStack.Peek().Count > 0) lineStack.Peek().RemoveLast();
             if (lineStack.Peek().Count == 0) lineStack.Pop();
 
             RenderAll();
         }
 
+        //reduce complexity button
         private void UI_Reduce_Btn_Click(object sender, EventArgs e)
         {
-            if(UpdateUI() > 1)
+            if (lineStack.Peek().Count > 1)
             {
-                
+
+                foreach(LineSeg seg in lineStack.Peek())
+                {
+
+                }
             }
         }
 
+        //color button
         private void UI_Color_Btn_Click(object sender, EventArgs e)
         {
             colorDialog.ShowDialog();
         }
 
+        //update trackbar labels
         private void UI_Thickness_Trkbar_Scroll(object sender, EventArgs e)
         {
             UI_Thickness_Lbl.Text = $"Thickness: {UI_Thickness_Trkbar.Value}";
+        }
+
+        private void UI_Opacity_Trckbar_Scroll(object sender, EventArgs e)
+        {
+            UI_Opacity_Lbl.Text = $"Opacity: {UI_Opacity_Trckbar.Value}";
         }
     }
 }
