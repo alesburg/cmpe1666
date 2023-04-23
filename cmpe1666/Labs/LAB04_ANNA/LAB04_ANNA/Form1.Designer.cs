@@ -45,6 +45,7 @@
             this.UI_UndoLine_Btn.TabIndex = 0;
             this.UI_UndoLine_Btn.Text = "Undo Line...";
             this.UI_UndoLine_Btn.UseVisualStyleBackColor = true;
+            this.UI_UndoLine_Btn.Click += new System.EventHandler(this.UI_UndoLine_Btn_Click);
             // 
             // UI_UndoSeg_Btn
             // 
@@ -54,6 +55,7 @@
             this.UI_UndoSeg_Btn.TabIndex = 1;
             this.UI_UndoSeg_Btn.Text = "Undo Segment...";
             this.UI_UndoSeg_Btn.UseVisualStyleBackColor = true;
+            this.UI_UndoSeg_Btn.Click += new System.EventHandler(this.UI_UndoSeg_Btn_Click);
             // 
             // UI_Reduce_Btn
             // 
@@ -63,6 +65,7 @@
             this.UI_Reduce_Btn.TabIndex = 2;
             this.UI_Reduce_Btn.Text = "Reduce Complexity...";
             this.UI_Reduce_Btn.UseVisualStyleBackColor = true;
+            this.UI_Reduce_Btn.Click += new System.EventHandler(this.UI_Reduce_Btn_Click);
             // 
             // UI_Color_Btn
             // 
