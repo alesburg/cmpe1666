@@ -130,15 +130,16 @@ namespace LAB04_ANNA
         private void UI_UndoSeg_Btn_Click(object sender, EventArgs e)
         {
             drawing = false;
-            if (lineStack.Peek().Count < 1 && lineStack.Count > 0) lineStack.Pop(); 
-            else if(UpdateUI() > 0) lineStack.Peek().RemoveLast();
-            
+                
+            if(lineStack.Count > 0 && lineStack.Peek().Count > 0) lineStack.Peek().RemoveLast();
+            if (lineStack.Peek().Count == 0) lineStack.Pop();
+
             RenderAll();
         }
 
         private void UI_Reduce_Btn_Click(object sender, EventArgs e)
         {
-
+            drawing = false;
         }
     }
 }
