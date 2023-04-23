@@ -6,7 +6,8 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 22 APR 2023 - Created, finished and tested
+ * 22 APR 2023 - Created
+ * 23 APR 2023 - Finished and tested
  */
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,9 @@ namespace LAB04_ANNA
         CDrawer canvas; //cdrawer
         bool drawing; //currently drawing flag
         Point lastMousePos; //last mouse position
+        Point leftclick = new Point(-1, -1); //left click for start of line
+        Point mousepos = new Point(-1, -1); //mouse position
+        Point rightclick = new Point(-1, -1); //right click for end of line
 
         public Form1()
         {
@@ -55,24 +59,19 @@ namespace LAB04_ANNA
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            Point leftclick = new Point(-1,-1); //left click for start of line
-            Point mousepos = new Point(-1,-1); //mouse position
-            Point rightclick = new Point(-1, -1) ; //right click for end of line
-
-            canvas.GetLastMouseLeftClick(out leftclick);
-            canvas.GetLastMousePosition(out mousepos);
-            canvas.GetLastMouseRightClick(out rightclick);
-
-            if(!drawing && leftclick != lastMousePos)
+            if (!drawing && canvas.GetLastMouseLeftClick(out leftclick))
             {
                 drawing = true;
                 lastMousePos = leftclick;
                 lineStack.Push(new LinkedList<LineSeg>());
-            }else if(drawing && mousepos != lastMousePos)
+            }
+            else if (drawing && canvas.GetLastMousePosition(out mousepos))
             {
                 lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos,2,1,Color.Red)); //placeholder thickness, alpha, color
                 canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, Color.Red, 2);
-            }else if(drawing && rightclick != lastMousePos)
+                lastMousePos = mousepos;
+            }
+            else if (drawing && canvas.GetLastMouseRightClick(out rightclick))
             {
                 drawing = false;
             }
@@ -82,17 +81,18 @@ namespace LAB04_ANNA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lineStack= new Stack<LinkedList<LineSeg>>();
-            canvas = new CDrawer(1024,768);
+            lineStack = new Stack<LinkedList<LineSeg>>();
+            canvas = new CDrawer(1024, 768);
             timer.Start();
             drawing = false;
-            lastMousePos = new Point(-1,-1);
+            lastMousePos = new Point(-1, -1);
             UpdateUI();
         }
 
         private void UpdateUI()
-        {   int segcount = 0;
-            foreach(LinkedList<LineSeg> l in lineStack)
+        {
+            int segcount = 0;
+            foreach (LinkedList<LineSeg> l in lineStack)
             {
                 segcount += l.Count;
             }
