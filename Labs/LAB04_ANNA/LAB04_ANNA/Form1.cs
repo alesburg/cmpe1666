@@ -68,8 +68,8 @@ namespace LAB04_ANNA
             }
             else if (drawing && canvas.GetLastMousePosition(out mousepos))
             {
-                lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos,2,1,Color.Red)); //placeholder thickness, alpha, color
-                canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, Color.Red, 2);
+                lineStack.Peek().AddLast(new LineSeg(lastMousePos, mousepos,(byte)UI_Thickness_Trkbar.Value,1,colorDialog.Color)); //alpha???
+                canvas.AddLine(lastMousePos.X, lastMousePos.Y, mousepos.X, mousepos.Y, colorDialog.Color, (byte)UI_Thickness_Trkbar.Value);
                 lastMousePos = mousepos;
             }
             else if (drawing && canvas.GetLastMouseRightClick(out rightclick))
@@ -87,6 +87,7 @@ namespace LAB04_ANNA
             timer.Start();
             drawing = false;
             lastMousePos = new Point(-1, -1);
+            colorDialog.Color = Color.Red;
             UpdateUI();
         }
 
@@ -104,6 +105,9 @@ namespace LAB04_ANNA
 
             if (lineStack.Count < 1 || lineStack.Peek().Count < 1) UI_UndoSeg_Btn.Enabled = false;
             else UI_UndoSeg_Btn.Enabled = true;
+
+            if (lineStack.Count < 1 || lineStack.Peek().Count < 2) UI_Reduce_Btn.Enabled = false;
+            else UI_Reduce_Btn.Enabled = true;
 
             return segcount;
         }
@@ -139,7 +143,23 @@ namespace LAB04_ANNA
 
         private void UI_Reduce_Btn_Click(object sender, EventArgs e)
         {
-            drawing = false;
+            if(UpdateUI() > 1)
+            {
+                foreach()
+                {
+                    lineStack.
+                }
+            }
+        }
+
+        private void UI_Color_Btn_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog();
+        }
+
+        private void UI_Thickness_Trkbar_Scroll(object sender, EventArgs e)
+        {
+            UI_Thickness_Lbl.Text = $"Thickness: {UI_Thickness_Trkbar.Value}";
         }
     }
 }
