@@ -163,13 +163,19 @@ namespace LAB04_ANNA
         //reduce complexity button
         private void UI_Reduce_Btn_Click(object sender, EventArgs e)
         {
+            //if more than 2 segments in current line
             if (lineStack.Peek().Count > 1)
             {
-                LinkedList<LineSeg> temp = new LinkedList<LineSeg>();
-                for(LinkedListNode<LineSeg> node = lineStack.Peek().First; node != lineStack.Peek().Last && node != lineStack.Peek().Last.Previous; node = node.Next.Next)
+                LinkedList<LineSeg> temp = new LinkedList<LineSeg>(); //temporary list for updated line
+
+                //iterate over line segments
+                for(LinkedListNode<LineSeg> node = lineStack.Peek().First; node != lineStack.Peek().Last && node != null; node = node.Next.Next)
                 {
+                    //add simplified segment to new list
                     if(lineStack.Peek().Count > 1 && node.Next != null) temp.AddLast(new LineSeg(node.Value.start, node.Next.Value.end, node.Value.thickness, node.Value.alpha, node.Value.color));
                 }
+
+                //replace old line with new line
                 lineStack.Pop();
                 lineStack.Push(temp);
                 RenderAll();
