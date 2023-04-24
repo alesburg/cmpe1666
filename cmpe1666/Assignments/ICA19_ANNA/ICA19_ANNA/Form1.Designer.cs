@@ -124,6 +124,7 @@
             this.UI_GenSensors_Btn.TabIndex = 6;
             this.UI_GenSensors_Btn.Text = "Generate Sensors";
             this.UI_GenSensors_Btn.UseVisualStyleBackColor = true;
+            this.UI_GenSensors_Btn.Click += new System.EventHandler(this.UI_GenSensors_Btn_Click);
             // 
             // UI_SensorNum_Tbx
             // 
