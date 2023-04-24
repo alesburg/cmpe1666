@@ -38,6 +38,14 @@
             this.UI_SensorNum_Tbx = new System.Windows.Forms.TextBox();
             this.UI_NumSensors_Lbl = new System.Windows.Forms.Label();
             this.UI_Redisplay_Button = new System.Windows.Forms.Button();
+            this.UI_SortCriteria_Grpbx = new System.Windows.Forms.GroupBox();
+            this.UI_SortOrder_Grpbx = new System.Windows.Forms.GroupBox();
+            this.UI_SensorID_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_Temp_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_Asc_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_Desc_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_SortCriteria_Grpbx.SuspendLayout();
+            this.UI_SortOrder_Grpbx.SuspendLayout();
             this.SuspendLayout();
             // 
             // UI_RawData_Lbl
@@ -134,11 +142,79 @@
             this.UI_Redisplay_Button.Text = "Redisplay";
             this.UI_Redisplay_Button.UseVisualStyleBackColor = true;
             // 
+            // UI_SortCriteria_Grpbx
+            // 
+            this.UI_SortCriteria_Grpbx.Controls.Add(this.UI_Temp_RadBtn);
+            this.UI_SortCriteria_Grpbx.Controls.Add(this.UI_SensorID_RadBtn);
+            this.UI_SortCriteria_Grpbx.Location = new System.Drawing.Point(370, 403);
+            this.UI_SortCriteria_Grpbx.Name = "UI_SortCriteria_Grpbx";
+            this.UI_SortCriteria_Grpbx.Size = new System.Drawing.Size(235, 67);
+            this.UI_SortCriteria_Grpbx.TabIndex = 10;
+            this.UI_SortCriteria_Grpbx.TabStop = false;
+            this.UI_SortCriteria_Grpbx.Text = "Sort Criteria";
+            // 
+            // UI_SortOrder_Grpbx
+            // 
+            this.UI_SortOrder_Grpbx.Controls.Add(this.UI_Desc_RadBtn);
+            this.UI_SortOrder_Grpbx.Controls.Add(this.UI_Asc_RadBtn);
+            this.UI_SortOrder_Grpbx.Location = new System.Drawing.Point(370, 483);
+            this.UI_SortOrder_Grpbx.Name = "UI_SortOrder_Grpbx";
+            this.UI_SortOrder_Grpbx.Size = new System.Drawing.Size(235, 54);
+            this.UI_SortOrder_Grpbx.TabIndex = 11;
+            this.UI_SortOrder_Grpbx.TabStop = false;
+            this.UI_SortOrder_Grpbx.Text = "Sort Order";
+            // 
+            // UI_SensorID_RadBtn
+            // 
+            this.UI_SensorID_RadBtn.AutoSize = true;
+            this.UI_SensorID_RadBtn.Location = new System.Drawing.Point(6, 21);
+            this.UI_SensorID_RadBtn.Name = "UI_SensorID_RadBtn";
+            this.UI_SensorID_RadBtn.Size = new System.Drawing.Size(82, 20);
+            this.UI_SensorID_RadBtn.TabIndex = 0;
+            this.UI_SensorID_RadBtn.TabStop = true;
+            this.UI_SensorID_RadBtn.Text = "SensorId";
+            this.UI_SensorID_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Temp_RadBtn
+            // 
+            this.UI_Temp_RadBtn.AutoSize = true;
+            this.UI_Temp_RadBtn.Location = new System.Drawing.Point(123, 21);
+            this.UI_Temp_RadBtn.Name = "UI_Temp_RadBtn";
+            this.UI_Temp_RadBtn.Size = new System.Drawing.Size(106, 20);
+            this.UI_Temp_RadBtn.TabIndex = 1;
+            this.UI_Temp_RadBtn.TabStop = true;
+            this.UI_Temp_RadBtn.Text = "Temperature";
+            this.UI_Temp_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Asc_RadBtn
+            // 
+            this.UI_Asc_RadBtn.AutoSize = true;
+            this.UI_Asc_RadBtn.Location = new System.Drawing.Point(6, 21);
+            this.UI_Asc_RadBtn.Name = "UI_Asc_RadBtn";
+            this.UI_Asc_RadBtn.Size = new System.Drawing.Size(92, 20);
+            this.UI_Asc_RadBtn.TabIndex = 2;
+            this.UI_Asc_RadBtn.TabStop = true;
+            this.UI_Asc_RadBtn.Text = "Ascending";
+            this.UI_Asc_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Desc_RadBtn
+            // 
+            this.UI_Desc_RadBtn.AutoSize = true;
+            this.UI_Desc_RadBtn.Location = new System.Drawing.Point(123, 21);
+            this.UI_Desc_RadBtn.Name = "UI_Desc_RadBtn";
+            this.UI_Desc_RadBtn.Size = new System.Drawing.Size(101, 20);
+            this.UI_Desc_RadBtn.TabIndex = 3;
+            this.UI_Desc_RadBtn.TabStop = true;
+            this.UI_Desc_RadBtn.Text = "Descending";
+            this.UI_Desc_RadBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 623);
+            this.Controls.Add(this.UI_SortOrder_Grpbx);
+            this.Controls.Add(this.UI_SortCriteria_Grpbx);
             this.Controls.Add(this.UI_Redisplay_Button);
             this.Controls.Add(this.UI_NumSensors_Lbl);
             this.Controls.Add(this.UI_SensorNum_Tbx);
@@ -151,6 +227,10 @@
             this.Controls.Add(this.UI_RawData_Lbl);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.UI_SortCriteria_Grpbx.ResumeLayout(false);
+            this.UI_SortCriteria_Grpbx.PerformLayout();
+            this.UI_SortOrder_Grpbx.ResumeLayout(false);
+            this.UI_SortOrder_Grpbx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +248,12 @@
         private System.Windows.Forms.TextBox UI_SensorNum_Tbx;
         private System.Windows.Forms.Label UI_NumSensors_Lbl;
         private System.Windows.Forms.Button UI_Redisplay_Button;
+        private System.Windows.Forms.GroupBox UI_SortCriteria_Grpbx;
+        private System.Windows.Forms.RadioButton UI_Temp_RadBtn;
+        private System.Windows.Forms.RadioButton UI_SensorID_RadBtn;
+        private System.Windows.Forms.GroupBox UI_SortOrder_Grpbx;
+        private System.Windows.Forms.RadioButton UI_Desc_RadBtn;
+        private System.Windows.Forms.RadioButton UI_Asc_RadBtn;
     }
 }
 
