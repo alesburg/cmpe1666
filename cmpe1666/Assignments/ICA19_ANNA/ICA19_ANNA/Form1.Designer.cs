@@ -44,8 +44,16 @@
             this.UI_Temp_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_Asc_RadBtn = new System.Windows.Forms.RadioButton();
             this.UI_Desc_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_DisplaySorted_Btn = new System.Windows.Forms.Button();
+            this.UI_TempVal_Tbx = new System.Windows.Forms.TextBox();
+            this.UI_TempVal_Lbl = new System.Windows.Forms.Label();
+            this.UI_SelectCriteria_Grpbx = new System.Windows.Forms.GroupBox();
+            this.UI_Less_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_Greater_RadBtn = new System.Windows.Forms.RadioButton();
+            this.UI_DisplaySelected_Btn = new System.Windows.Forms.Button();
             this.UI_SortCriteria_Grpbx.SuspendLayout();
             this.UI_SortOrder_Grpbx.SuspendLayout();
+            this.UI_SelectCriteria_Grpbx.SuspendLayout();
             this.SuspendLayout();
             // 
             // UI_RawData_Lbl
@@ -135,7 +143,7 @@
             // 
             // UI_Redisplay_Button
             // 
-            this.UI_Redisplay_Button.Location = new System.Drawing.Point(60, 535);
+            this.UI_Redisplay_Button.Location = new System.Drawing.Point(59, 543);
             this.UI_Redisplay_Button.Name = "UI_Redisplay_Button";
             this.UI_Redisplay_Button.Size = new System.Drawing.Size(168, 55);
             this.UI_Redisplay_Button.TabIndex = 9;
@@ -208,11 +216,83 @@
             this.UI_Desc_RadBtn.Text = "Descending";
             this.UI_Desc_RadBtn.UseVisualStyleBackColor = true;
             // 
+            // UI_DisplaySorted_Btn
+            // 
+            this.UI_DisplaySorted_Btn.Location = new System.Drawing.Point(401, 543);
+            this.UI_DisplaySorted_Btn.Name = "UI_DisplaySorted_Btn";
+            this.UI_DisplaySorted_Btn.Size = new System.Drawing.Size(168, 55);
+            this.UI_DisplaySorted_Btn.TabIndex = 12;
+            this.UI_DisplaySorted_Btn.Text = "Display Sorted";
+            this.UI_DisplaySorted_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UI_TempVal_Tbx
+            // 
+            this.UI_TempVal_Tbx.Location = new System.Drawing.Point(820, 403);
+            this.UI_TempVal_Tbx.Name = "UI_TempVal_Tbx";
+            this.UI_TempVal_Tbx.Size = new System.Drawing.Size(125, 22);
+            this.UI_TempVal_Tbx.TabIndex = 13;
+            // 
+            // UI_TempVal_Lbl
+            // 
+            this.UI_TempVal_Lbl.AutoSize = true;
+            this.UI_TempVal_Lbl.Location = new System.Drawing.Point(686, 406);
+            this.UI_TempVal_Lbl.Name = "UI_TempVal_Lbl";
+            this.UI_TempVal_Lbl.Size = new System.Drawing.Size(129, 16);
+            this.UI_TempVal_Lbl.TabIndex = 14;
+            this.UI_TempVal_Lbl.Text = "Temperature Value: ";
+            // 
+            // UI_SelectCriteria_Grpbx
+            // 
+            this.UI_SelectCriteria_Grpbx.Controls.Add(this.UI_Less_RadBtn);
+            this.UI_SelectCriteria_Grpbx.Controls.Add(this.UI_Greater_RadBtn);
+            this.UI_SelectCriteria_Grpbx.Location = new System.Drawing.Point(688, 451);
+            this.UI_SelectCriteria_Grpbx.Name = "UI_SelectCriteria_Grpbx";
+            this.UI_SelectCriteria_Grpbx.Size = new System.Drawing.Size(275, 73);
+            this.UI_SelectCriteria_Grpbx.TabIndex = 12;
+            this.UI_SelectCriteria_Grpbx.TabStop = false;
+            this.UI_SelectCriteria_Grpbx.Text = "Selection Criteria";
+            // 
+            // UI_Less_RadBtn
+            // 
+            this.UI_Less_RadBtn.AutoSize = true;
+            this.UI_Less_RadBtn.Location = new System.Drawing.Point(10, 47);
+            this.UI_Less_RadBtn.Name = "UI_Less_RadBtn";
+            this.UI_Less_RadBtn.Size = new System.Drawing.Size(144, 20);
+            this.UI_Less_RadBtn.TabIndex = 3;
+            this.UI_Less_RadBtn.TabStop = true;
+            this.UI_Less_RadBtn.Text = "Less Than or Equal";
+            this.UI_Less_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_Greater_RadBtn
+            // 
+            this.UI_Greater_RadBtn.AutoSize = true;
+            this.UI_Greater_RadBtn.Location = new System.Drawing.Point(10, 21);
+            this.UI_Greater_RadBtn.Name = "UI_Greater_RadBtn";
+            this.UI_Greater_RadBtn.Size = new System.Drawing.Size(160, 20);
+            this.UI_Greater_RadBtn.TabIndex = 2;
+            this.UI_Greater_RadBtn.TabStop = true;
+            this.UI_Greater_RadBtn.Text = "Greater Than or Equal";
+            this.UI_Greater_RadBtn.UseVisualStyleBackColor = true;
+            // 
+            // UI_DisplaySelected_Btn
+            // 
+            this.UI_DisplaySelected_Btn.Location = new System.Drawing.Point(747, 543);
+            this.UI_DisplaySelected_Btn.Name = "UI_DisplaySelected_Btn";
+            this.UI_DisplaySelected_Btn.Size = new System.Drawing.Size(168, 55);
+            this.UI_DisplaySelected_Btn.TabIndex = 15;
+            this.UI_DisplaySelected_Btn.Text = "Display Selected";
+            this.UI_DisplaySelected_Btn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 623);
+            this.Controls.Add(this.UI_DisplaySelected_Btn);
+            this.Controls.Add(this.UI_SelectCriteria_Grpbx);
+            this.Controls.Add(this.UI_TempVal_Lbl);
+            this.Controls.Add(this.UI_TempVal_Tbx);
+            this.Controls.Add(this.UI_DisplaySorted_Btn);
             this.Controls.Add(this.UI_SortOrder_Grpbx);
             this.Controls.Add(this.UI_SortCriteria_Grpbx);
             this.Controls.Add(this.UI_Redisplay_Button);
@@ -231,6 +311,8 @@
             this.UI_SortCriteria_Grpbx.PerformLayout();
             this.UI_SortOrder_Grpbx.ResumeLayout(false);
             this.UI_SortOrder_Grpbx.PerformLayout();
+            this.UI_SelectCriteria_Grpbx.ResumeLayout(false);
+            this.UI_SelectCriteria_Grpbx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +336,13 @@
         private System.Windows.Forms.GroupBox UI_SortOrder_Grpbx;
         private System.Windows.Forms.RadioButton UI_Desc_RadBtn;
         private System.Windows.Forms.RadioButton UI_Asc_RadBtn;
+        private System.Windows.Forms.Button UI_DisplaySorted_Btn;
+        private System.Windows.Forms.TextBox UI_TempVal_Tbx;
+        private System.Windows.Forms.Label UI_TempVal_Lbl;
+        private System.Windows.Forms.GroupBox UI_SelectCriteria_Grpbx;
+        private System.Windows.Forms.RadioButton UI_Less_RadBtn;
+        private System.Windows.Forms.RadioButton UI_Greater_RadBtn;
+        private System.Windows.Forms.Button UI_DisplaySelected_Btn;
     }
 }
 
