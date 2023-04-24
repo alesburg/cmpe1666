@@ -166,7 +166,7 @@ namespace LAB04_ANNA
             if (lineStack.Peek().Count > 1)
             {
                 LinkedList<LineSeg> temp = new LinkedList<LineSeg>();
-                for(LinkedListNode<LineSeg> node = lineStack.Peek().First; node != null; node = node.Next.Next)
+                for(LinkedListNode<LineSeg> node = lineStack.Peek().First; node != lineStack.Peek().Last && node != lineStack.Peek().Last.Previous; node = node.Next.Next)
                 {
                     if(lineStack.Peek().Count > 1 && node.Next != null) temp.AddLast(new LineSeg(node.Value.start, node.Next.Value.end, node.Value.thickness, node.Value.alpha, node.Value.color));
                 }
