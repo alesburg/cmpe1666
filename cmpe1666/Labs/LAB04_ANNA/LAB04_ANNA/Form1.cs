@@ -7,7 +7,7 @@
  * 
  * Modification History:
  * 22 APR 2023 - Created
- * 23 APR 2023 - Finished and tested
+ * 23 APR 2023 - Finished and tested (except for reduce complexity)
  */
 using System;
 using System.Collections.Generic;
@@ -165,11 +165,14 @@ namespace LAB04_ANNA
         {
             if (lineStack.Peek().Count > 1)
             {
-
-                foreach(LineSeg seg in lineStack.Peek())
+                LinkedList<LineSeg> temp = new LinkedList<LineSeg>();
+                for(LinkedListNode<LineSeg> node = lineStack.Peek().First; node != null; node = node.Next.Next)
                 {
-
+                    if(lineStack.Peek().Count > 1 && node.Next != null) temp.AddLast(new LineSeg(node.Value.start, node.Next.Value.end, node.Value.thickness, node.Value.alpha, node.Value.color));
                 }
+                lineStack.Pop();
+                lineStack.Push(temp);
+                RenderAll();
             }
         }
 
