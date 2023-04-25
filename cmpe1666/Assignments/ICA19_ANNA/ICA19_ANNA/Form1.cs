@@ -6,7 +6,8 @@
  * Author: Anna Lesburg
  * 
  * Modification History:
- * 22 APR 2023 - Created, finished, and tested
+ * 22 APR 2023 - Created 
+ * 24 APR 2023 - Finished and tested
  */
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,9 @@ namespace ICA19_ANNA
                 return $"Sensor Id: {SensorId}, Temperature: {temperature}";
             }
         }
+
+        List<Sensor> sensorList;
+
         public Form1()
         {
             InitializeComponent();
@@ -47,12 +51,14 @@ namespace ICA19_ANNA
         {
             int numSensors;
             Random random = new Random();
+            int sensorId;
 
             if(int.TryParse(UI_SensorNum_Tbx.Text,out numSensors))
             {
                 for(int i = 0; i < numSensors; i++)
                 {
-
+                    sensorId = random.Next(1, 5001);
+                    ;
                 }
             }
         }
